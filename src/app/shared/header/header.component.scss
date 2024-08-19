@@ -1,0 +1,55 @@
+@use '../../../styles/mixins.scss';
+@import '../../../styles.scss';
+
+.header-container {
+    width: 100%;
+    max-width: 1920px;
+    @include mixins.flex($jc: space-between);
+    z-index: 2;
+    position: absolute;
+    top: 0;
+    padding: 37px 100px;
+}
+
+.first-name {
+    font-size: 32px;
+    font-weight: 700;
+    cursor: pointer;
+}
+
+.header-links {
+    @include mixins.flex();
+    gap: 30px;
+}
+
+a, a:-webkit-any-link {
+    color: $mainTextColor;
+    text-decoration: none;
+}
+
+a:hover {
+    color: $accentColor2;
+}
+
+.active {
+    color: red;
+    position: relative;
+}
+
+.active:before {
+    position: absolute;
+    left: 0;
+    top: 30px;
+    height: 0;
+    width: 58px;
+    content: '';
+    border-top: 3px solid $accentColor1;
+}
+
+.accent1 {
+    color: $accentColor1;
+}
+
+.accent2 {
+    color: $accentColor2;
+}

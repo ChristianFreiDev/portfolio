@@ -1,0 +1,24 @@
+@use '../../styles/mixins.scss';
+
+section, header {
+    margin: auto;
+    max-width: 1920px;
+}
+
+section {
+    min-height: 100dvh;
+    min-height: 100vh;
+}
+
+img {
+    position: absolute;
+    z-index: -1;
+    top: 25%;
+    width: 100%;
+}
+
+@media (max-width: 1440px) {
+    img {
+        top: 35%;
+    }
+}

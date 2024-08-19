@@ -1,4 +1,5 @@
-# See https://docs.github.com/get-started/getting-started-with-git/ignoring-files for more about ignoring files.
+# Assets
+/src/assets
 
 # Compiled output
 /dist
@@ -21,6 +22,7 @@ yarn-error.log
 *.sublime-workspace
 
 # Visual Studio Code
+.editorconfig
 .vscode/*
 !.vscode/settings.json
 !.vscode/tasks.json

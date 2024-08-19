@@ -1,1 +1,35 @@
-/* You can add global styles to this file, and also import other style files */
+@use './styles/mixins.scss';
+@import './styles/fonts.scss';
+@import './styles/colors.scss';
+@import './styles/buttons.scss';
+
+* {
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    margin: 0;
+    background: $backgroundColor;
+    font-family: 'Poppins', sans-serif;
+    color: $mainTextColor;
+}
+
+h1, h3 {
+    font-size: 90px;
+    line-height: 108px;
+}
+
+p, li {
+    font-size: 16px;
+}
+
+@media (max-width: 1440px) {
+    h1, h3 {
+        font-size: 44px;
+        line-height: 44px;
+    }
+}

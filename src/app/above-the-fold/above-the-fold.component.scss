@@ -1,0 +1,130 @@
+@use '../../styles/mixins.scss';
+@import '../../styles/colors.scss';
+
+#above-the-fold {
+    height: 100dvh;
+    height: 100vh;
+    width: 100%;
+    position: relative;
+}
+
+.above-the-fold-inner-container {
+    position: absolute;
+    top: 24%;
+    right: 12%;
+    background: transparent;
+    @include mixins.flex($ai: center, $dir: column);
+}
+
+.main-heading-container {
+    background: transparent;
+    @include mixins.flex($jc: center, $ai: center);
+    gap: 35px;
+}
+
+h1, h2 {
+    margin: 0;
+}
+
+h2 {
+    font-size: 58px;
+    line-height: 69.6px;
+    font-weight: 400;
+}
+
+.i-am {
+    transform: rotate(270deg);
+    font-size: 64px;
+    line-height: 76.8px;
+    height: 76.8px;
+    margin-left: -45px;
+    margin-right: -45px;
+    margin-bottom: -5px;
+}
+
+$arrowAnimationStart: -110px;
+$arrowAnimationMiddle: 104px;
+$arrowAnimationEnd: 88px;
+
+.scroll-down-container {
+    position: absolute;
+    right: 4px;
+    bottom: $arrowAnimationEnd;
+    @include mixins.flex($jc: center, $ai: center);
+    gap: 7px;
+    transform: rotate(90deg);
+    font-size: 23px;
+    line-height: 27.6px;
+    animation: 1.2s ease-in-out slideIn, 0.8s ease-in-out 1.2s 5 alternate forwards moveUpAndDown;
+}
+
+@keyframes slideIn {
+    0% {
+        bottom: $arrowAnimationStart;
+    }
+    100% {
+        bottom: $arrowAnimationMiddle;
+    }
+}
+
+@keyframes moveUpAndDown {
+    0% {
+        bottom: $arrowAnimationMiddle;
+    }
+    100% {
+        bottom: $arrowAnimationEnd;
+    }
+}
+
+.arrow {
+    transform: rotate(270deg);
+}
+
+button {
+    margin-top: 44px;
+}
+
+.socials-container {
+    @include mixins.flex($ai: center);
+    gap: 32px;
+    position: absolute;
+    left: 0;
+    bottom: 16px;
+}
+
+.socials-hr {
+    width: 100px;
+    height: 0;
+    border: 2px solid $accentColor1;
+    border-top-right-radius: 2px;
+    border-bottom-right-radius: 2px;
+}
+
+.e-mail {
+    color: $mainTextColor;
+    text-decoration: none;
+}
+
+img {
+    position: absolute;
+    z-index: -1;
+    top: 25%;
+    width: 100%;
+}
+
+@media (max-width: 1440px) {
+    .main-heading-container {
+        gap: 4px;
+    }
+    h2 {
+        font-size: 28px;
+        line-height: 33.6px;
+    }
+    .i-am {
+        font-size: 32px;
+        line-height: 32px;
+        margin-left: -22.5px;
+        margin-right: -22.5px;
+        margin-bottom: 0;
+    }
+}
