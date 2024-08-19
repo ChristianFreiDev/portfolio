@@ -22,10 +22,6 @@
     gap: 35px;
 }
 
-h1, h2 {
-    margin: 0;
-}
-
 h2 {
     font-size: 58px;
     line-height: 69.6px;
@@ -95,7 +91,7 @@ button {
 .socials-hr {
     width: 100px;
     height: 0;
-    border: 2px solid $accentColor1;
+    border-color: $accentColor1;
     border-top-right-radius: 2px;
     border-bottom-right-radius: 2px;
 }

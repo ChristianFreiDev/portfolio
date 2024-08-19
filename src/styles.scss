@@ -22,10 +22,19 @@ body {
 h1, h3 {
     font-size: 90px;
     line-height: 108px;
+    margin: 0;
+}
+
+h1, h2, h3 {
+    margin: 0;
 }
 
 p, li {
     font-size: 16px;
+}
+
+hr {
+    border: 2px solid;
 }
 
 @media (max-width: 1440px) {

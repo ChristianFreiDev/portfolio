@@ -1,4 +1,47 @@
+@use '../../styles/mixins.scss';
+@import '../../styles/colors.scss';
+
 #about-me {
+    padding-top: 124px;
+    @include mixins.flex($jc: space-between, $ai: center);
+}
+
+.about-me-left-side {
     padding-left: 100px;
     padding-right: 0;
+    @include mixins.flex($dir: column);
+    gap: 40px;
+}
+
+.about-me-right-side {
+    @include mixins.flex($ai: center);
+}
+
+.about-me-content {
+    width: 471px;
+    @include mixins.flex($dir: column);
+    gap: 32px;
+}
+
+ul {
+    margin: 0;
+    padding: 0;
+    @include mixins.flex($dir: column);
+    gap: 24px;
+}
+
+li {
+    margin: 0;
+    padding: 0;
+    @include mixins.flex($ai: center);
+    gap: 16px;
+}
+
+.portrait2 {
+    padding-left: 42px;
+}
+
+hr {
+    width: 20vw;
+    border-color: $accentColor2;
 }
