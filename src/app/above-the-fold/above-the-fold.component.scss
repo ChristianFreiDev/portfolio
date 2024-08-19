@@ -5,7 +5,7 @@
     height: 100dvh;
     height: 100vh;
     width: 100%;
-    position: relative;
+    position: absolute;
 }
 
 .above-the-fold-inner-container {
@@ -105,10 +105,25 @@ button {
     text-decoration: none;
 }
 
-img {
+.portrait {
     position: absolute;
+    height: 800px;
+    left: -300px;
+    bottom: 100px;
+    z-index: -2;
+}
+
+.curve-img-container {
+    position: absolute;
+    height: 100vh;
+    width: 100%;
+}
+
+.curve-img {
+    position: absolute;
+    bottom: -800px;
     z-index: -1;
-    top: 25%;
+    min-width: 2000px;
     width: 100%;
 }
 
