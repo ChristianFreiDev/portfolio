@@ -61,6 +61,13 @@ $arrowAnimationEnd: 88px;
     animation: 1.2s ease-in-out slideIn, 0.8s ease-in-out 1.2s 5 alternate forwards moveUpAndDown;
 }
 
+.social-link {
+    transition: transform 75ms;
+    &:hover {
+        transform: scale(1.2);
+    }
+}
+
 @keyframes slideIn {
     0% {
         bottom: $arrowAnimationStart;
