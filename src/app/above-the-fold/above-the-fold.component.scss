@@ -5,14 +5,22 @@
     height: 100dvh;
     height: 100vh;
     width: 100%;
+    position: relative;
+}
+
+.above-the-fold-main-container {
     position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    height: 80%;
+    margin-right: 100px;
 }
 
 .above-the-fold-inner-container {
-    position: absolute;
-    top: 24%;
-    right: 12%;
     background: transparent;
+    position: absolute;
+    right: 0;
     @include mixins.flex($ai: center, $dir: column);
 }
 
@@ -32,7 +40,6 @@ h2 {
     transform: rotate(270deg);
     font-size: 64px;
     line-height: 76.8px;
-    height: 76.8px;
     margin-left: -45px;
     margin-right: -45px;
     margin-bottom: -5px;
@@ -44,7 +51,7 @@ $arrowAnimationEnd: 88px;
 
 .scroll-down-container {
     position: absolute;
-    right: 4px;
+    right: -72px;
     bottom: $arrowAnimationEnd;
     @include mixins.flex($jc: center, $ai: center);
     gap: 7px;
@@ -124,12 +131,12 @@ button {
 }
 
 @media (max-width: 1440px) {
-    .main-heading-container {
-        gap: 4px;
-    }
     h2 {
         font-size: 28px;
         line-height: 33.6px;
+    }
+    .main-heading-container {
+        gap: 12px;
     }
     .i-am {
         font-size: 32px;
@@ -137,5 +144,40 @@ button {
         margin-left: -22.5px;
         margin-right: -22.5px;
         margin-bottom: 0;
+    }
+    button {
+        margin-top: 32px;
+    }
+}
+
+
+@media (max-width: 1024px) {
+    .above-the-fold-main-container {
+        margin-right: 24px; 
+        height: 239px;
+    }
+    .curve-img {
+        bottom: -640px;
+    }
+    .scroll-down-container {
+        display: none;
+    }
+    .e-mail {
+        display: none;
+    }
+}
+
+@media (max-width: 768px) {
+    .above-the-fold-main-container {
+        margin-right: 0;
+        @include mixins.flex($jc: center);
+    }
+    .above-the-fold-inner-container {
+        position: static;
+    }
+    .portrait {
+        height: 400px;
+        left: -150px;
+        bottom: 200px;
     }
 }
