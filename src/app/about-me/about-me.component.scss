@@ -38,10 +38,37 @@ li {
 }
 
 .portrait2 {
-    padding-left: 42px;
+    padding-left: 64px;
 }
 
 hr {
     width: 20vw;
     border-color: $accentColor2;
+}
+
+@media (max-width: 1200px) {
+    .portrait2 {
+        width: 31.8vw;
+    }
+}
+
+@media (max-width: 960px) {
+    .portrait2 {
+        width: 24vw;
+    }
+    .about-me-left-side {
+        padding-left: 93px;
+    }
+}
+
+@media (max-width: 768px) {
+    #about-me {
+        @include mixins.flex($ai: center, $dir: column);
+    }
+    .about-me-left-side {
+        padding-left: 0;
+    }
+    .portrait2, hr {
+        display: none;
+    }
 }
