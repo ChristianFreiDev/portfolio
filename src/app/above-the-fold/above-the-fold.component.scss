@@ -123,20 +123,6 @@ button {
     z-index: -2;
 }
 
-.curve-img-container {
-    position: absolute;
-    height: 100vh;
-    width: 100%;
-}
-
-.curve-img {
-    position: absolute;
-    bottom: -800px;
-    z-index: -1;
-    min-width: 2000px;
-    width: 100%;
-}
-
 @media (max-width: 1440px) {
     h2 {
         font-size: 28px;
@@ -161,9 +147,6 @@ button {
     .above-the-fold-main-container {
         margin-right: 24px; 
         height: 239px;
-    }
-    .curve-img {
-        bottom: -640px;
     }
     .scroll-down-container {
         display: none;
