@@ -1,0 +1,63 @@
+@use '../../styles/mixins.scss';
+@import '../../styles/colors.scss';
+
+p {
+    margin: 0;
+}
+
+#skills {
+    padding-top: 180px;
+    @include mixins.flex($jc: space-around);
+}
+
+.skill-items-container {
+    @include mixins.flex();
+    flex-wrap: wrap;
+    gap: 88px;
+    height: 404px;
+    width: 664px;
+}
+
+.skill-item {
+    @include mixins.flex($jc: center, $ai: center, $dir: column);
+    gap: 10px;
+    width: 88px;
+    padding: 12px 0 0 0;
+    > svg {
+        fill: white;
+        height: 60px;
+    }
+}
+
+.skills-text-container {
+    @include mixins.flex($ai: flex-end, $dir: column);
+    text-align: right;
+    gap: 24px;
+}
+
+strong {
+    font-size: 32px;
+    line-height: 38.4px;
+}
+
+.looking-for-another-skill {
+    @include mixins.flex($ai: flex-end, $dir: column);
+    gap: 16px;
+}
+
+.another-skill {
+    color: $accentColor1;
+}
+
+@media (max-width: 768px) {
+    .skill-item {
+        gap: 10px;
+        > svg {
+            height: 48px;
+        }
+    }
+}
+
+#learning-svg {
+    fill: $accentColor1;
+}

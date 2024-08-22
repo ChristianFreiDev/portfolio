@@ -3,6 +3,10 @@ $backgroundColor: hsla(220, 41%, 13%, 1);
 $mainTextColor: hsla(0, 0%, 100%, 1);
 $accentColor2: hsla(95, 80%, 51%, 1);
 
-.accent-text {
+.accent-color1-text {
     color: $accentColor1;
+}
+
+.accent-color2-text {
+    color: $accentColor2;
 }

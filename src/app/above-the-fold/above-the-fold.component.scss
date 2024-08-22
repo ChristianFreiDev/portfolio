@@ -62,7 +62,7 @@ $arrowAnimationEnd: 88px;
 }
 
 .social-link {
-    transition: transform 75ms;
+    transition: transform 100ms ease-out;
     &:hover {
         transform: scale(1.2);
     }

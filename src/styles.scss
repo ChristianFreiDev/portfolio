@@ -5,6 +5,8 @@
 
 * {
     box-sizing: border-box;
+    margin: 0;
+    padding: 0;
 }
 
 html {
@@ -12,7 +14,6 @@ html {
 }
 
 body {
-    margin: 0;
     overflow-x: hidden;
     background: $backgroundColor;
     font-family: 'Poppins', sans-serif;
@@ -31,6 +32,7 @@ h1, h2, h3 {
 
 p, li {
     font-size: 16px;
+    line-height: 20px;
 }
 
 hr {
