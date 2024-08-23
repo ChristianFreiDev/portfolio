@@ -1,3 +1,30 @@
+@use '../../styles/mixins.scss';
+@import '../../styles/colors.scss';
+
 #portfolio {
     padding-top: 180px;
+    padding-left: 136px;
+    @include mixins.flex($ai: flex-end, $dir: column);
+}
+
+.portfolio-top-container {
+    @include mixins.flex($ai: flex-start, $dir: column);
+    gap: 40px;
+}
+
+.portfolio-heading-container {
+    @include mixins.flex($jc: flex-start, $ai: center);
+    gap: 32px;
+}
+
+hr {
+    border-color: $accentColor1;
+}
+
+.portfolio-hr-before {
+    width: 100px;
+}
+
+.portfolio-hr-after {
+    width: 507px;
 }

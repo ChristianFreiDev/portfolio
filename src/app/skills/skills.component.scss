@@ -7,7 +7,7 @@ p {
 
 #skills {
     padding-top: 180px;
-    @include mixins.flex($jc: space-around);
+    @include mixins.flex($jc: space-between);
 }
 
 .skill-items-container {
@@ -88,6 +88,16 @@ strong {
     100% {
         transform: rotate(-360deg);
     }
+}
+
+.skills-heading-container {
+    @include mixins.flex($ai: center);
+    gap: 32px;
+}
+
+.skills-hr {
+    width: 68px;
+    color: $accentColor1;
 }
 
 #learning-svg, #learning-arrows {
