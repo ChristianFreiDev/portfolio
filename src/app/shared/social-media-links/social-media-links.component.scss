@@ -1,0 +1,27 @@
+@use '../../../styles/mixins.scss';
+@import '../../../styles/colors.scss';
+
+.social-links {
+    @include mixins.flex($ai: center);
+    gap: 32px;
+}
+
+.social-link {
+    transition: transform 100ms ease-out;
+    &:hover {
+        transform: scale(1.2);
+    }
+}
+
+@media (max-width: 1920px) {
+    .socials-hr {
+        border-top-left-radius: 0;
+        border-bottom-left-radius: 0;
+    }
+}
+
+@media (max-width: 1024px) {
+    .social-links {
+        gap: 42px;
+    }
+}

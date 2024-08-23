@@ -61,11 +61,22 @@ $arrowAnimationEnd: 88px;
     animation: 1.2s ease-in-out slideIn, 0.8s ease-in-out 1.2s 5 alternate forwards moveUpAndDown;
 }
 
-.social-link {
-    transition: transform 100ms ease-out;
-    &:hover {
-        transform: scale(1.2);
-    }
+.socials-container {
+    @include mixins.flex($ai: center);
+    gap: 32px;
+    position: absolute;
+    left: 0;
+    bottom: 16px;
+}
+
+.socials-hr {
+    width: 100px;
+    height: 0;
+    border-color: $accentColor1;
+    border-top-right-radius: 2px;
+    border-bottom-right-radius: 2px;
+    border-top-left-radius: 2px;
+    border-bottom-left-radius: 2px;
 }
 
 @keyframes slideIn {
@@ -94,24 +105,6 @@ button {
     margin-top: 44px;
 }
 
-.socials-container {
-    @include mixins.flex($ai: center);
-    gap: 32px;
-    position: absolute;
-    left: 0;
-    bottom: 16px;
-}
-
-.socials-hr {
-    width: 100px;
-    height: 0;
-    border-color: $accentColor1;
-    border-top-right-radius: 2px;
-    border-bottom-right-radius: 2px;
-    border-top-left-radius: 2px;
-    border-bottom-left-radius: 2px;
-}
-
 .e-mail {
     color: $mainTextColor;
     text-decoration: none;
@@ -123,13 +116,6 @@ button {
     left: -300px;
     bottom: 100px;
     z-index: -2;
-}
-
-@media (max-width: 1920px) {
-    .socials-hr {
-        border-top-left-radius: 0;
-        border-bottom-left-radius: 0;
-    }
 }
 
 @media (max-width: 1440px) {

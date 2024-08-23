@@ -39,3 +39,10 @@ a:hover {
     content: '';
     border-top: 3px solid $accentColor1;
 }
+
+app-name {
+    font-size: 28px;
+    line-height: 35px;
+    font-weight: 700;
+    cursor: pointer;
+}
