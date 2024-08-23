@@ -15,3 +15,9 @@ section, header {
 section {
     min-height: 664px;
 }
+
+@media (max-width: 768px) {
+    #home {
+        background-position: top calc(100vh - 650px) left;
+    }
+}
