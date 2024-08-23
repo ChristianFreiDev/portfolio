@@ -138,7 +138,9 @@ strong {
 }
 
 .skills-hr {
-    width: 68px;
+    width: 4.72vw;
+    min-width: 24px;
+    max-width: 90px;
     color: $accentColor1;
 }
 

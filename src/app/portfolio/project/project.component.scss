@@ -47,6 +47,9 @@ h4 {
     .project {
         @include mixins.flex($dir: column);
     }
+    .project-content {
+        @include mixins.flex($ai: center, $dir: column);
+    }
     .left, .right {
         text-align: center;
     }
