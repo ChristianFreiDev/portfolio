@@ -108,6 +108,8 @@ button {
     border-color: $accentColor1;
     border-top-right-radius: 2px;
     border-bottom-right-radius: 2px;
+    border-top-left-radius: 2px;
+    border-bottom-left-radius: 2px;
 }
 
 .e-mail {
@@ -121,6 +123,13 @@ button {
     left: -300px;
     bottom: 100px;
     z-index: -2;
+}
+
+@media (max-width: 1920px) {
+    .socials-hr {
+        border-top-left-radius: 0;
+        border-bottom-left-radius: 0;
+    }
 }
 
 @media (max-width: 1440px) {

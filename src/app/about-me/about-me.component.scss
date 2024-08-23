@@ -53,6 +53,8 @@ li {
 hr {
     width: 20vw;
     border-color: $accentColor2;
+    border-top-right-radius: 2px;
+    border-bottom-right-radius: 2px;
 }
 
 .icon-container {
@@ -84,6 +86,13 @@ hr {
 
 .icon {
     transition: height 100ms;
+}
+
+@media (max-width: 1920px) {
+    hr {
+        border-top-right-radius: 0;
+        border-bottom-right-radius: 0;
+    }
 }
 
 $secondPortraitSizeM: 31.8vw;
