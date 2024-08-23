@@ -3,8 +3,8 @@
 
 #portfolio {
     padding-top: 180px;
-    padding-left: 136px;
     @include mixins.flex($ai: flex-end, $dir: column);
+    margin-bottom: 146px;
 }
 
 .portfolio-top-container {
@@ -27,4 +27,8 @@ hr {
 
 .portfolio-hr-after {
     width: 507px;
+}
+
+.projects {
+    @include mixins.flex($jc: center, $dir: column);
 }

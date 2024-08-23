@@ -1,10 +1,30 @@
 <div id="portfolio">
-    <div class="portfolio-top-container">
-        <div class="portfolio-heading-container">
-            <hr class="portfolio-hr-before">
-            <h3>Portfolio</h3>
-            <hr class="portfolio-hr-after">
-        </div>
-        <p>Explore a selection of my work here—interact with projects to see my skills in action.</p>
+  <div class="portfolio-top-container">
+    <div class="portfolio-heading-container">
+      <hr class="portfolio-hr-before" />
+      <h3>Portfolio</h3>
+      <hr class="portfolio-hr-after" />
     </div>
+    <p>
+      Explore a selection of my work here—interact with projects to see my
+      skills in action.
+    </p>
+  </div>
+  <div class="projects">
+    <app-project
+      title="Join"
+      stack="Angular | TypeScript | HTML | CSS | Firebase"
+      description="Task manager inspired by the kanban system. Create and organize tasks using drag and drop, assign users and categories."
+      imagePath="../../../assets/img/join.png"
+      alt="Join project image"
+    ></app-project>
+    <app-project
+      title="Sharkie"
+      stack="JavaScript | HTML | CSS"
+      description="A simple side-scroller based on an object-oriented approach. Help Sharkie find coins and poison bottles to fight against the killer whale."
+      imagePath="../../../assets/img/sharkie.png"
+      alt="Sharkie project image"
+      direction="row-reverse"
+    ></app-project>
+  </div>
 </div>

@@ -1,0 +1,27 @@
+@use '../../../styles/mixins.scss';
+@import '../../../styles/colors.scss';
+
+.project {
+    @include mixins.flex($ai: center);
+    gap: 35px;
+    padding: 0 182px;
+}
+
+.project-content {
+    @include mixins.flex($dir: column);
+    gap: 15px;
+}
+
+h4 {
+    color: $accentColor1;
+}
+
+.stack {
+    color: $accentColor2;
+}
+
+@media (max-width: 1440px) {
+    .project {
+        padding: 0 136px;
+    }
+}
