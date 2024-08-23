@@ -58,6 +58,39 @@ strong {
     }
 }
 
+.learning {
+    position: relative;
+}
+
 #learning-svg {
+    position: absolute;
+}
+
+.learning:hover {
+    .accent-color1-text{
+        color: white;
+    }
+    .learning-icon-container {
+        #learning-svg {
+            fill: white;
+        }
+        #learning-arrows {
+            animation: rotateArrows 2s infinite linear;
+            fill: white;
+        }
+    }
+}
+
+@keyframes rotateArrows {
+    0% {
+        transform: rotate(0deg);
+    }
+    100% {
+        transform: rotate(-360deg);
+    }
+}
+
+#learning-svg, #learning-arrows {
     fill: $accentColor1;
+    transition: all 125ms;
 }
