@@ -11,24 +11,6 @@
     padding: 37px 100px;
 }
 
-.first-name {
-    font-size: 32px;
-    font-weight: 700;
-    cursor: pointer;
-}
-
-.i {  
-    position: relative;
-  }
-
-.i:before {
-    z-index: -1;
-    content: 'i';
-    position: absolute;
-    left: 0;
-    color: $accentColor1;
-}
-
 .header-links {
     @include mixins.flex();
     gap: 30px;

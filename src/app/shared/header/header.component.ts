@@ -1,10 +1,11 @@
 import { Component } from '@angular/core';
 import { IsActiveMatchOptions, Router, RouterLink, RouterLinkActive } from '@angular/router';
+import { NameComponent } from '../name/name.component';
 
 @Component({
   selector: 'app-header',
   standalone: true,
-  imports: [RouterLink, RouterLinkActive],
+  imports: [RouterLink, RouterLinkActive, NameComponent],
   templateUrl: './header.component.html',
   styleUrl: './header.component.scss'
 })

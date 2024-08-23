@@ -1,0 +1,46 @@
+@use '../../../styles/mixins.scss';
+@import '../../../styles/colors.scss';
+
+hr {
+    border: 2px solid $accentColor2;
+    border-top-left-radius: 2px;
+    border-top-right-radius: 2px;
+    border-bottom-left-radius: 2px;
+    border-bottom-right-radius: 2px;
+}
+
+#footer {
+    height: 291px;
+    padding-top: 121px;
+    padding-right: 100px;
+    padding-left: 100px;
+    @include mixins.flex($jc: space-between);
+}
+
+.footer-name-container {
+    position: relative;
+    a {
+        position: absolute;
+        top: 42px;
+        left: 0;
+        text-decoration: none;
+        color: white;
+        font-size: 16px;
+        line-height: 19.2px;
+        &:hover:before {
+            position: absolute;
+            left: 0;
+            top: 22px;
+            height: 0;
+            width: 58px;
+            content: '';
+            border-top: 3px solid $accentColor2;
+        }
+    }
+}
+
+@media (max-width: 1920px) {
+    hr {
+        border-radius: 0;
+    }
+}
