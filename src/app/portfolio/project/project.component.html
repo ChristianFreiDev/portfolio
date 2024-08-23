@@ -1,6 +1,6 @@
-<div class="project" [style.flex-direction]="direction">
+<div class="project" [ngClass]="direction == 'row' ? 'left' : 'right'">
     <img [src]="imagePath" [alt]="alt">
-    <div class="project-content" [style.text-align]="direction == 'row' ? 'left': 'right'">
+    <div class="project-content">
         <h4>{{ title }}</h4>
         <p class="stack">{{ stack }}</p>
         <p>{{ description }}</p>

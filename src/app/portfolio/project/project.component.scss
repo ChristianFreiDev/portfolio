@@ -20,8 +20,27 @@ h4 {
     color: $accentColor2;
 }
 
+.left {
+    @include mixins.flex($ai: center, $dir: row);
+    text-align: left;
+}
+
+.right {
+    @include mixins.flex($ai: center, $dir: row-reverse);
+    text-align: right;
+}
+
 @media (max-width: 1440px) {
     .project {
         padding: 0 136px;
+    }
+}
+
+@media (max-width: 1200px) {
+    .project {
+        @include mixins.flex($dir: column);
+    }
+    .left, .right {
+        text-align: center;
     }
 }

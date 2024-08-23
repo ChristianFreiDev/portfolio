@@ -8,10 +8,17 @@ p {
 #skills {
     padding-top: 180px;
     padding-left: 136px;
-    @include mixins.flex($jc: space-between);
+    display: grid;
+    grid-template-columns: auto auto;
+    grid-template-rows: auto 1fr;
+    grid-template-areas:
+    "items text-top"
+    "items text-bottom";
+    row-gap: 24px;
 }
 
 .skill-items-container {
+    grid-area: items;
     @include mixins.flex();
     flex-wrap: wrap;
     gap: 88px;
@@ -29,7 +36,20 @@ p {
     }
 }
 
-.skills-text-container {
+.skills-text-top-container {
+    grid-area: text-top;
+    @include mixins.flex($ai: flex-end, $dir: column);
+    text-align: right;
+    gap: 24px;
+}
+
+.skills-text-top-container p {
+    padding-right: 133px;
+}
+
+.skills-text-bottom-container {
+    padding-right: 133px;
+    grid-area: text-bottom;
     @include mixins.flex($ai: flex-end, $dir: column);
     text-align: right;
     gap: 24px;
@@ -103,4 +123,27 @@ strong {
 #learning-svg, #learning-arrows {
     fill: $accentColor1;
     transition: all 125ms;
+}
+
+@media (max-width: 1440px) {
+    #skills {
+        padding-left: 100px;
+    }
+    .skills-text-top-container p, .skills-text-bottom-container {
+        padding-right: 100px;
+    }
+    .skills-text-bottom-container {
+        padding-right: 100px;
+    }
+}
+
+@media (max-width: 1200px) {
+    #skills {
+        grid-template-columns: 1fr;
+        grid-template-rows: auto auto auto;
+        grid-template-areas:
+        "text-top"
+        "items"
+        "text-bottom";
+    }
 }
