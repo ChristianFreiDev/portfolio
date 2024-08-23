@@ -17,6 +17,18 @@
     cursor: pointer;
 }
 
+.i {  
+    position: relative;
+  }
+
+.i:before {
+    z-index: -1;
+    content: 'i';
+    position: absolute;
+    left: 0;
+    color: $accentColor1;
+}
+
 .header-links {
     @include mixins.flex();
     gap: 30px;
