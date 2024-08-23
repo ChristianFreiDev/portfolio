@@ -37,8 +37,17 @@ li {
     gap: 16px;
 }
 
-.portrait2 {
+.portrait2-container {
     padding-left: 64px;
+}
+
+.portrait2 {
+
+    width: 453px;
+    min-width: 453px;
+    border: 4px solid $accentColor2;
+    border-radius: 50%;
+    object-fit: cover;
 }
 
 hr {
@@ -46,15 +55,50 @@ hr {
     border-color: $accentColor2;
 }
 
-@media (max-width: 1200px) {
-    .portrait2 {
-        width: 31.8vw;
+.icon-container {
+    height: 48px;
+    width: 48px;
+    min-width: 48px;
+    @include mixins.flex($jc: center, $ai: center);
+}
+
+.bulb {
+    height: 30px;
+    path {
+        stroke: $accentColor2;
+    }
+    &:hover {
+        height: 48px;
     }
 }
 
+.puzzle {
+    height: 30px;
+    path {
+        fill: $accentColor2;
+    }
+    &:hover {
+        height: 48px;
+    }
+}
+
+.icon {
+    transition: height 100ms;
+}
+
+$secondPortraitSizeM: 31.8vw;
+@media (max-width: 1200px) {
+    .portrait2 {
+        width: $secondPortraitSizeM;
+        min-width: $secondPortraitSizeM;
+    }
+}
+
+$secondPortraitSizeS: 24vw;
 @media (max-width: 960px) {
     .portrait2 {
-        width: 24vw;
+        width: $secondPortraitSizeS;
+        min-width: $secondPortraitSizeS;
     }
     .about-me-left-side {
         padding-left: 93px;
