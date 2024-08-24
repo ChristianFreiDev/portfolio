@@ -9,6 +9,11 @@
 
 .project-content {
     @include mixins.flex($dir: column);
+    gap: 35px;
+}
+
+.project-content-text {
+    @include mixins.flex($dir: column);
     gap: 15px;
 }
 
@@ -32,6 +37,15 @@ h4 {
 .right {
     @include mixins.flex($ai: center, $dir: row-reverse);
     text-align: right;
+}
+
+.project-btn-container {
+    @include mixins.flex();
+    gap: 86px;
+}
+
+.flex-end {
+    @include mixins.flex($jc: flex-end);
 }
 
 @media (max-width: 1440px) {
