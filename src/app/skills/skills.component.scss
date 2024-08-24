@@ -146,10 +146,10 @@ strong {
         padding-left: 100px;
     }
     .skills-text-top-container p, .skills-text-bottom-container {
-        padding-right: 100px;
+        padding-right: calc(4.72vw + 32px);
     }
     .skills-text-bottom-container {
-        padding-right: 100px;
+        padding-right: calc(4.72vw + 32px);
     }
     br {
         display: none;

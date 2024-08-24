@@ -120,6 +120,12 @@ $secondPortraitSizeS: 24vw;
     }
 }
 
+@media (max-width: 864px) {
+    .portrait2, hr {
+        display: none;
+    }
+}
+
 @media (max-width: 768px) {
     #about-me {
         padding-top: 82px;
@@ -127,8 +133,5 @@ $secondPortraitSizeS: 24vw;
     }
     .about-me-left-side {
         padding-left: 0;
-    }
-    .portrait2, hr {
-        display: none;
     }
 }
