@@ -40,6 +40,12 @@ hr {
     }
 }
 
+@media (max-width: 1024px) {
+    #portfolio {
+        padding-top: 128px;
+    }
+}
+
 @media (max-width: 767px) {
     .portfolio-top-text {
         padding: 0 24px;

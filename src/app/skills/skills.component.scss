@@ -14,7 +14,8 @@ p {
     grid-template-areas:
     "items text-top"
     "items text-bottom";
-    row-gap: 24px;
+    row-gap: 40px;
+    column-gap: 88px;
 }
 
 .skill-items-container {
@@ -40,7 +41,7 @@ p {
     grid-area: text-top;
     @include mixins.flex($ai: flex-end, $dir: column);
     text-align: right;
-    gap: 24px;
+    gap: 40px;
 }
 
 .skills-text-top-container p {
@@ -67,15 +68,6 @@ strong {
 
 .another-skill {
     color: $accentColor1;
-}
-
-@media (max-width: 768px) {
-    .skill-item {
-        gap: 10px;
-        > svg {
-            height: 48px;
-        }
-    }
 }
 
 .learning {
@@ -159,15 +151,81 @@ strong {
     .skills-text-bottom-container {
         padding-right: 100px;
     }
+    br {
+        display: none;
+    }
 }
 
 @media (max-width: 1200px) {
     #skills {
+        padding-left: 0;
         grid-template-columns: 1fr;
         grid-template-rows: auto auto auto;
         grid-template-areas:
         "text-top"
         "items"
         "text-bottom";
+    }
+    .skill-items-container {
+        @include mixins.flex($jc: center);
+        flex-wrap: wrap;
+        justify-self: right;
+        margin-right: 4.72vw;
+    }
+    br {
+        display: inline;
+    }
+}
+
+@media (max-width: 1024px) {
+    #skills {
+        padding-top: 128px;
+    }
+    .skill-items-container {
+        margin-right: 0;
+        width: 100%;
+        padding-left: 4.72vw;
+        padding-right: 4.72vw;
+        gap: 39px;
+    }
+    .skill-item {
+        justify-self: center;
+        gap: 10px;
+        > svg {
+            height: 48px;
+        }
+    }
+}
+
+@media (max-width: 800px) {
+    .skill-items-container {
+        gap: 72px;
+    }
+}
+
+@media (max-width: 720px) {
+    .skill-items-container {
+        gap: 62px;
+    }
+    #skills {
+        row-gap: 40px;
+    }
+    .skills-text-top-container {
+        gap: 40px;
+    }
+}
+
+@media (max-width: 660px) {
+    .skill-items-container {
+        gap: 39px;
+    }
+    #skills {
+        row-gap: 24px;
+    }
+    .skills-text-top-container {
+        gap: 24px;
+    }
+    br {
+        display: none;
     }
 }
