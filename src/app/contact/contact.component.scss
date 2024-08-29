@@ -1,0 +1,83 @@
+@use '../../styles/mixins.scss';
+@import '../../styles/colors.scss';
+
+.contact-heading-container {
+    @include mixins.flex($ai: center);
+    gap: 32px;
+}
+
+.contact-content {
+    @include mixins.flex($jc: space-between);
+    padding: 40px 100px 181px;
+}
+
+.contact-text-container {
+    @include mixins.flex($dir: column);
+    gap: 24px;
+    width: 474px;
+    padding-right: 48px;
+}
+
+.contact-text {
+    @include mixins.flex($dir: column);
+    gap: 16px;
+}
+
+input::placeholder, textarea::placeholder {
+    color: white;
+}
+
+input, textarea {
+    color: white;
+    border: 1px solid $accentColor1;
+    background-color: transparent;
+    border-radius: 10px;
+    padding: 15px 25px;
+    font-family: 'Poppins', sans-serif;
+}
+
+input {
+    height: 50px;
+}
+
+.contact-form {
+    width: 617px;
+    @include mixins.flex($dir: column);
+    gap: 32px;
+}
+
+button {
+    align-self: center;
+}
+
+button:disabled {
+    background-color: hsla(0, 0%, 71%, 1);
+}
+
+hr {
+    width: 37.15vw;
+    max-width: 714px;
+    border-color: $accentColor1;
+}
+
+@media (max-width: 1200px) {
+    .contact-content {
+        @include mixins.flex($dir: column);
+        gap: 24px;
+    }
+}
+
+@media (max-width: 1024px) {
+    .contact-form {
+        width: 100%;
+        max-width: 617px;
+    }
+    .contact-text-container {
+        width: unset;
+        max-width: 617px;
+    }
+    .contact-content {
+        @include mixins.flex($ai: center, $dir: column);
+        padding: 32px 4.72vw 100px;
+    }
+}
