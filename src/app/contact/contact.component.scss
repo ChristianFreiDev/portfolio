@@ -52,12 +52,19 @@ button {
 
 button:disabled {
     background-color: hsla(0, 0%, 71%, 1);
+    &:hover {
+        padding: 15px 30px;
+    }
 }
 
 hr {
     width: 37.15vw;
     max-width: 714px;
     border-color: $accentColor1;
+}
+
+.message-length-note {
+    margin-top: -16px;
 }
 
 @media (max-width: 1200px) {
