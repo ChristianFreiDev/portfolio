@@ -1,4 +1,4 @@
-<div class="project" [ngClass]="direction == 'row' ? 'left' : 'right'">
+<div class="project" [ngClass]="direction == 'row' ? 'left' : 'right'" appUseScrollAnimation [scrollAnimationClass]="direction == 'row' ? 'slide-in-from-left' : 'slide-in-from-right'">
     <img [src]="imagePath" [alt]="alt">
     <div class="project-content">
         <div class="project-content-text">

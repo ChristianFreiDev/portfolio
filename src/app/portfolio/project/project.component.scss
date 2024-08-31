@@ -2,6 +2,7 @@
 @import '../../../styles/colors.scss';
 
 .project {
+    opacity: 0;
     @include mixins.flex($ai: center);
     gap: 35px;
     padding: 0 182px;
@@ -68,3 +69,5 @@ h4 {
         text-align: center;
     }
 }
+
+@import '../../../styles/animations.scss';

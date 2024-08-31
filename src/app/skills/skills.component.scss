@@ -24,6 +24,7 @@ p {
     flex-wrap: wrap;
     gap: 88px;
     width: 664px;
+    opacity: 0;
 }
 
 .skill-item {
@@ -42,6 +43,7 @@ p {
     @include mixins.flex($ai: flex-end, $dir: column);
     text-align: right;
     gap: 40px;
+    opacity: 0;
 }
 
 .skills-text-top-container p {
@@ -54,6 +56,7 @@ p {
     @include mixins.flex($ai: flex-end, $dir: column);
     text-align: right;
     gap: 24px;
+    opacity: 0;
 }
 
 strong {
@@ -229,3 +232,5 @@ strong {
         display: none;
     }
 }
+
+@import '../../styles/animations.scss';

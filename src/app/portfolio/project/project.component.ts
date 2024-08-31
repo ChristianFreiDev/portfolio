@@ -1,10 +1,11 @@
 import { CommonModule } from '@angular/common';
 import { Component, Input } from '@angular/core';
+import { UseScrollAnimationDirective } from '../../directives/use-scroll-animation.directive';
 
 @Component({
   selector: 'app-project',
   standalone: true,
-  imports: [CommonModule],
+  imports: [CommonModule, UseScrollAnimationDirective],
   templateUrl: './project.component.html',
   styleUrl: './project.component.scss'
 })

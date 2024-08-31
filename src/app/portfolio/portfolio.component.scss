@@ -10,6 +10,7 @@
 .portfolio-top-container {
     @include mixins.flex($dir: column);
     gap: 40px;
+    opacity: 0;
 }
 
 .portfolio-heading-container {
@@ -58,3 +59,5 @@ hr {
         width: 22.5vw;
     }
 }
+
+@import '../../styles/animations.scss';

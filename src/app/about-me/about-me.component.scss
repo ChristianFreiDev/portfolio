@@ -11,10 +11,12 @@
     padding-right: 0;
     @include mixins.flex($dir: column);
     gap: 40px;
+    opacity: 0;
 }
 
 .about-me-right-side {
     @include mixins.flex($ai: center);
+    opacity: 0;
 }
 
 .about-me-content {
@@ -135,3 +137,5 @@ $secondPortraitSizeS: 24vw;
         padding-left: 0;
     }
 }
+
+@import '../../styles/animations.scss';
