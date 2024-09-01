@@ -7,7 +7,7 @@
   <div class="above-the-fold-main-container">
     <div class="above-the-fold-inner-container">
       <div class="main-heading-container">
-        <div class="i-am">{{ 'above-the-fold-i-am' | translate }}</div>
+        <div class="i-am" [ngClass]="currentLanguage == 'de' ? 'small-i-am-font-size' : ''">{{ 'above-the-fold-i-am' | translate }}</div>
         <div>
           <h1>Christian Frei</h1>
           <h2 class="accent-color1-text">FRONTEND DEVELOPER</h2>
