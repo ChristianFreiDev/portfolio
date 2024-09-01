@@ -12,7 +12,7 @@
 }
 
 .header-links {
-    @include mixins.flex();
+    @include mixins.flex($ai: center);
     gap: 30px;
 }
 
@@ -38,6 +38,21 @@ a:hover {
     width: 58px;
     content: '';
     border-top: 3px solid $accentColor1;
+}
+
+.language-btn {
+    padding: 7.5px 15px;
+    font-size: 11.5px;
+    line-height: 13.8px;
+    background-color: transparent;
+    border: 2px solid white;
+    &:hover {
+        color: $accentColor2;
+    }
+}
+
+.active-language {
+    border-color: $accentColor1;
 }
 
 app-name {

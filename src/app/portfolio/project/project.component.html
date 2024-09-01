@@ -7,7 +7,7 @@
             <p class="description">{{ description }}</p>
         </div>
         <div class="project-btn-container" [ngClass]="direction == 'row' ? 'flex-start' : 'flex-end'">
-            <button class="btn-secondary">Live test</button>
+            <button class="btn-secondary">{{ 'project-live-test' | translate }}</button>
             <button class="btn-tertiary">GitHub</button>
         </div>
     </div>

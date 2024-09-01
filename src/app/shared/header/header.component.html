@@ -1,8 +1,10 @@
 <div class="header-container">
   <app-name></app-name>
   <div class="header-links">
-    <a routerLink="/" fragment="about-me" routerLinkActive="active" [routerLinkActiveOptions]="routerLinkOptions">About me</a>
+    <a routerLink="/" fragment="about-me" routerLinkActive="active" [routerLinkActiveOptions]="routerLinkOptions">{{ 'about-me' | translate }}</a>
     <a routerLink="/" fragment="skills" routerLinkActive="active" [routerLinkActiveOptions]="routerLinkOptions">Skills</a>
     <a routerLink="/" fragment="portfolio" routerLinkActive="active" [routerLinkActiveOptions]="routerLinkOptions">Portfolio</a>
+    <button class="language-btn" (click)="changeLanguage('de')" [ngClass]="activeLanguage == 'de' ? 'active-language' : ''">DE</button>
+    <button class="language-btn" (click)="changeLanguage('en')" [ngClass]="activeLanguage == 'en' ? 'active-language' : ''">EN</button>
   </div>
 </div>

@@ -1,11 +1,12 @@
 import { Component } from '@angular/core';
 import { FormsModule, NgForm } from '@angular/forms';
 import { UseScrollAnimationDirective } from '../directives/use-scroll-animation.directive';
+import { TranslateModule } from '@ngx-translate/core';
 
 @Component({
   selector: 'app-contact',
   standalone: true,
-  imports: [FormsModule, UseScrollAnimationDirective],
+  imports: [FormsModule, UseScrollAnimationDirective, TranslateModule],
   templateUrl: './contact.component.html',
   styleUrl: './contact.component.scss'
 })

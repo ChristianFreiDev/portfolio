@@ -96,10 +96,6 @@ strong {
     transition: opacity 250ms;
 }
 
-.node {
-    color: hsla(78, 100%, 40%, 1);
-}
-
 .learning:hover {
     .accent-color1-text{
         color: white;
@@ -142,6 +138,10 @@ strong {
 #learning-svg, #learning-arrows {
     fill: $accentColor1;
     transition: all 125ms;
+}
+
+.node {
+    color: hsla(78, 100%, 40%, 1);
 }
 
 @media (max-width: 1440px) {
