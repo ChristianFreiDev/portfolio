@@ -12,7 +12,7 @@ section, header, footer {
     max-width: 1920px;
 }
 
-@media (max-width: 768px) {
+@media (max-width: 768px) and (orientation: portrait) {
     #home {
         background-position: top calc(100vh - 650px) left;
     }

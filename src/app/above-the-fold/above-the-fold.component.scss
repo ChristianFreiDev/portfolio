@@ -119,35 +119,37 @@ button {
     bottom: 0;
     left: 0;
     height: 100%;
+    max-width: 90%;
+    object-fit: contain;
+    object-position: bottom;
 }
 
 .portrait-container {
     position: absolute;
-    height: 800px;
-    left: -300px;
+    height: calc(100vh - 218px);
+    left: 0;
     bottom: 100px;
     z-index: -2;
     width: 100%;
+    margin-left: 48px;
 }
 
 .portrait-shadow-svg {
-    height: 100%;
     position: absolute;
+    bottom: 0;
+    left: 0;
+    transform: translate(-8%, 12%);
+    max-height: 100%;
+    max-width: 90%;
     z-index: -3;
 }
 
 .accent-color1-shadow {
-    transform: translate(60%, 20%);
-    path {
-        fill: $accentColor1;
-    }
+    fill: $accentColor1;
 }
 
 .accent-color2-shadow {
-    transform: translate(90%, 10%);
-    path {
-        fill: $accentColor2;
-    }
+    fill: $accentColor2;
 }
 
 @media (max-width: 1440px) {
@@ -194,16 +196,26 @@ button {
     .above-the-fold-inner-container {
         position: static;
     }
+    $smallPortraitHeight: calc(100vh - 418px);
     .portrait-container {
-        height: 400px;
-        left: -150px;
+        margin-left: 0;
+        @include mixins.flex($jc: center);
+        transform: translateX(10%);
+    }
+    .portrait {
+        position: static;
+        max-width: 100%;
+    }
+    .portrait-shadow-svg {
+        width: 100%;
+        transform: unset;
+    }
+}
+
+@media (max-width: 768px) and (orientation: portrait) {
+    $smallPortraitHeight: calc(100vh - 418px);
+    .portrait-container {
         bottom: 200px;
-    }
-    .accent-color1-shadow {
-        transform: translate(0%, 20%);
-    }
-    
-    .accent-color2-shadow {
-        transform: translate(20%, 20%);
+        height: $smallPortraitHeight;
     }
 }
