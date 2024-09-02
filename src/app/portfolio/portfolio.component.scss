@@ -4,7 +4,6 @@
 #portfolio {
     padding-top: 180px;
     @include mixins.flex($ai: flex-end, $dir: column);
-    margin-bottom: 146px;
 }
 
 .portfolio-top-container {
