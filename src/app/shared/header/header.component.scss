@@ -6,9 +6,10 @@
     max-width: 1920px;
     @include mixins.flex($jc: space-between);
     z-index: 2;
-    position: absolute;
+    position: fixed;
     top: 0;
     padding: 37px 100px;
+    background-color: $backgroundColor;
 }
 
 .header-links {
