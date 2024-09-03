@@ -70,8 +70,63 @@ hr {
     border-color: $accentColor1;
 }
 
-.message-length-note {
+$validInputColor: hsla(95, 80%, 51%, 1);
+$invalidInputColor: hsla(349, 80%, 51%, 1);
+
+.validation-message {
     margin-top: -16px;
+    color: $invalidInputColor;
+}
+
+input, textarea {
+    width: 100%;
+}
+
+textarea {
+    resize: vertical;
+    min-height: 202px;
+}
+
+.input-container {
+    position: relative;
+    display: flex;
+}
+
+.input-icon {
+    position: absolute;
+    right: 12.5px;
+    top: 12px;
+}
+
+.invalid-input {
+    border: 1px solid $invalidInputColor;
+}
+
+.valid-input {
+    border: 1px solid $validInputColor;
+}
+
+input[type='checkbox'] {
+    width: 18px;
+    height: 18px;
+    position: absolute;
+    left: 0;
+    top: 0;
+    opacity: 0;
+}
+
+.checkbox-svg {
+    width: 18px;
+    height: 18px;
+    path {
+        fill: $validInputColor;
+    }
+}
+
+.contact-privacy-policy-message-container {
+    display: grid;
+    grid-template-columns: 26px auto;
+    position: relative;
 }
 
 @media (max-width: 1200px) {
