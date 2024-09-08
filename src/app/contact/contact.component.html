@@ -13,36 +13,24 @@
         </div>
         <form #contactForm="ngForm" class="contact-form" (ngSubmit)="onSubmit(contactForm)" appUseScrollAnimation scrollAnimationClass="slide-in-from-right">
             <div class="input-container">
-                <input #name="ngModel" [(ngModel)]="formData.name" [ngClass]="{'invalid-input': !name.valid && name.touched && name.value.length >= 0, 'valid-input': name.valid}" name="name" type="text" placeholder="{{ 'contact-name-placeholder' | translate }}" required>
-                @if (!name.valid && name.touched && name.value.length >= 0) {
-                    <img class="input-icon" src="../../assets/img/invalid.png" alt="">
-                } @else if (name.valid) {
-                    <img class="input-icon" src="../../assets/img/valid.png" alt="">
-                }
+                <input #name="ngModel" [(ngModel)]="formData.name" [ngClass]="{'invalid-input': isInvalid(name), 'valid-input': name.valid}" name="name" type="text" placeholder="{{ 'contact-name-placeholder' | translate }}" required>
+                <app-validity-icon [ngModel]="name" [isValidCallback]="isValid" [isValidCallback]="isInvalid"></app-validity-icon>
             </div>
-            @if (!name.valid && name.touched && name.value.length >= 0) {
+            @if (isInvalid(name)) {
                 <span class="validation-message">{{ 'contact-invalid-name' | translate }}</span>
             }
             <div class="input-container">
-                <input #email="ngModel" [(ngModel)]="formData.email" [ngClass]="{'invalid-input': !email.valid && email.touched, 'valid-input': email.valid}" name="email" type="text" placeholder="{{ 'contact-email-placeholder' | translate }}" pattern="[a-zA-Z0-9._%+\-]+@[a-zA-Z0-9.\-]+\.[a-zA-Z]{2,}" required>
-                @if (!email.valid && email.touched) {
-                    <img class="input-icon" src="../../assets/img/invalid.png" alt="">
-                } @else if (email.valid) {
-                    <img class="input-icon" src="../../assets/img/valid.png" alt="">
-                }
+                <input #email="ngModel" [(ngModel)]="formData.email" [ngClass]="{'invalid-input': isInvalid(email), 'valid-input': email.valid}" name="email" type="text" placeholder="{{ 'contact-email-placeholder' | translate }}" pattern="[a-zA-Z0-9._%+\-]+@[a-zA-Z0-9.\-]+\.[a-zA-Z]{2,}" required>
+                <app-validity-icon [ngModel]="email" [isValidCallback]="isValid" [isValidCallback]="isInvalid"></app-validity-icon>
             </div>
-            @if (!email.valid && email.touched) {
+            @if (isInvalid(email)) {
                 <span class="validation-message">{{ 'contact-invalid-email' | translate }}</span>
             }
             <div class="input-container">
-                <textarea #message="ngModel" [(ngModel)]="formData.message" [ngClass]="{'invalid-input': !message.valid && message.touched && message.value.length > 0, 'valid-input': message.valid}" name="message" placeholder="{{ 'contact-message-placeholder' | translate }}" minlength="4" required></textarea>
-                @if (!message.valid && message.touched && message.value.length > 0) {
-                    <img class="input-icon" src="../../assets/img/invalid.png" alt="">
-                } @else if (message.valid) {
-                    <img class="input-icon" src="../../assets/img/valid.png" alt="">
-                }
+                <textarea #message="ngModel" [(ngModel)]="formData.message" [ngClass]="{'invalid-input': isInvalid(message), 'valid-input': message.valid}" name="message" placeholder="{{ 'contact-message-placeholder' | translate }}" minlength="4" required></textarea>
+                <app-validity-icon [ngModel]="message" [isValidCallback]="isValid" [isValidCallback]="isInvalid"></app-validity-icon>
             </div>
-            @if (!message.valid && message.touched && message.value.length > 0) {
+            @if (isInvalid(message)) {
                 <span class="validation-message">{{ 'contact-invalid-message' | translate }}</span>
             }
             <div class="contact-privacy-policy-message-container">
