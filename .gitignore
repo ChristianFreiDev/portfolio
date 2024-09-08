@@ -1,6 +1,9 @@
 # Assets
 /src/assets
 
+# PHP
+/src/sendMail.php
+
 # Compiled output
 /dist
 /tmp

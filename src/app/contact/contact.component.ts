@@ -1,9 +1,10 @@
-import { Component, EventEmitter, Output, QueryList, ViewChildren } from '@angular/core';
+import { Component, inject } from '@angular/core';
 import { FormsModule, NgForm, NgModel } from '@angular/forms';
 import { UseScrollAnimationDirective } from '../directives/use-scroll-animation.directive';
 import { TranslateModule } from '@ngx-translate/core';
 import { CommonModule } from '@angular/common';
 import { ValidityIconComponent } from './validity-icon/validity-icon.component';
+import { HttpClient } from '@angular/common/http';
 
 @Component({
   selector: 'app-contact',
@@ -14,6 +15,8 @@ import { ValidityIconComponent } from './validity-icon/validity-icon.component';
 })
 export class ContactComponent {
 
+  httpClient = inject(HttpClient);
+
   formData: any = {
     name: '',
     email: '',
@@ -21,9 +24,35 @@ export class ContactComponent {
     checkbox: false
   }
 
+  mailTest = true;
+
+  mailPhpUrl = 'https://';
+
+  post = {
+    endPoint: this.mailPhpUrl,
+    body: (payload: any) => JSON.stringify(payload),
+    options: {
+      headers: {
+        'Content-Type': 'text/plain',
+        responseType: 'text',
+      },
+    },
+  };
+
   onSubmit(ngForm: NgForm) {
-    if (ngForm.valid && ngForm.submitted) {
-      console.log('Form submitted.', this.formData);
+    if (ngForm.submitted && ngForm.form.valid && !this.mailTest) {
+      this.httpClient.post(this.post.endPoint, this.post.body(this.formData))
+        .subscribe({
+          next: (response) => {
+            ngForm.resetForm();
+          },
+          error: (error) => {
+            console.error(error);
+          },
+          complete: () => console.info('Data has been sent.'),
+        });
+    } else if (ngForm.submitted && ngForm.form.valid && this.mailTest) {
+      ngForm.resetForm();
     }
   }
 
