@@ -127,6 +127,7 @@ button {
 .portrait-container {
     position: absolute;
     height: calc(100vh - 218px);
+    max-height: 1200px;
     left: 0;
     bottom: 100px;
     z-index: -2;
@@ -138,7 +139,7 @@ button {
     position: absolute;
     bottom: 0;
     left: 0;
-    transform: translate(-8%, 12%);
+    transform: translate(-3.5%, 12%);
     max-height: 100%;
     max-width: 90%;
     z-index: -3;
@@ -188,6 +189,7 @@ button {
     }
 }
 
+$smallPortraitHeight: calc(100vh - 360px);
 @media (max-width: 768px) {
     .above-the-fold-main-container {
         margin-right: 0;
@@ -196,11 +198,9 @@ button {
     .above-the-fold-inner-container {
         position: static;
     }
-    $smallPortraitHeight: calc(100vh - 418px);
     .portrait-container {
         margin-left: 0;
         @include mixins.flex($jc: center);
-        transform: translateX(10%);
     }
     .portrait {
         position: static;
@@ -213,7 +213,6 @@ button {
 }
 
 @media (max-width: 768px) and (orientation: portrait) {
-    $smallPortraitHeight: calc(100vh - 418px);
     .portrait-container {
         bottom: 200px;
         height: $smallPortraitHeight;

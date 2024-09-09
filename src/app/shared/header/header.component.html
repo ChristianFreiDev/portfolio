@@ -8,3 +8,44 @@
     <button class="language-btn" (click)="changeLanguage('en')" [ngClass]="activeLanguage == 'en' ? 'active-language' : ''">EN</button>
   </div>
 </div>
+<div ngModel #headerBurgerMenuOverlay class="header-burger-menu-overlay">
+  <div class="header-burger-menu-content">
+    <a routerLink="/" fragment="about-me" routerLinkActive="active" [routerLinkActiveOptions]="routerLinkOptions" (click)="closeBurgerMenu()">{{ 'about-me' | translate }}</a>
+    <a routerLink="/" fragment="skills" routerLinkActive="active" [routerLinkActiveOptions]="routerLinkOptions" (click)="closeBurgerMenu()">Skills</a>
+    <a routerLink="/" fragment="portfolio" routerLinkActive="active" [routerLinkActiveOptions]="routerLinkOptions" (click)="closeBurgerMenu()">Portfolio</a>
+    <button class="language-btn" (click)="changeLanguage('de')" [ngClass]="activeLanguage == 'de' ? 'active-language' : ''">DE</button>
+    <button class="language-btn" (click)="changeLanguage('en')" [ngClass]="activeLanguage == 'en' ? 'active-language' : ''">EN</button>
+  </div>
+</div>
+<svg class="header-burger-menu" (click)="toggleBurgerMenu()" width="32" height="31" viewBox="0 0 32 31" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <path class="header-burger-menu-path1" d="M 0 1 L 32 1" stroke-width="2" stroke-linecap="round">
+    <animate ngModel #headerBurgerMenuSvgAnimation1
+      attributeName="d"
+      from="M 0 1 L 32 29"
+      to="M 0 1 L 32 1"
+      begin="indefinite"
+      dur="125ms"
+      fill="freeze"
+    />
+  </path>
+  <path class="header-burger-menu-path1" d="M 0 15 L 32 15" stroke-width="2" stroke-linecap="round">
+    <animate ngModel #headerBurgerMenuSvgAnimation2
+      attributeName="d"
+      from="M 0 1 L 32 29"
+      to="M 0 15 L 32 15"
+      begin="indefinite"
+      dur="125ms"
+      fill="freeze"
+    />
+  </path>
+  <path class="header-burger-menu-path1" d="M 0 29 L 32 29" stroke-width="2" stroke-linecap="round">
+    <animate ngModel #headerBurgerMenuSvgAnimation3
+      attributeName="d"
+      from="M 0 29 L 32 0"
+      to="M 0 29 L 32 29"
+      begin="indefinite"
+      dur="125ms"
+      fill="freeze"
+    />
+  </path>
+</svg>    

@@ -56,9 +56,58 @@ a:hover {
     border-color: $accentColor1;
 }
 
+.header-burger-menu {
+    position: fixed;
+    top: 40px;
+    right: 24px;
+    z-index: 3;
+    display: none;
+    cursor: pointer;
+    path {
+        stroke: white;
+    }
+    &:hover {
+        path {
+            stroke: $accentColor2;
+        }
+    }
+}
+
+.header-burger-menu-overlay {
+    display: none;
+    background: hsla(220, 41%, 13%, 0.8);
+    z-index: 2;
+    position: fixed;
+    width: 100vw;
+    height: 100vh;
+}
+
 app-name {
     font-size: 28px;
     line-height: 35px;
     font-weight: 700;
     cursor: pointer;
+}
+
+.show-burger-menu {
+    @include mixins.flex($jc: center, $ai: center);
+}
+
+@media (max-width: 1024px) {
+    .header-links {
+        display: none;
+    }
+    .header-burger-menu {
+        display: block;
+    }
+    .header-burger-menu-content {
+        @include mixins.flex($dir: column, $ai: flex-start);
+        gap: 29px;
+    }
+}
+
+@media (max-width: 768px) {
+    .header-container {
+        padding: 37px 6.15vw;
+    }
 }
