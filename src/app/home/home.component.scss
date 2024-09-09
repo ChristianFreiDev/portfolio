@@ -1,4 +1,5 @@
 @use '../../styles/mixins.scss';
+@import '../../styles/colors.scss';
 
 #home {
     background-image: url('../../assets/img/vector-shape-hero-page.png');
@@ -7,13 +8,93 @@
     background-size: calc(max(100%, 1440px)) 1079px;
 }
 
-section, header, footer {
+section, header {
     margin: auto;
     max-width: 1920px;
+}
+
+footer {
+    background-color: $backgroundColor;
+}
+
+.home-shape-svg {
+    position: absolute;
+}
+
+.shape1 {
+    margin-top: -128px;
+}
+
+.shape2 {
+    margin-top: -256px;
+}
+
+.shape1, .shape2 {
+    width: 18.75vw;
+}
+
+.shape3 {
+    width: 33.33vw;
+}
+
+.shape4 {
+    width: 16.66vw;
+}
+
+.shape5-container {
+    overflow: hidden;
+}
+
+.shape5 {
+    z-index: -2;
+    margin-top: 400px;
+    width: 39.37vw;
+    overflow: hidden;
+}
+
+.accent-color1-shape {
+    path {
+        fill: $accentColor1;
+    }
+}
+
+.accent-color2-shape {
+    path {
+        fill: $accentColor2;
+    }
+}
+
+.left {
+    left: 0;
+}
+
+.right {
+    right: 0;
+}
+
+@media (max-width: 1200px) {
+    .shape5 {
+        margin-top: 512px;
+    }
+}
+
+@media (max-width: 1024px) {
+    .shape1 {
+        width: 46.15vw;
+    }
+    .shape2 {
+        width: 29.74vw;
+    }
+    .shape4 {
+        width: 37.97vw;
+    }
 }
 
 @media (max-width: 768px) and (orientation: portrait) {
     #home {
         background-position: top calc(100vh - 650px) left;
+    }
+    .shape4 {
+        width: 38vw;
     }
 }

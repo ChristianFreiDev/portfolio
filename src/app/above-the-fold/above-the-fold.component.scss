@@ -218,3 +218,26 @@ $smallPortraitHeight: calc(100vh - 360px);
         height: $smallPortraitHeight;
     }
 }
+
+@media (max-width: 360px) {
+    h2 {
+        font-size: 20px;
+        line-height: 24px;
+    }
+    .main-heading-container {
+        gap: 8px;
+    }
+    .i-am {
+        font-size: 24px;
+        line-height: 24px;
+        margin-left: -18px;
+        margin-right: -18px;
+        margin-bottom: 0;
+    }
+    .small-i-am-font-size {
+        font-size: 15px;
+    }
+    button {
+        margin-top: 32px;
+    }
+}
