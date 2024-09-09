@@ -4,8 +4,8 @@
     <a routerLink="/" fragment="about-me" routerLinkActive="active" [routerLinkActiveOptions]="routerLinkOptions">{{ 'about-me' | translate }}</a>
     <a routerLink="/" fragment="skills" routerLinkActive="active" [routerLinkActiveOptions]="routerLinkOptions">Skills</a>
     <a routerLink="/" fragment="portfolio" routerLinkActive="active" [routerLinkActiveOptions]="routerLinkOptions">Portfolio</a>
-    <button class="language-btn" (click)="changeLanguage('de')" [ngClass]="activeLanguage == 'de' ? 'active-language' : ''">DE</button>
-    <button class="language-btn" (click)="changeLanguage('en')" [ngClass]="activeLanguage == 'en' ? 'active-language' : ''">EN</button>
+    <button class="btn language-btn" (click)="changeLanguage('de')" [ngClass]="activeLanguage == 'de' ? 'active-language' : ''">DE</button>
+    <button class="btn language-btn" (click)="changeLanguage('en')" [ngClass]="activeLanguage == 'en' ? 'active-language' : ''">EN</button>
   </div>
 </div>
 <div ngModel #headerBurgerMenuOverlay class="header-burger-menu-overlay">
@@ -13,8 +13,8 @@
     <a routerLink="/" fragment="about-me" routerLinkActive="active" [routerLinkActiveOptions]="routerLinkOptions" (click)="closeBurgerMenu()">{{ 'about-me' | translate }}</a>
     <a routerLink="/" fragment="skills" routerLinkActive="active" [routerLinkActiveOptions]="routerLinkOptions" (click)="closeBurgerMenu()">Skills</a>
     <a routerLink="/" fragment="portfolio" routerLinkActive="active" [routerLinkActiveOptions]="routerLinkOptions" (click)="closeBurgerMenu()">Portfolio</a>
-    <button class="language-btn" (click)="changeLanguage('de')" [ngClass]="activeLanguage == 'de' ? 'active-language' : ''">DE</button>
-    <button class="language-btn" (click)="changeLanguage('en')" [ngClass]="activeLanguage == 'en' ? 'active-language' : ''">EN</button>
+    <button class="btn language-btn" (click)="changeLanguage('de')" [ngClass]="activeLanguage == 'de' ? 'active-language' : ''">DE</button>
+    <button class="btn language-btn" (click)="changeLanguage('en')" [ngClass]="activeLanguage == 'en' ? 'active-language' : ''">EN</button>
   </div>
 </div>
 <svg class="header-burger-menu" (click)="toggleBurgerMenu()" width="32" height="31" viewBox="0 0 32 31" fill="none" xmlns="http://www.w3.org/2000/svg">

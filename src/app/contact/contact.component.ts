@@ -5,15 +5,18 @@ import { TranslateModule } from '@ngx-translate/core';
 import { CommonModule } from '@angular/common';
 import { ValidityIconComponent } from './validity-icon/validity-icon.component';
 import { HttpClient } from '@angular/common/http';
+import { Router, RouterLink } from '@angular/router';
 
 @Component({
   selector: 'app-contact',
   standalone: true,
-  imports: [FormsModule, UseScrollAnimationDirective, TranslateModule, CommonModule, ValidityIconComponent],
+  imports: [FormsModule, UseScrollAnimationDirective, TranslateModule, CommonModule, ValidityIconComponent, RouterLink],
   templateUrl: './contact.component.html',
   styleUrl: './contact.component.scss'
 })
 export class ContactComponent {
+
+  constructor(private router: Router) { }
 
   httpClient = inject(HttpClient);
 

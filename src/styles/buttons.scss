@@ -1,4 +1,4 @@
-button {
+.btn {
     @include mixins.flex($jc: center, $ai: center);
     padding: 15px 30px;
     gap: 10px;
@@ -10,7 +10,7 @@ button {
     transition: padding 125ms ease-out;
 }
 
-button, a {
+.btn, a {
     font-size: 23px;
     line-height: 27.6px;
     font-weight: 400;
@@ -41,7 +41,7 @@ button, a {
 }
 
 @media (max-width: 1440px) {
-    button {
+    .btn {
         font-size: 16px;
         line-height: 19.2px;
     }

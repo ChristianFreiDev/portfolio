@@ -123,6 +123,31 @@ input[type='checkbox'] {
     position: relative;
 }
 
+.arrow-svg-btn {
+    position: absolute;
+    color: unset;
+    background-color: unset;
+    border: unset;
+    cursor: pointer;
+    right: 100px;
+    z-index: 4;
+    margin-top: -90px;
+    path {
+        fill: white;
+    }
+    rect {
+        stroke: white;
+    }
+    &:hover {
+        path {
+            fill: $accentColor2;
+        }
+        rect {
+            stroke: $accentColor2;
+        }
+    }
+}
+
 @media (max-width: 1200px) {
     .contact-content {
         @include mixins.flex($dir: column);
