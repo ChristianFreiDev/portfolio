@@ -12,6 +12,10 @@
     opacity: 0;
 }
 
+.portfolio-top-text {
+    padding: 0 24px;
+}
+
 .portfolio-heading-container {
     @include mixins.flex($jc: flex-end, $ai: center);
     gap: 32px;
@@ -47,6 +51,9 @@ hr {
 }
 
 @media (max-width: 767px) {
+    .portfolio-heading-container {
+        gap: 16px;
+    }
     .portfolio-top-text {
         padding: 0 24px;
         text-align: center;

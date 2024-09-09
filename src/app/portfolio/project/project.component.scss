@@ -70,4 +70,20 @@ h4 {
     }
 }
 
+@media (max-width: 768px) {
+    .project {
+        padding: 0 24px;
+    }
+    .project-btn-container {
+        gap: 50px;
+    }
+}
+
+@media (max-width: 360px) {
+    .project-btn-container {
+        flex-direction: column;
+        gap: 16px;
+    }
+}
+
 @import '../../../styles/animations.scss';

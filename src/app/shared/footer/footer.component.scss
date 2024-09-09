@@ -98,3 +98,10 @@ app-social-media-links {
         display: block;
     }
 }
+
+@media (max-width: 328px) {
+    app-name {
+        font-size: 28px;
+        line-height: 35px;
+    }
+}

@@ -212,6 +212,12 @@ $smallPortraitHeight: calc(100vh - 360px);
     }
 }
 
+@media (max-width: 768px) {
+    .socials-container {
+        gap: 16px;
+    }
+}
+
 @media (max-width: 768px) and (orientation: portrait) {
     .portrait-container {
         bottom: 200px;

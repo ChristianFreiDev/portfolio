@@ -58,3 +58,17 @@ hr {
         line-height: 32px;
     }
 }
+
+@media (max-width: 328px) {
+    h1, h3 {
+        font-size: 28px;
+        line-height: 28px;
+    }
+    h4 {
+        font-size: 28px;
+        line-height: 33.6px;
+    }
+    p {
+        font-size: 14px;
+    }
+}

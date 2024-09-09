@@ -206,6 +206,18 @@ strong {
     }
 }
 
+@media (max-width: 768px) {
+    .skills-heading-container {
+        gap: 16px;
+    }
+    .skills-text-top-container {
+        padding-left: 24px;
+    }
+    .skills-text-bottom-container {
+        padding: 0 24px;
+    }
+}
+
 @media (max-width: 720px) {
     .skill-items-container {
         gap: 62px;
@@ -230,6 +242,13 @@ strong {
     }
     br {
         display: none;
+    }
+}
+
+@media (max-width: 328px) {
+    strong {
+        font-size: 28px;
+        line-height: 33.6px;
     }
 }
 
