@@ -2,9 +2,9 @@
 <div id="footer">
     <div class="footer-name-container">
         <app-name></app-name>
-        <a class="legal-notice" href="">{{ 'legal-notice' | translate }}</a>
+        <a class="legal-notice" routerLink="legal-notice">{{ 'legal-notice' | translate }}</a>
     </div>
     <span class="copyright">© Christian Frei {{ year }}</span>
     <app-social-media-links></app-social-media-links>
-    <a class="legal-notice-mobile" href="">Legal notice</a>
+    <a class="legal-notice-mobile" routerLink="legal-notice">Legal notice</a>
 </div>

@@ -8,17 +8,14 @@
     background-size: calc(max(100%, 1440px)) 1079px;
 }
 
-section, header {
+section {
     margin: auto;
     max-width: 1920px;
 }
 
-footer {
-    background-color: $backgroundColor;
-}
-
 .home-shape-svg {
     position: absolute;
+    z-index: 0;
 }
 
 .shape1 {
@@ -26,6 +23,7 @@ footer {
 }
 
 .shape2 {
+    z-index: -1;
     margin-top: -256px;
 }
 
@@ -72,6 +70,14 @@ footer {
     right: 0;
 }
 
+#orientation-message {
+    height: 100svh;
+    height: 100vh;
+    width: 100%;
+    display: none;
+    padding: 24px;
+}
+
 @media (max-width: 1200px) {
     .shape5 {
         margin-top: 512px;
@@ -96,5 +102,14 @@ footer {
     }
     .shape4 {
         width: 38vw;
+    }
+}
+
+@media (max-height: 464px) and (orientation: landscape), (max-height: 432px)  {
+    #home {
+        display: none;
+    }
+    #orientation-message {
+        @include mixins.flex($jc: center, $ai: center);
     }
 }

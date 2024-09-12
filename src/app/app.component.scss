@@ -1,0 +1,10 @@
+@import '../styles/colors.scss';
+
+header {
+    margin: auto;
+    max-width: 1920px;
+}
+
+footer {
+    background-color: $backgroundColor;
+}

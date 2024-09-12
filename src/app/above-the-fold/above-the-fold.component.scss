@@ -18,6 +18,7 @@
 }
 
 .above-the-fold-inner-container {
+    z-index: 1;
     background: transparent;
     position: absolute;
     right: 0;
@@ -127,6 +128,7 @@ button {
 .portrait-container {
     position: absolute;
     height: calc(100vh - 218px);
+    min-height: 128px;
     max-height: 1200px;
     left: 0;
     bottom: 100px;

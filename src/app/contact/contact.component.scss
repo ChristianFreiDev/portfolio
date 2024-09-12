@@ -130,7 +130,7 @@ input[type='checkbox'] {
     border: unset;
     cursor: pointer;
     right: 100px;
-    z-index: 4;
+    z-index: 1;
     margin-top: -90px;
     path {
         fill: white;
@@ -168,11 +168,17 @@ input[type='checkbox'] {
         @include mixins.flex($ai: center, $dir: column);
         padding: 32px 4.72vw 100px;
     }
+    .arrow-svg-btn {
+        right: calc(4.72vw + 32px);
+    }
 }
 
 @media (max-width: 768px) {
     .contact-heading-container {
         gap: 16px;
+    }
+    .arrow-svg-btn {
+        right: 24px;
     }
 }
 

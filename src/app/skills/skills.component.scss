@@ -35,6 +35,12 @@ p {
     > svg {
         fill: white;
         height: 60px;
+        transition: transform 125ms;
+    }
+    &:hover {
+        > svg {
+            transform: translateY(-24px);
+        }
     }
 }
 
@@ -177,6 +183,10 @@ strong {
     }
     br {
         display: inline;
+    }
+    .learning-tooltip {
+        top: -128px;
+        left: -52px;
     }
 }
 
