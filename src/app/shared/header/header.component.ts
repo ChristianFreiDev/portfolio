@@ -24,6 +24,9 @@ export class HeaderComponent {
 
   constructor(private router: Router, private translate: TranslateService) { }
 
+  /**
+   * This function changes the active language.
+   */
   changeLanguage(language: string): void {
     this.translate.use(language);
     this.activeLanguage = language;
@@ -36,7 +39,10 @@ export class HeaderComponent {
 
   isBurgerMenuOpen = false;
 
-  toggleBurgerMenu() {
+  /**
+   * This function opens or closes the burger menu.
+   */
+  toggleBurgerMenu(): void {
     this.isBurgerMenuOpen = !this.isBurgerMenuOpen;
     if (this.isBurgerMenuOpen) {
       this.openBurgerMenu();
@@ -45,27 +51,35 @@ export class HeaderComponent {
     }
   }
 
-  openBurgerMenu() {
+  /**
+   * This function opens the burger menu.
+   */
+  openBurgerMenu(): void {
     document.body.classList.add('disable-scroll');
     this.overlay.nativeElement.classList.add('show-burger-menu');
     this.startAnimation();
   }
 
-  closeBurgerMenu() {
+  /**
+   * This functions closes the burger menu.
+   */
+  closeBurgerMenu(): void {
     this.isBurgerMenuOpen = false;
     document.body.classList.remove('disable-scroll');
     this.overlay.nativeElement.classList.remove('show-burger-menu');
     this.startAnimation();
   }
 
-  startAnimation() {
+  /**
+   * This function starts the animation for opening or closing the burger menu.
+   */
+  startAnimation(): void {
     let anims = [this.menuSvgAnimation1.nativeElement, this.menuSvgAnimation2.nativeElement, this.menuSvgAnimation3.nativeElement];
     anims.forEach(anim => {
       anim.beginElement();
       let from = anim.getAttribute('from');
       anim.setAttribute('from', anim.getAttribute('to'));
       anim.setAttribute('to', from);
-      console.log('Attributes changed');
     })
   }
 }

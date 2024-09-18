@@ -16,7 +16,10 @@ export class UseScrollAnimationDirective {
 
   constructor(private elementRef: ElementRef) { }
 
-  addClass(entry: IntersectionObserverEntry) {
+  /**
+   * This function adds the animation class to the target of an IntersectionObserverEntry.
+   */
+  addClass(entry: IntersectionObserverEntry): void {
     entry.target.classList.add(this.scrollAnimationClass);
   }
 

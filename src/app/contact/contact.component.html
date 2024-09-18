@@ -11,41 +11,46 @@
                 <p [innerHTML]="'contact-second-paragraph' | translate"></p>
             </div>
         </div>
-        <form #contactForm="ngForm" class="contact-form" (ngSubmit)="onSubmit(contactForm)" appUseScrollAnimation scrollAnimationClass="slide-in-from-right">
-            <div class="input-container">
-                <input #name="ngModel" [(ngModel)]="formData.name" [ngClass]="{'invalid-input': isInvalid(name), 'valid-input': name.valid}" name="name" type="text" placeholder="{{ 'contact-name-placeholder' | translate }}" required>
-                <app-validity-icon [ngModel]="name" [isValidCallback]="isValid" [isValidCallback]="isInvalid"></app-validity-icon>
-            </div>
-            @if (isInvalid(name)) {
-                <span class="validation-message">{{ 'contact-invalid-name' | translate }}</span>
-            }
-            <div class="input-container">
-                <input #email="ngModel" [(ngModel)]="formData.email" [ngClass]="{'invalid-input': isInvalid(email), 'valid-input': email.valid}" name="email" type="text" placeholder="{{ 'contact-email-placeholder' | translate }}" pattern="[a-zA-Z0-9._%+\-]+@[a-zA-Z0-9.\-]+\.[a-zA-Z]{2,}" required>
-                <app-validity-icon [ngModel]="email" [isValidCallback]="isValid" [isValidCallback]="isInvalid"></app-validity-icon>
-            </div>
-            @if (isInvalid(email)) {
-                <span class="validation-message">{{ 'contact-invalid-email' | translate }}</span>
-            }
-            <div class="input-container">
-                <textarea #message="ngModel" [(ngModel)]="formData.message" [ngClass]="{'invalid-input': isInvalid(message), 'valid-input': message.valid}" name="message" placeholder="{{ 'contact-message-placeholder' | translate }}" minlength="4" required></textarea>
-                <app-validity-icon [ngModel]="message" [isValidCallback]="isValid" [isValidCallback]="isInvalid"></app-validity-icon>
-            </div>
-            @if (isInvalid(message)) {
-                <span class="validation-message">{{ 'contact-invalid-message' | translate }}</span>
-            }
-            <div class="contact-privacy-policy-message-container">
-                <svg class="checkbox-svg" width="18" height="18" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg">
-                    @if (checkbox.valid) {
-                        <path class="checked" d="M7.6 10.4L5.45 8.25C5.26667 8.06667 5.03333 7.975 4.75 7.975C4.46667 7.975 4.23333 8.06667 4.05 8.25C3.86667 8.43333 3.775 8.66667 3.775 8.95C3.775 9.23333 3.86667 9.46667 4.05 9.65L6.9 12.5C7.1 12.7 7.33333 12.8 7.6 12.8C7.86667 12.8 8.1 12.7 8.3 12.5L13.95 6.85C14.1333 6.66667 14.225 6.43333 14.225 6.15C14.225 5.86667 14.1333 5.63333 13.95 5.45C13.7667 5.26667 13.5333 5.175 13.25 5.175C12.9667 5.175 12.7333 5.26667 12.55 5.45L7.6 10.4ZM2 18C1.45 18 0.979167 17.8042 0.5875 17.4125C0.195833 17.0208 0 16.55 0 16V2C0 1.45 0.195833 0.979167 0.5875 0.5875C0.979167 0.195833 1.45 0 2 0H16C16.55 0 17.0208 0.195833 17.4125 0.5875C17.8042 0.979167 18 1.45 18 2V16C18 16.55 17.8042 17.0208 17.4125 17.4125C17.0208 17.8042 16.55 18 16 18H2ZM2 16H16V2H2V16Z"/>
-                    } @else {
-                        <path class="unchecked" d="M2 18C1.45 18 0.979167 17.8042 0.5875 17.4125C0.195833 17.0208 0 16.55 0 16V2C0 1.45 0.195833 0.979167 0.5875 0.5875C0.979167 0.195833 1.45 0 2 0H16C16.55 0 17.0208 0.195833 17.4125 0.5875C17.8042 0.979167 18 1.45 18 2V16C18 16.55 17.8042 17.0208 17.4125 17.4125C17.0208 17.8042 16.55 18 16 18H2ZM2 16H16V2H2V16Z"/>
-                    }
-                </svg>
-                <input #checkbox="ngModel" type="checkbox" [(ngModel)]="formData.checkbox" name="checkbox" required>
-                <p>{{ 'contact-privacy-policy-message' | translate }}</p>
-            </div>
-            <button class="btn btn-primary" [disabled]="!contactForm.valid">{{ 'contact-send-message' | translate }}</button>
-        </form>    
+            <form #contactForm="ngForm" class="contact-form" (ngSubmit)="onSubmit(contactForm)" appUseScrollAnimation scrollAnimationClass="slide-in-from-right">
+                <div class="input-container">
+                    <input #name="ngModel" [(ngModel)]="formData.name" [ngClass]="{'invalid-input': isInvalid(name), 'valid-input': name.valid}" (click)="formSent = false" name="name" type="text" placeholder="{{ 'contact-name-placeholder' | translate }}" required>
+                    <app-validity-icon [model]="name" [isValidCallback]="isValid(name)" [isInvalidCallback]="isInvalid(name)"></app-validity-icon>
+                </div>
+                @if (isInvalid(name)) {
+                    <span class="validation-message">{{ 'contact-invalid-name' | translate }}</span>
+                }
+                <div class="input-container">
+                    <input #email="ngModel" [(ngModel)]="formData.email" [ngClass]="{'invalid-input': isInvalid(email), 'valid-input': email.valid}" (click)="formSent = false" name="email" type="text" placeholder="{{ 'contact-email-placeholder' | translate }}" pattern="[a-zA-Z0-9._%+\-]+@[a-zA-Z0-9.\-]+\.[a-zA-Z]{2,}" required>
+                    <app-validity-icon [model]="email" [isValidCallback]="isValid(email)" [isInvalidCallback]="isInvalid(email)"></app-validity-icon>
+                </div>
+                @if (isInvalid(email)) {
+                    <span class="validation-message">{{ 'contact-invalid-email' | translate }}</span>
+                }
+                <div class="input-container">
+                    <textarea #message="ngModel" [(ngModel)]="formData.message" [ngClass]="{'invalid-input': isInvalid(message), 'valid-input': message.valid}" (click)="formSent = false" name="message" placeholder="{{ 'contact-message-placeholder' | translate }}" minlength="4" required></textarea>
+                    <app-validity-icon [model]="message" [isValidCallback]="isValid(message)" [isInvalidCallback]="isInvalid(message)"></app-validity-icon>
+                </div>
+                @if (isInvalid(message)) {
+                    <span class="validation-message">{{ 'contact-invalid-message' | translate }}</span>
+                }
+                <div class="contact-privacy-policy-message-container">
+                    <svg class="checkbox-svg" width="18" height="18" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        @if (checkbox.valid) {
+                            <path class="checked" d="M7.6 10.4L5.45 8.25C5.26667 8.06667 5.03333 7.975 4.75 7.975C4.46667 7.975 4.23333 8.06667 4.05 8.25C3.86667 8.43333 3.775 8.66667 3.775 8.95C3.775 9.23333 3.86667 9.46667 4.05 9.65L6.9 12.5C7.1 12.7 7.33333 12.8 7.6 12.8C7.86667 12.8 8.1 12.7 8.3 12.5L13.95 6.85C14.1333 6.66667 14.225 6.43333 14.225 6.15C14.225 5.86667 14.1333 5.63333 13.95 5.45C13.7667 5.26667 13.5333 5.175 13.25 5.175C12.9667 5.175 12.7333 5.26667 12.55 5.45L7.6 10.4ZM2 18C1.45 18 0.979167 17.8042 0.5875 17.4125C0.195833 17.0208 0 16.55 0 16V2C0 1.45 0.195833 0.979167 0.5875 0.5875C0.979167 0.195833 1.45 0 2 0H16C16.55 0 17.0208 0.195833 17.4125 0.5875C17.8042 0.979167 18 1.45 18 2V16C18 16.55 17.8042 17.0208 17.4125 17.4125C17.0208 17.8042 16.55 18 16 18H2ZM2 16H16V2H2V16Z"/>
+                        } @else {
+                            <path class="unchecked" d="M2 18C1.45 18 0.979167 17.8042 0.5875 17.4125C0.195833 17.0208 0 16.55 0 16V2C0 1.45 0.195833 0.979167 0.5875 0.5875C0.979167 0.195833 1.45 0 2 0H16C16.55 0 17.0208 0.195833 17.4125 0.5875C17.8042 0.979167 18 1.45 18 2V16C18 16.55 17.8042 17.0208 17.4125 17.4125C17.0208 17.8042 16.55 18 16 18H2ZM2 16H16V2H2V16Z"/>
+                        }
+                    </svg>
+                    <input #checkbox="ngModel" type="checkbox" [(ngModel)]="formData.checkbox" name="checkbox" required>
+                    <p>{{ 'contact-privacy-policy-message1' | translate }}<a class="privacy-policy-link" routerLink="privacy-policy">{{ 'contact-privacy-policy-message2' | translate }}</a>{{ 'contact-privacy-policy-message3' | translate }}</p>
+                </div>
+                <button class="btn btn-primary" [disabled]="!contactForm.valid">{{ 'contact-send-message' | translate }}</button>
+                @if(formSent) {
+                    <div appUseScrollAnimation scrollAnimationClass="slide-in-from-right">
+                        <p>{{ 'contact-form-sent' | translate }}</p>
+                    </div>
+                }
+            </form>    
     </div>
     <button class="arrow-svg-btn" routerLink="/">
         <svg width="39" height="39" viewBox="0 0 39 39" fill="none" xmlns="http://www.w3.org/2000/svg">

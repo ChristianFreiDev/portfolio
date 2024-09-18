@@ -17,7 +17,12 @@
     gap: 30px;
 }
 
-a, a:-webkit-any-link {
+a {
+    color: $mainTextColor;
+    text-decoration: none;
+}
+
+a:-webkit-any-link {
     color: $mainTextColor;
     text-decoration: none;
 }
@@ -27,7 +32,6 @@ a:hover {
 }
 
 .active {
-    color: red;
     position: relative;
 }
 

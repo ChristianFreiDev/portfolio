@@ -27,9 +27,25 @@ export class ContactComponent {
     checkbox: false
   }
 
-  mailTest = true;
+  formSent: boolean = false;
 
-  mailPhpUrl = 'https://';
+  /**
+   * This function resets the form data.
+   */
+  resetFormData(ngForm: NgForm): void {
+    ngForm.resetForm();
+    this.formData = {
+      name: '',
+      email: '',
+      message: '',
+      checkbox: false
+    }
+    this.formSent = true;
+  }
+
+  mailTest = false;
+
+  mailPhpUrl = 'https://christian-frei.dev/sendMail.php';
 
   post = {
     endPoint: this.mailPhpUrl,
@@ -42,12 +58,15 @@ export class ContactComponent {
     },
   };
 
+  /**
+   * This function sends the form data via e-mail.
+   */
   onSubmit(ngForm: NgForm) {
     if (ngForm.submitted && ngForm.form.valid && !this.mailTest) {
       this.httpClient.post(this.post.endPoint, this.post.body(this.formData))
         .subscribe({
           next: (response) => {
-            ngForm.resetForm();
+            this.resetFormData(ngForm);
           },
           error: (error) => {
             console.error(error);
@@ -55,11 +74,14 @@ export class ContactComponent {
           complete: () => console.info('Data has been sent.'),
         });
     } else if (ngForm.submitted && ngForm.form.valid && this.mailTest) {
-      ngForm.resetForm();
+      this.resetFormData(ngForm);
     }
   }
 
-  isValid(input: NgModel) {
+  /**
+   * This function checks if the input value is valid.
+   */
+  isValid(input: NgModel): boolean {
     if (input && input.valid) {
       return true;
     } else {
@@ -67,7 +89,10 @@ export class ContactComponent {
     }
   }
 
-  isInvalid(input: NgModel) {
+    /**
+   * This function checks if the input value is invalid.
+   */
+  isInvalid(input: NgModel): boolean {
     if (input && !input.valid && input.touched && input.value.length >= 0) {
       return true;
     } else {

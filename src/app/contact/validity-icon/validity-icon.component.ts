@@ -9,9 +9,9 @@ import { NgModel } from '@angular/forms';
   styleUrl: './validity-icon.component.scss'
 })
 export class ValidityIconComponent {
-  @Input() ngModel!: NgModel;
-  @Input() isValidCallback!: (args: any) => void;
-  @Input() isInvalidCallback!: (args: any) => void;
+  @Input() model!: NgModel;
+  @Input() isValidCallback!: boolean;
+  @Input() isInvalidCallback!: boolean;
 
   isValid(input: NgModel) {
     if (input && input.valid) {

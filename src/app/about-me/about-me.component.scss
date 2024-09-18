@@ -130,7 +130,7 @@ $secondPortraitSizeS: 24vw;
 
 @media (max-width: 768px) {
     #about-me {
-        padding: 82px 24px 0;
+        padding: 128px 24px 0;
         @include mixins.flex($ai: center, $dir: column);
     }
     .about-me-content {

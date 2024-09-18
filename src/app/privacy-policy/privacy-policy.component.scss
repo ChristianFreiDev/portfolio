@@ -1,0 +1,35 @@
+@use '../../styles/mixins.scss';
+@import '../../styles/colors.scss';
+
+section {
+    padding: 128px 100px 100px;
+    min-height: calc(100vh - 295px);
+    @include mixins.flex($jc: center, $ai: center, $dir: column);
+}
+
+#privacy-policy {
+    opacity: 0;
+}
+
+h2 {
+    margin-bottom: 20px;
+}
+
+h3 {
+    margin-top: 24px;
+    margin-bottom: 12px;
+    font-size: 20px;
+    line-height: 20px;
+}
+
+a {
+    word-break: break-word
+}
+
+@media (max-width: 768px) {
+    section {
+        padding: 128px 24px 24px;
+    }
+}
+
+@import '../../styles/animations.scss';

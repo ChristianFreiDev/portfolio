@@ -17,4 +17,10 @@ export class ProjectComponent {
   @Input() imagePath: string = '';
   @Input() alt: string = '';
   @Input() direction: string = 'row';
+  @Input() liveTestUrl: string = '';
+  @Input() gitHubUrl: string = '';
+
+  openUrl(url: string) {
+    window.open(url);
+  }
 }
