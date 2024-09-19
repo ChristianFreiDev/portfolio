@@ -5,6 +5,8 @@ section {
     padding: 128px 100px 100px;
     min-height: calc(100vh - 295px);
     @include mixins.flex($jc: center, $ai: center, $dir: column);
+    margin: auto;
+    max-width: 1920px;
 }
 
 #privacy-policy {
