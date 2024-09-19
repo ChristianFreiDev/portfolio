@@ -117,6 +117,10 @@ input[type='checkbox'] {
     }
 }
 
+.checkbox {
+    cursor: pointer;
+}
+
 .contact-privacy-policy-message-container {
     display: grid;
     grid-template-columns: 26px auto;
