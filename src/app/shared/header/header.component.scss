@@ -1,5 +1,6 @@
 @use '../../../styles/mixins.scss';
 @import '../../../styles.scss';
+@import '../../../styles/spacing.scss';
 
 .header-container {
     width: 100%;
@@ -8,7 +9,7 @@
     z-index: 2;
     position: fixed;
     top: 0;
-    padding: 37px 100px;
+    padding: 37px $sideSpacingLarge;
     background-color: $backgroundColor;
 }
 
@@ -95,6 +96,12 @@ app-name {
 
 .show-burger-menu {
     @include mixins.flex($jc: center, $ai: center);
+}
+
+@media (max-width: 1440px) {
+    .header-container {
+        padding: 37px $sideSpacingMedium;
+    }
 }
 
 @media (max-width: 1024px) {

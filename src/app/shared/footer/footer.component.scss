@@ -1,5 +1,6 @@
 @use '../../../styles/mixins.scss';
 @import '../../../styles/colors.scss';
+@import '../../../styles/spacing.scss';
 
 hr {
     border: 2px solid $accentColor2;
@@ -13,8 +14,8 @@ hr {
     margin: auto;
     max-width: 1920px;
     height: 291px;
-    padding-right: 100px;
-    padding-left: 100px;
+    padding-right: $sideSpacingLarge;
+    padding-left: $sideSpacingLarge;
     @include mixins.flex($jc: space-between);
 }
 
@@ -71,6 +72,13 @@ app-social-media-links {
 @media (max-width: 1920px) {
     hr {
         border-radius: 0;
+    }
+}
+
+@media (max-width: 1440px) {
+    #footer {
+        padding-right: $sideSpacingMedium;
+        padding-left: $sideSpacingMedium;
     }
 }
 

@@ -1,5 +1,6 @@
 @use '../../styles/mixins.scss';
 @import '../../styles/colors.scss';
+@import '../../styles/spacing.scss';
 
 #contact {
     padding-top: 146px;
@@ -13,13 +14,14 @@
 
 .contact-content {
     @include mixins.flex($jc: space-between);
-    padding: 40px 100px 181px;
+    padding: 40px $sideSpacingLarge 181px;
 }
 
 .contact-text-container {
     @include mixins.flex($dir: column);
     gap: 24px;
-    width: 474px;
+    width: 32.9vw;
+    max-width: 632px;
     padding-right: 48px;
     opacity: 0;
 }
@@ -133,7 +135,7 @@ input[type='checkbox'] {
     background-color: unset;
     border: unset;
     cursor: pointer;
-    right: 100px;
+    right: $sideSpacingLarge;
     z-index: 1;
     margin-top: -90px;
     path {
@@ -159,14 +161,20 @@ input[type='checkbox'] {
     text-decoration: none;
 }
 
+@media (max-width: 1440px) {
+    .contact-content {
+        padding: 40px $sideSpacingMedium 181px;
+    }
+    .arrow-svg-btn {
+        right: $sideSpacingMedium;
+    }
+}
+
 @media (max-width: 1200px) {
     .contact-content {
         @include mixins.flex($dir: column);
         gap: 24px;
     }
-}
-
-@media (max-width: 1024px) {
     .contact-form {
         width: 100%;
         max-width: 617px;

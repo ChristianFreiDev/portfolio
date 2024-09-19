@@ -98,10 +98,16 @@ section {
 
 @media (max-width: 768px) and (orientation: portrait) {
     #home {
-        background-position: top calc(100vh - 650px) left;
+        background-position: top calc(100vh - 686px) left;
     }
     .shape4 {
         width: 38vw;
+    }
+}
+
+@media (max-height: 560px) and (orientation: portrait) {
+    #home {
+        background-position: top calc(100vh - 644px) left;
     }
 }
 

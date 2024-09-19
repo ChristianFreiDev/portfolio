@@ -1,5 +1,6 @@
 @use '../../styles/mixins.scss';
 @import '../../styles/colors.scss';
+@import '../../styles/spacing.scss';
 
 #above-the-fold {
     height: 100dvh;
@@ -14,7 +15,7 @@
     right: 0;
     bottom: 0;
     height: 80%;
-    margin-right: 100px;
+    margin-right: $sideSpacingLarge;
 }
 
 .above-the-fold-inner-container {
@@ -75,7 +76,7 @@ $arrowAnimationEnd: 88px;
 }
 
 .socials-hr {
-    width: 100px;
+    width: $sideSpacingLarge;
     height: 0;
     border-color: $accentColor1;
     border-top-right-radius: 2px;
@@ -176,6 +177,12 @@ button {
     button {
         margin-top: 32px;
     }
+    .above-the-fold-main-container {
+        margin-right: $sideSpacingMedium;
+    }
+    .socials-hr {
+        width: $sideSpacingMedium;
+    }
 }
 
 @media (max-width: 1024px) {
@@ -227,6 +234,18 @@ $smallPortraitHeight: calc(100vh - 360px);
     }
 }
 
+@media (max-width: 768px) and (orientation: landscape) {
+    h1 {
+        text-shadow: 0px 0px 4px black;
+    }
+    .above-the-fold-main-container {
+        height: 208px;
+    }
+    button {
+        margin-top: 12px;
+    }
+}
+
 @media (max-width: 360px) {
     h2 {
         font-size: 20px;
@@ -247,5 +266,14 @@ $smallPortraitHeight: calc(100vh - 360px);
     }
     button {
         margin-top: 32px;
+    }
+}
+
+@media (max-height: 560px) and (orientation: portrait) {
+    button {
+        margin-top: 12px;
+    }
+    .above-the-fold-main-container {
+        height: 208px;
     }
 }

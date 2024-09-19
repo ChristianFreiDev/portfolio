@@ -1,5 +1,6 @@
 @use '../../styles/mixins.scss';
 @import '../../styles/colors.scss';
+@import '../../styles/spacing.scss';
 
 p {
     margin: 0;
@@ -7,7 +8,7 @@ p {
 
 #skills {
     padding-top: 180px;
-    padding-left: 136px;
+    padding-left: $sideSpacingLarge;
     display: grid;
     grid-template-columns: auto auto;
     grid-template-rows: auto 1fr;
@@ -53,11 +54,11 @@ p {
 }
 
 .skills-text-top-container p {
-    padding-right: 133px;
+    padding-right: $sideSpacingLarge;
 }
 
 .skills-text-bottom-container {
-    padding-right: 133px;
+    padding-right: $sideSpacingLarge;
     grid-area: text-bottom;
     @include mixins.flex($ai: flex-end, $dir: column);
     text-align: right;
@@ -152,7 +153,7 @@ strong {
 
 @media (max-width: 1440px) {
     #skills {
-        padding-left: 100px;
+        padding-left: $sideSpacingMedium;
     }
     .skills-text-top-container p, .skills-text-bottom-container {
         padding-right: calc(4.72vw + 32px);
@@ -168,18 +169,13 @@ strong {
 @media (max-width: 1200px) {
     #skills {
         padding-left: 0;
+        padding-top: 128px;
         grid-template-columns: 1fr;
         grid-template-rows: auto auto auto;
         grid-template-areas:
         "text-top"
         "items"
         "text-bottom";
-    }
-    .skill-items-container {
-        @include mixins.flex($jc: center);
-        flex-wrap: wrap;
-        justify-self: right;
-        margin-right: 4.72vw;
     }
     br {
         display: inline;
@@ -188,13 +184,10 @@ strong {
         top: -128px;
         left: -52px;
     }
-}
-
-@media (max-width: 1024px) {
-    #skills {
-        padding-top: 128px;
-    }
     .skill-items-container {
+        @include mixins.flex($jc: center);
+        flex-wrap: wrap;
+        justify-self: right;
         margin-right: 0;
         width: 100%;
         padding-left: 4.72vw;
