@@ -36,12 +36,7 @@ hr {
 
 .projects {
     @include mixins.flex($jc: center, $dir: column);
-}
-
-@media (max-width: 1200px) {
-    .projects {
-        width: 100%;
-    }
+    width: 100%;
 }
 
 @media (max-width: 1024px) {

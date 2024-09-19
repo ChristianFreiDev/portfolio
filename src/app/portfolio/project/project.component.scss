@@ -31,12 +31,12 @@ h4 {
 }
 
 .left {
-    @include mixins.flex($ai: center, $dir: row);
+    @include mixins.flex($jc: space-between, $ai: center, $dir: row);
     text-align: left;
 }
 
 .right {
-    @include mixins.flex($ai: center, $dir: row-reverse);
+    @include mixins.flex($jc: space-between, $ai: center, $dir: row-reverse);
     text-align: right;
 }
 
