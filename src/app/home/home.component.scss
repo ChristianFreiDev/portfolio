@@ -119,3 +119,21 @@ section {
         @include mixins.flex($jc: center, $ai: center);
     }
 }
+
+@media (min-height: 845px) and (max-width: 768px) and (orientation: portrait) {
+    #home {
+        background-position: top calc(100vh - 744px) left;
+    }
+}
+
+@media (min-height: 1024px) and (max-width: 560px) and (orientation: portrait) {
+    #home {
+        background-position: top calc(100vh - 794px) left;
+    }
+}
+
+@media (min-height: 1200px) and (max-width: 768px) and (orientation: portrait) {
+    #home {
+        background-position: top calc(100vh - 894px) left;
+    }
+}

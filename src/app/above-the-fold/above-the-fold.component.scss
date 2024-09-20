@@ -130,7 +130,7 @@ button {
     position: absolute;
     height: calc(100vh - 218px);
     min-height: 128px;
-    max-height: 1200px;
+    max-height: 1366px;
     left: 0;
     bottom: 100px;
     z-index: -2;
@@ -229,7 +229,7 @@ $smallPortraitHeight: calc(100vh - 360px);
 
 @media (max-width: 768px) and (orientation: portrait) {
     .portrait-container {
-        bottom: 200px;
+        bottom: 250px;
         height: $smallPortraitHeight;
     }
 }
@@ -273,7 +273,37 @@ $smallPortraitHeight: calc(100vh - 360px);
     button {
         margin-top: 12px;
     }
+    .portrait-container {
+        bottom: 210px;
+    }
     .above-the-fold-main-container {
         height: 208px;
+    }
+}
+
+@media (min-height: 845px) and (max-width: 768px) and (orientation: portrait) {
+    .portrait-container {
+        bottom: 300px;
+    }
+    .above-the-fold-main-container {
+        height: 298px;
+    }
+}
+
+@media (min-height: 1024px) and (max-width: 560px) and (orientation: portrait) {
+    .portrait-container {
+        bottom: 350px;
+    }
+    .above-the-fold-main-container {
+        height: 348px;
+    }
+}
+
+@media (min-height: 1200px) and (max-width: 768px) and (orientation: portrait) {
+    .portrait-container {
+        bottom: 450px;
+    }
+    .above-the-fold-main-container {
+        height: 448px;
     }
 }
