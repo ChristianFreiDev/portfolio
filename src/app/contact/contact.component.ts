@@ -67,11 +67,7 @@ export class ContactComponent {
         .subscribe({
           next: (response) => {
             this.resetFormData(ngForm);
-          },
-          error: (error) => {
-            console.error(error);
-          },
-          complete: () => console.info('Data has been sent.'),
+          }
         });
     } else if (ngForm.submitted && ngForm.form.valid && this.mailTest) {
       this.resetFormData(ngForm);
