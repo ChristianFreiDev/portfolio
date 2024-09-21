@@ -35,10 +35,11 @@ export class HomeComponent {
    */
   createObservers(): void {
     let options = {
-      rootMargin: '0px',
-      threshold: 0.4
+      rootMargin: '10% 0px 10% 0px',
+      threshold: 0.5
     }
     let callback = (entries: any[]) => {
+      console.log(entries);
       entries.forEach(entry => {
         if (entry.isIntersecting && entry.target.id) {
               const urlTree = this.router.createUrlTree([], { fragment: entry.target.id });

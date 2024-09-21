@@ -2,7 +2,8 @@ import { Component, ViewChild } from '@angular/core';
 import { IsActiveMatchOptions, Router, RouterLink, RouterLinkActive } from '@angular/router';
 import { NameComponent } from '../name/name.component';
 import { TranslateModule, TranslateService } from '@ngx-translate/core';
-import { CommonModule } from '@angular/common';
+import { CommonModule, Location } from '@angular/common';
+import { BehaviorSubject } from 'rxjs';
 
 @Component({
   selector: 'app-header',
@@ -19,10 +20,14 @@ export class HeaderComponent {
     paths: 'exact',
     fragment: 'exact'
   }
-
   activeLanguage: string = 'de';
+  activeFragmentFromLocation: BehaviorSubject<string> = new BehaviorSubject('#above-the-fold');
+  location: Location;
+  unsubLocationUrlChange!: () => void;
 
-  constructor(private router: Router, private translate: TranslateService) { }
+  constructor(private router: Router, private translate: TranslateService, location: Location) { 
+    this.location = location;
+  }
 
   /**
    * This function changes the active language.
@@ -38,6 +43,18 @@ export class HeaderComponent {
   @ViewChild('headerBurgerMenuSvgAnimation3') menuSvgAnimation3: any;
 
   isBurgerMenuOpen = false;
+  fragmentFromLocation: string = '#above-the-fold';
+
+  ngOnInit() {
+    this.unsubLocationUrlChange = this.location.onUrlChange((url, state) => {
+      this.activeFragmentFromLocation.next(this.location.path(true));
+    });
+  }
+
+  ngOnDestroy() {
+    this.unsubLocationUrlChange();
+    this.activeFragmentFromLocation.unsubscribe();
+  }
 
   /**
    * This function opens or closes the burger menu.
