@@ -68,6 +68,7 @@ $arrowAnimationEnd: 88px;
 }
 
 .socials-container {
+    z-index: 2;
     @include mixins.flex($ai: center);
     gap: 32px;
     position: absolute;
