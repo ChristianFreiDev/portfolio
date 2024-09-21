@@ -6,7 +6,7 @@
     width: 100%;
     max-width: 1920px;
     @include mixins.flex($jc: space-between);
-    z-index: 2;
+    z-index: 3;
     position: fixed;
     top: 0;
     padding: 37px $sideSpacingLarge;
@@ -65,7 +65,7 @@ a:hover {
     position: fixed;
     top: 40px;
     right: 24px;
-    z-index: 3;
+    z-index: 4;
     display: none;
     cursor: pointer;
     path {
@@ -81,7 +81,7 @@ a:hover {
 .header-burger-menu-overlay {
     display: none;
     background: hsla(220, 41%, 13%, 0.8);
-    z-index: 2;
+    z-index: 3;
     position: fixed;
     width: 100vw;
     height: 100vh;
