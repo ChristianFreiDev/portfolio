@@ -21,6 +21,7 @@ export class HomeComponent {
   router: Router;
   location: Location;
   observers: IntersectionObserver[];
+  areObserversActive: boolean = false;
 
   @ViewChildren('view') views!: QueryList<ElementRef>;
 
@@ -36,10 +37,9 @@ export class HomeComponent {
   createObservers(): void {
     let options = {
       rootMargin: '10% 0px 10% 0px',
-      threshold: 0.5
+      threshold: 0.64
     }
     let callback = (entries: any[]) => {
-      console.log(entries);
       entries.forEach(entry => {
         if (entry.isIntersecting && entry.target.id) {
               const urlTree = this.router.createUrlTree([], { fragment: entry.target.id });
