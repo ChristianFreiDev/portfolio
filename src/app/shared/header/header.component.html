@@ -1,18 +1,18 @@
 <div class="header-container">
   <app-name></app-name>
   <div class="header-links">
-    <a routerLink="/" fragment="about-me" routerLinkActive="active" [routerLinkActiveOptions]="routerLinkOptions" [ngClass]="activeFragmentFromLocation.value == '#about-me' ? 'active' : ''">{{ 'about-me' | translate }}</a>
-    <a routerLink="/" fragment="skills" routerLinkActive="active" [routerLinkActiveOptions]="routerLinkOptions" [ngClass]="activeFragmentFromLocation.value == '#skills' ? 'active' : ''">Skills</a>
-    <a routerLink="/" fragment="portfolio" routerLinkActive="active" [routerLinkActiveOptions]="routerLinkOptions" [ngClass]="activeFragmentFromLocation.value == '#portfolio' ? 'active' : ''">Portfolio</a>
+    <a class="btn-link" routerLink="/" fragment="about-me" routerLinkActive="active" [routerLinkActiveOptions]="routerLinkOptions" [ngClass]="activeFragmentFromLocation.value == '#about-me' ? 'active' : ''">{{ 'about-me' | translate }}</a>
+    <a class="btn-link" routerLink="/" fragment="skills" routerLinkActive="active" [routerLinkActiveOptions]="routerLinkOptions" [ngClass]="activeFragmentFromLocation.value == '#skills' ? 'active' : ''">Skills</a>
+    <a class="btn-link" routerLink="/" fragment="portfolio" routerLinkActive="active" [routerLinkActiveOptions]="routerLinkOptions" [ngClass]="activeFragmentFromLocation.value == '#portfolio' ? 'active' : ''">Portfolio</a>
     <button class="btn language-btn" (click)="changeLanguage('de')" [ngClass]="activeLanguage == 'de' ? 'active-language' : ''">DE</button>
     <button class="btn language-btn" (click)="changeLanguage('en')" [ngClass]="activeLanguage == 'en' ? 'active-language' : ''">EN</button>
   </div>
 </div>
 <div ngModel #headerBurgerMenuOverlay class="header-burger-menu-overlay">
   <div class="header-burger-menu-content">
-    <a routerLink="/" fragment="about-me" routerLinkActive="active" [routerLinkActiveOptions]="routerLinkOptions" (click)="closeBurgerMenu()" [routerLinkActiveOptions]="routerLinkOptions" [ngClass]="activeFragmentFromLocation.value == '#about-me' ? 'active' : ''">{{ 'about-me' | translate }}</a>
-    <a routerLink="/" fragment="skills" routerLinkActive="active" [routerLinkActiveOptions]="routerLinkOptions" (click)="closeBurgerMenu()" [ngClass]="activeFragmentFromLocation.value == '#skills' ? 'active' : ''">Skills</a>
-    <a routerLink="/" fragment="portfolio" routerLinkActive="active" [routerLinkActiveOptions]="routerLinkOptions" (click)="closeBurgerMenu()" [ngClass]="activeFragmentFromLocation.value == '#portfolio' ? 'active' : ''">Portfolio</a>
+    <a class="btn-link" routerLink="/" fragment="about-me" routerLinkActive="active" [routerLinkActiveOptions]="routerLinkOptions" (click)="closeBurgerMenu()" [routerLinkActiveOptions]="routerLinkOptions" [ngClass]="activeFragmentFromLocation.value == '#about-me' ? 'active' : ''">{{ 'about-me' | translate }}</a>
+    <a class="btn-link" routerLink="/" fragment="skills" routerLinkActive="active" [routerLinkActiveOptions]="routerLinkOptions" (click)="closeBurgerMenu()" [ngClass]="activeFragmentFromLocation.value == '#skills' ? 'active' : ''">Skills</a>
+    <a class="btn-link" routerLink="/" fragment="portfolio" routerLinkActive="active" [routerLinkActiveOptions]="routerLinkOptions" (click)="closeBurgerMenu()" [ngClass]="activeFragmentFromLocation.value == '#portfolio' ? 'active' : ''">Portfolio</a>
     <button class="btn language-btn" (click)="changeLanguage('de')" [ngClass]="activeLanguage == 'de' ? 'active-language' : ''">DE</button>
     <button class="btn language-btn" (click)="changeLanguage('en')" [ngClass]="activeLanguage == 'en' ? 'active-language' : ''">EN</button>
   </div>

@@ -42,7 +42,7 @@
                         }
                     </svg>
                     <input #checkbox="ngModel" class="checkbox" type="checkbox" [(ngModel)]="formData.checkbox" name="checkbox" required>
-                    <p>{{ 'contact-privacy-policy-message1' | translate }}<a class="privacy-policy-link" routerLink="privacy-policy">{{ 'contact-privacy-policy-message2' | translate }}</a>{{ 'contact-privacy-policy-message3' | translate }}</p>
+                    <p>{{ 'contact-privacy-policy-message1' | translate }}<a class="privacy-policy-link regular-link" routerLink="privacy-policy">{{ 'contact-privacy-policy-message2' | translate }}</a>{{ 'contact-privacy-policy-message3' | translate }}</p>
                 </div>
                 <button class="btn btn-primary" [disabled]="!contactForm.valid">{{ 'contact-send-message' | translate }}</button>
                 @if(formSent) {

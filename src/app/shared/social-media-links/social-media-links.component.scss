@@ -6,7 +6,13 @@
     gap: 32px;
 }
 
+.footer-social-links {
+    padding: 5px 0;
+    gap: 42px;
+}
+
 .social-link {
+    display: flex;
     transition: transform 100ms ease-out;
     &:hover {
         transform: scale(1.2);
