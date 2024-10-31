@@ -42,7 +42,6 @@ export class HomeComponent {
     let callback = (entries: any[]) => {
       entries.forEach(entry => {
         if (entry.isIntersecting && entry.target.id) {
-              console.log(entry.target.id);
               const urlTree = this.router.createUrlTree([], { fragment: entry.target.id });
               this.location.go(urlTree.toString());
         }
