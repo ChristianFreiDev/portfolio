@@ -8,6 +8,7 @@
 
 @media (prefers-reduced-motion) {
     .slide-in-from-left, .slide-in-from-right {
+        animation: none;
         animation: show 1s ease-in-out forwards;
     }
 }

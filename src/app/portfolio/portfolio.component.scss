@@ -36,8 +36,15 @@ hr {
 
 .projects {
     @include mixins.flex($jc: center, $dir: column);
+    gap: 80px;
     width: 100%;
 }
+
+@media (max-width: 1200px) {
+    .projects {
+        gap: 102px;
+    }
+} 
 
 @media (max-width: 1024px) {
     #portfolio {
