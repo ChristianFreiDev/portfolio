@@ -1,84 +1,104 @@
-@use './styles/mixins.scss';
-@import './styles/fonts.scss';
-@import './styles/colors.scss';
-@import './styles/buttons.scss';
+@use "./styles/mixins.scss";
+@import "./styles/fonts.scss";
+@import "./styles/colors.scss";
+@import "./styles/buttons.scss";
 
 * {
-    box-sizing: border-box;
-    margin: 0;
-    padding: 0;
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
 }
 
 html {
-    scroll-behavior: smooth;
+  scroll-behavior: smooth;
 }
 
 body {
-    overflow-x: hidden;
-    background: $backgroundColor;
-    font-family: 'Poppins', sans-serif;
-    color: $mainTextColor;
+  overflow-x: hidden;
+  background: $backgroundColor;
+  font-family: "Poppins", sans-serif;
+  color: $mainTextColor;
 }
 
-h1, h3 {
-    font-size: 90px;
-    line-height: 108px;
-    margin: 0;
+h1,
+h3 {
+  font-size: 90px;
+  line-height: 108px;
+  margin: 0;
 }
 
 h4 {
-    font-size: 32px;
-    line-height: 38.4px;
-    font-weight: 700;
+  font-size: 32px;
+  line-height: 38.4px;
+  font-weight: 700;
 }
 
-p, li {
-    font-size: 16px;
-    line-height: 20px;
+p,
+li {
+  font-size: 16px;
+  line-height: 20px;
 }
 
 hr {
-    border: 2px solid;
+  border: 2px solid;
 }
 
 .disable-scroll {
-    overflow: hidden;
+  overflow: hidden;
 }
 
 .email {
-    font-size: 16px;
-    line-height: 20px;
+  font-size: 16px;
+  line-height: 20px;
 }
 
 .regular-link {
-    color: $accentColor1;
-    text-decoration: none;
+  color: $accentColor1;
+  text-decoration: none;
+}
+
+::-webkit-scrollbar {
+  width: 10px;
+  height: 10px;
+}
+
+::-webkit-scrollbar-track {
+  border-radius: 5px;
+  background-color: $scrollbarColor1;
+}
+
+::-webkit-scrollbar-thumb {
+  background: $scrollbarColor2;
+  border-radius: 5px;
 }
 
 @media (max-width: 1440px) {
-    h1, h3 {
-        font-size: 44px;
-        line-height: 44px;
-    }
+  h1,
+  h3 {
+    font-size: 44px;
+    line-height: 44px;
+  }
 }
 
 @media (max-width: 360px) {
-    h1, h3 {
-        font-size: 32px;
-        line-height: 32px;
-    }
+  h1,
+  h3 {
+    font-size: 32px;
+    line-height: 32px;
+  }
 }
 
 @media (max-width: 328px) {
-    h1, h3 {
-        font-size: 28px;
-        line-height: 28px;
-    }
-    h4 {
-        font-size: 28px;
-        line-height: 33.6px;
-    }
-    p {
-        font-size: 14px;
-    }
+  h1,
+  h3 {
+    font-size: 28px;
+    line-height: 28px;
+  }
+  h4 {
+    font-size: 28px;
+    line-height: 33.6px;
+  }
+  p {
+    font-size: 14px;
+  }
 }
