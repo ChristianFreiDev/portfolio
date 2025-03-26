@@ -20,13 +20,6 @@ body {
   color: $mainTextColor;
 }
 
-#home {
-  background-image: url('assets/img/vector-shape-hero-page.webp');
-  background-repeat: no-repeat;
-  background-position: top calc(100vh - 550px) left;
-  background-size: calc(max(100%, 1440px)) 1079px;
-}
-
 h1,
 h3 {
   font-size: 90px;
