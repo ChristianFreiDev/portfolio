@@ -25,7 +25,7 @@ export class UseScrollAnimationDirective {
 
   intersectionObserver = new IntersectionObserver((entries, observer) => {
     entries.forEach(entry => {
-      if (entry.isIntersecting) {
+      if (entry.isIntersecting && !entry.target.classList.contains(this.scrollAnimationClass)) {
         this.addClass(entry);
       }
     });

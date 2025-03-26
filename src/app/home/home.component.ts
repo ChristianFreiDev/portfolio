@@ -1,18 +1,16 @@
-import { Component, ElementRef, QueryList, ViewChild, ViewChildren } from '@angular/core';
+import { Component, ElementRef, QueryList, ViewChildren } from '@angular/core';
 import { AboveTheFoldComponent } from '../above-the-fold/above-the-fold.component';
 import { AboutMeComponent } from '../about-me/about-me.component';
-import { HeaderComponent } from '../shared/header/header.component';
 import { SkillsComponent } from '../skills/skills.component';
 import { PortfolioComponent } from '../portfolio/portfolio.component';
-import { FooterComponent } from '../shared/footer/footer.component';
 import { ContactComponent } from '../contact/contact.component';
-import { Router } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { Location } from '@angular/common';
 
 @Component({
   selector: 'app-home',
   standalone: true,
-  imports: [HeaderComponent, AboveTheFoldComponent, AboutMeComponent, SkillsComponent, PortfolioComponent, ContactComponent, FooterComponent],
+  imports: [AboveTheFoldComponent, AboutMeComponent, SkillsComponent, PortfolioComponent, ContactComponent],
   templateUrl: './home.component.html',
   styleUrl: './home.component.scss'
 })
@@ -25,7 +23,7 @@ export class HomeComponent {
 
   @ViewChildren('view') views!: QueryList<ElementRef>;
 
-  constructor(router: Router, location: Location) {
+  constructor(router: Router, location: Location, private activatedRoute: ActivatedRoute) {
     this.router = router;
     this.location = location;
     this.observers = [];
@@ -43,7 +41,9 @@ export class HomeComponent {
       entries.forEach(entry => {
         if (entry.isIntersecting && entry.target.id) {
               const urlTree = this.router.createUrlTree([], { fragment: entry.target.id });
-              this.location.go(urlTree.toString());
+              if (entry.target.id !== this.activatedRoute.fragment) {
+                this.location.go(urlTree.toString());
+              }
         }
       })
     }
