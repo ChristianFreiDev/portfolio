@@ -1,13 +1,15 @@
 <div id="portfolio">
-  <div class="portfolio-top-container" appUseScrollAnimation scrollAnimationClass="slide-in-from-right">
-    <div class="portfolio-heading-container">
-      <hr class="portfolio-hr-before" />
-      <h3>Portfolio</h3>
-      <hr class="portfolio-hr-after" />
+  <div appUseScrollAnimation scrollAnimationClass="slide-in-from-right">
+    <div class="portfolio-top-container">
+      <div class="portfolio-heading-container">
+        <hr class="portfolio-hr-before" />
+        <h3>Portfolio</h3>
+        <hr class="portfolio-hr-after" />
+      </div>
+      <p class="portfolio-top-text">
+        {{ 'portfolio-subtitle' | translate }}
+      </p>
     </div>
-    <p class="portfolio-top-text">
-      {{ 'portfolio-subtitle' | translate }}
-    </p>
   </div>
   <div class="projects">
     <app-project

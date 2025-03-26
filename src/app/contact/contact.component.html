@@ -1,17 +1,22 @@
 <div id="contact">
-    <div class="contact-heading-container" appUseScrollAnimation scrollAnimationClass="slide-in-from-left">
-        <hr>
-        <h3>{{'contact-heading' | translate }}</h3>
+    <div appUseScrollAnimation scrollAnimationClass="slide-in-from-left">
+        <div class="contact-heading-container">
+            <hr>
+            <h3>{{'contact-heading' | translate }}</h3>
+        </div>
     </div>
     <div class="contact-content">
-        <div class="contact-text-container" appUseScrollAnimation scrollAnimationClass="slide-in-from-left">
-            <h4>{{ 'contact-subheading' | translate }}</h4>
-            <div class="contact-text">
-                <p>{{ 'contact-first-paragraph' | translate }}</p>
-                <p [innerHTML]="'contact-second-paragraph' | translate"></p>
+        <div appUseScrollAnimation scrollAnimationClass="slide-in-from-left">
+            <div class="contact-text-container">
+                <h4>{{ 'contact-subheading' | translate }}</h4>
+                <div class="contact-text">
+                    <p>{{ 'contact-first-paragraph' | translate }}</p>
+                    <p [innerHTML]="'contact-second-paragraph' | translate"></p>
+                </div>
             </div>
         </div>
-            <form #contactForm="ngForm" class="contact-form" (ngSubmit)="onSubmit(contactForm)" appUseScrollAnimation scrollAnimationClass="slide-in-from-right">
+        <div appUseScrollAnimation scrollAnimationClass="slide-in-from-right">
+            <form #contactForm="ngForm" class="contact-form" (ngSubmit)="onSubmit(contactForm)">
                 <div class="input-container">
                     <input #name="ngModel" [(ngModel)]="formData.name" [ngClass]="{'invalid-input': isInvalid(name), 'valid-input': name.valid}" (click)="formSent = false" name="name" type="text" placeholder="{{ 'contact-name-placeholder' | translate }}" required>
                     <app-validity-icon [model]="name" [isValidCallback]="isValid(name)" [isInvalidCallback]="isInvalid(name)"></app-validity-icon>
@@ -50,7 +55,8 @@
                         <p>{{ 'contact-form-sent' | translate }}</p>
                     </div>
                 }
-            </form>    
+            </form>
+        </div>    
     </div>
     <button class="arrow-svg-btn" routerLink="/">
         <svg width="39" height="39" viewBox="0 0 39 39" fill="none" xmlns="http://www.w3.org/2000/svg">

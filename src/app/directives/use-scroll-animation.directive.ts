@@ -17,15 +17,15 @@ export class UseScrollAnimationDirective {
   constructor(private elementRef: ElementRef) { }
 
   /**
-   * This function adds the animation class to the target of an IntersectionObserverEntry.
+   * This function adds the animation class to the first element child of the target of an IntersectionObserverEntry.
    */
   addClass(entry: IntersectionObserverEntry): void {
-    entry.target.classList.add(this.scrollAnimationClass);
+    entry.target.firstElementChild?.classList.add(this.scrollAnimationClass);
   }
 
   intersectionObserver = new IntersectionObserver((entries, observer) => {
     entries.forEach(entry => {
-      if (entry.isIntersecting && !entry.target.classList.contains(this.scrollAnimationClass)) {
+      if (entry.isIntersecting && !entry.target.firstElementChild?.classList.contains(this.scrollAnimationClass)) {
         this.addClass(entry);
       }
     });

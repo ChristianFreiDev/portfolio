@@ -1,12 +1,14 @@
 <section>
-    <div id="legal-notice" appUseScrollAnimation scrollAnimationClass="slide-in-from-left">
-        <h2>{{ 'legal-notice' | translate }}</h2>
-        <p>Christian Frei</p>
-        <p [innerHTML]="'legal-notice-address' | translate"></p>
-        <h3>{{ 'legal-notice-second-heading' | translate }}</h3>
-        <div>
-            <p>{{ 'phone' | translate }}</p>
-            <p [innerHTML]="'legal-notice-email' | translate"></p>
+    <div appUseScrollAnimation scrollAnimationClass="slide-in-from-left">
+        <div id="legal-notice">
+            <h2>{{ 'legal-notice' | translate }}</h2>
+            <p>Christian Frei</p>
+            <p [innerHTML]="'legal-notice-address' | translate"></p>
+            <h3>{{ 'legal-notice-second-heading' | translate }}</h3>
+            <div>
+                <p>{{ 'phone' | translate }}</p>
+                <p [innerHTML]="'legal-notice-email' | translate"></p>
+            </div>
         </div>
     </div>
 </section>

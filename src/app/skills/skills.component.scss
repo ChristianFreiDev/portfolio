@@ -19,8 +19,11 @@ p {
     column-gap: 88px;
 }
 
-.skill-items-container {
+.skill-items-container-outer {
     grid-area: items;
+}
+
+.skill-items-container {
     @include mixins.flex();
     flex-wrap: wrap;
     gap: 88px;
@@ -45,8 +48,11 @@ p {
     }
 }
 
-.skills-text-top-container {
+.skills-text-top-container-outer {
     grid-area: text-top;
+}
+
+.skills-text-top-container {
     @include mixins.flex($ai: flex-end, $dir: column);
     text-align: right;
     gap: 40px;
@@ -57,9 +63,12 @@ p {
     padding-right: $sideSpacingLarge;
 }
 
+.skills-text-bottom-container-outer {
+    grid-area: text-bottom;
+}
+
 .skills-text-bottom-container {
     padding-right: $sideSpacingLarge;
-    grid-area: text-bottom;
     @include mixins.flex($ai: flex-end, $dir: column);
     text-align: right;
     gap: 24px;

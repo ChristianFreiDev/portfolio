@@ -1,14 +1,16 @@
-<div class="project" [ngClass]="direction == 'row' ? 'left' : 'right'" appUseScrollAnimation [scrollAnimationClass]="direction == 'row' ? 'slide-in-from-left' : 'slide-in-from-right'">
-    <img [src]="imagePath" [alt]="alt">
-    <div class="project-content">
-        <div class="project-content-text">
-            <h4>{{ title }}</h4>
-            <p class="stack">{{ stack }}</p>
-            <p class="description">{{ description }}</p>
-        </div>
-        <div class="project-btn-container" [ngClass]="direction == 'row' ? 'flex-start' : 'flex-end'">
-            <button class="btn btn-secondary" (click)="openUrl(liveTestUrl)">{{ 'project-live-test' | translate }}</button>
-            <button class="btn btn-tertiary" (click)="openUrl(gitHubUrl)">GitHub</button>
+<div appUseScrollAnimation [scrollAnimationClass]="direction == 'row' ? 'slide-in-from-left' : 'slide-in-from-right'">
+    <div class="project" [ngClass]="direction == 'row' ? 'left' : 'right'">
+        <img [src]="imagePath" [alt]="alt">
+        <div class="project-content">
+            <div class="project-content-text">
+                <h4>{{ title }}</h4>
+                <p class="stack">{{ stack }}</p>
+                <p class="description">{{ description }}</p>
+            </div>
+            <div class="project-btn-container" [ngClass]="direction == 'row' ? 'flex-start' : 'flex-end'">
+                <button class="btn btn-secondary" (click)="openUrl(liveTestUrl)">{{ 'project-live-test' | translate }}</button>
+                <button class="btn btn-tertiary" (click)="openUrl(gitHubUrl)">GitHub</button>
+            </div>
         </div>
     </div>
 </div>
