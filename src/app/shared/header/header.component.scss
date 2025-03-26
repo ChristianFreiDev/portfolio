@@ -28,8 +28,10 @@ a:-webkit-any-link {
     text-decoration: none;
 }
 
-a:hover {
-    color: $accentColor2;
+@media (hover: hover) {
+    a:hover {
+        color: $accentColor2;
+    }
 }
 
 .active {

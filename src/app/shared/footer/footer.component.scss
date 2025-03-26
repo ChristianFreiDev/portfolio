@@ -31,14 +31,16 @@ a {
     font-size: 16px;
     line-height: 19.2px;
     position: relative;
-    &:hover:before {
-        position: absolute;
-        left: 0;
-        top: 22px;
-        height: 0;
-        width: 58px;
-        content: '';
-        border-top: 3px solid $accentColor2;
+    @media (hover: hover) {
+        &:hover:before {
+            position: absolute;
+            left: 0;
+            top: 22px;
+            height: 0;
+            width: 58px;
+            content: '';
+            border-top: 3px solid $accentColor2;
+        }
     }
 }
 

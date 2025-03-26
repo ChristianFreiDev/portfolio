@@ -61,8 +61,10 @@ button {
 
 button:disabled {
     background-color: hsla(0, 0%, 71%, 1);
-    &:hover {
-        padding: 15px 30px;
+    @media (hover: hover) {
+        &:hover {
+            padding: 15px 30px;
+        }
     }
 }
 
@@ -144,12 +146,14 @@ input[type='checkbox'] {
     rect {
         stroke: white;
     }
-    &:hover {
-        path {
-            fill: $accentColor2;
-        }
-        rect {
-            stroke: $accentColor2;
+    @media (hover: hover) {
+        &:hover {
+            path {
+                fill: $accentColor2;
+            }
+            rect {
+                stroke: $accentColor2;
+            }
         }
     }
 }

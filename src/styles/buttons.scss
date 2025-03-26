@@ -19,24 +19,30 @@
 
 .btn-primary {
     background: $accentColor2;
-    &:hover {
-        background: $accentColor1;
-        padding: 20px 40px;
+    @media (hover: hover) {
+        &:hover {
+            background: $accentColor1;
+            padding: 20px 40px;
+        }
     }
 }
 
 .btn-secondary {
     background: $accentColor1;
-    &:hover {
-        background: $accentColor2;
+    @media (hover: hover) {
+        &:hover {
+            background: $accentColor2;
+        }
     }
 }
 
 .btn-tertiary {
     border: 1px solid $accentColor2;
     background: transparent;
-    &:hover {
-        background: $accentColor2;
+    @media (hover: hover) {
+        &:hover {
+            background: $accentColor2;
+        }
     }
 }
 
