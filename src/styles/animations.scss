@@ -16,22 +16,22 @@
 @keyframes leftToRight {
     0% {
         opacity: 0;
-        transform: translateX(calc(-100% - 136px));
+        transform: translate3d(calc(-100% - 136px), 0, 0);
     }
     100% {
         opacity: 1;
-        transform: translateX(0%);
+        transform: translate3d(0%, 0, 0);
     }
 }
 
 @keyframes rightToLeft {
     0% {
         opacity: 0;
-        transform: translateX(calc(100% + 136px));
+        transform: translate3d(calc(100% + 136px), 0, 0);
     }
     100% {
         opacity: 1;
-        transform: translateX(0%);
+        transform: translate3d(0%, 0, 0);
     }
 }
 
