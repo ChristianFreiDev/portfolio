@@ -4,6 +4,7 @@
 section {
     padding: 128px 24px 0;
     min-height: calc(100vh - 295px);
+    min-height: calc(100svh - 295px);
     @include mixins.flex($jc: center, $ai: center, $dir: column);
 }
 

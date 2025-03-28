@@ -3,8 +3,8 @@
 @import '../../styles/spacing.scss';
 
 #above-the-fold {
-    height: 100dvh;
     height: 100vh;
+    height: 100svh;
     width: 100%;
     position: relative;
 }
@@ -132,6 +132,7 @@ button {
 .portrait-container {
     position: absolute;
     height: calc(100vh - 218px);
+    height: calc(100svh - 218px);
     min-height: 128px;
     max-height: 1366px;
     left: 0;
@@ -201,7 +202,6 @@ button {
     }
 }
 
-$smallPortraitHeight: calc(100vh - 360px);
 @media (max-width: 768px) {
     .above-the-fold-main-container {
         margin-right: 0;
@@ -233,7 +233,8 @@ $smallPortraitHeight: calc(100vh - 360px);
 @media (max-width: 768px) and (orientation: portrait) {
     .portrait-container {
         bottom: 250px;
-        height: $smallPortraitHeight;
+        height: calc(100vh - 360px);
+        height: calc(100svh - 360px);
     }
 }
 

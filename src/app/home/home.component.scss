@@ -5,6 +5,7 @@
     background-image: url('../../assets/img/vector-shape-hero-page.webp');
     background-repeat: no-repeat;
     background-position: top calc(100vh - 550px) left;
+    background-position: top calc(100svh - 550px) left;
     background-size: calc(max(100%, 1440px)) 1079px;
 }
 
@@ -71,8 +72,8 @@ section {
 }
 
 #orientation-message {
-    height: 100svh;
     height: 100vh;
+    height: 100svh;
     width: 100%;
     display: none;
     padding: 24px;
@@ -99,6 +100,7 @@ section {
 @media (max-width: 768px) and (orientation: portrait) {
     #home {
         background-position: top calc(100vh - 686px) left;
+        background-position: top calc(100svh - 686px) left;
     }
     .shape4 {
         width: 38vw;
@@ -108,6 +110,7 @@ section {
 @media (max-height: 560px) and (orientation: portrait) {
     #home {
         background-position: top calc(100vh - 644px) left;
+        background-position: top calc(100svh - 644px) left;
     }
 }
 
@@ -123,17 +126,20 @@ section {
 @media (min-height: 845px) and (max-width: 768px) and (orientation: portrait) {
     #home {
         background-position: top calc(100vh - 744px) left;
+        background-position: top calc(100svh - 744px) left;
     }
 }
 
 @media (min-height: 1024px) and (max-width: 560px) and (orientation: portrait) {
     #home {
         background-position: top calc(100vh - 794px) left;
+        background-position: top calc(100svh - 794px) left;
     }
 }
 
 @media (min-height: 1200px) and (max-width: 768px) and (orientation: portrait) {
     #home {
         background-position: top calc(100vh - 894px) left;
+        background-position: top calc(100svh - 894px) left;
     }
 }
