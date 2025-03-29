@@ -5,6 +5,7 @@
 #above-the-fold {
     height: 100vh;
     height: 100svh;
+    height: var(--vh100);
     width: 100%;
     position: relative;
 }
@@ -133,6 +134,7 @@ button {
     position: absolute;
     height: calc(100vh - 218px);
     height: calc(100svh - 218px);
+    height: calc(var(--vh100) - 218px);
     min-height: 128px;
     max-height: 1366px;
     left: 0;
@@ -235,6 +237,7 @@ button {
         bottom: 250px;
         height: calc(100vh - 360px);
         height: calc(100svh - 360px);
+        height: calc(var(--vh100) - 360px);
     }
 }
 
