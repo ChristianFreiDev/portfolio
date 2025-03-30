@@ -29,7 +29,7 @@ export class AppComponent {
 
   setHeight(innerHeight: number) {
     if (this.isIOS) {
-      document.documentElement.style.setProperty('--vh100', `${innerHeight}px`); 
+      document.documentElement.style.setProperty('--vh100', `${innerHeight - 49}px`); 
     }
   }
 
