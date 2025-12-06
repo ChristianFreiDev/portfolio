@@ -32,9 +32,9 @@ export class AppComponent {
     }
   }
 
-  @HostListener('window:resize', ['$event.target.screen.height'])
-  onResize(height: number) {
-    this.setHeight(height);
+  @HostListener('window:resize', ['$event'])
+  onResize(event: Event) {
+    this.setHeight((event.target as Window).screen.height);
   }
 
 }
