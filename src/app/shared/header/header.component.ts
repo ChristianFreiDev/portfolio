@@ -6,11 +6,10 @@ import { CommonModule, Location } from '@angular/common';
 import { BehaviorSubject } from 'rxjs';
 
 @Component({
-  selector: 'app-header',
-  standalone: true,
-  imports: [RouterLink, RouterLinkActive, NameComponent, TranslateModule, CommonModule],
-  templateUrl: './header.component.html',
-  styleUrl: './header.component.scss'
+    selector: 'app-header',
+    imports: [RouterLink, RouterLinkActive, NameComponent, TranslateModule, CommonModule],
+    templateUrl: './header.component.html',
+    styleUrl: './header.component.scss'
 })
 export class HeaderComponent {
 

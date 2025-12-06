@@ -5,11 +5,10 @@ import { Subscription } from 'rxjs';
 import { Router } from '@angular/router';
 
 @Component({
-  selector: 'app-privacy-policy',
-  standalone: true,
-  imports: [TranslateModule, UseScrollAnimationDirective],
-  templateUrl: './privacy-policy.component.html',
-  styleUrl: './privacy-policy.component.scss'
+    selector: 'app-privacy-policy',
+    imports: [TranslateModule, UseScrollAnimationDirective],
+    templateUrl: './privacy-policy.component.html',
+    styleUrl: './privacy-policy.component.scss'
 })
 export class PrivacyPolicyComponent {
   currentLanguage: string = this.translate.currentLang;

@@ -4,11 +4,10 @@ import { UseScrollAnimationDirective } from '../directives/use-scroll-animation.
 import { TranslateModule } from '@ngx-translate/core';
 
 @Component({
-  selector: 'app-skills',
-  standalone: true,
-  imports: [RouterLink, UseScrollAnimationDirective, TranslateModule],
-  templateUrl: './skills.component.html',
-  styleUrl: './skills.component.scss'
+    selector: 'app-skills',
+    imports: [RouterLink, UseScrollAnimationDirective, TranslateModule],
+    templateUrl: './skills.component.html',
+    styleUrl: './skills.component.scss'
 })
 export class SkillsComponent {
   constructor() { }

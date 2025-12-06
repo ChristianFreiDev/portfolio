@@ -4,11 +4,10 @@ import { UseScrollAnimationDirective } from '../directives/use-scroll-animation.
 import { TranslateModule } from '@ngx-translate/core';
 
 @Component({
-  selector: 'app-portfolio',
-  standalone: true,
-  imports: [ProjectComponent, UseScrollAnimationDirective, TranslateModule],
-  templateUrl: './portfolio.component.html',
-  styleUrl: './portfolio.component.scss'
+    selector: 'app-portfolio',
+    imports: [ProjectComponent, UseScrollAnimationDirective, TranslateModule],
+    templateUrl: './portfolio.component.html',
+    styleUrl: './portfolio.component.scss'
 })
 export class PortfolioComponent {
 

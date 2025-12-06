@@ -2,11 +2,10 @@ import { Component, Input } from '@angular/core';
 import { NgModel } from '@angular/forms';
 
 @Component({
-  selector: 'app-validity-icon',
-  standalone: true,
-  imports: [],
-  templateUrl: './validity-icon.component.html',
-  styleUrl: './validity-icon.component.scss'
+    selector: 'app-validity-icon',
+    imports: [],
+    templateUrl: './validity-icon.component.html',
+    styleUrl: './validity-icon.component.scss'
 })
 export class ValidityIconComponent {
   @Input() model!: NgModel;

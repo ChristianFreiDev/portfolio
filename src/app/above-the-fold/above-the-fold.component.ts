@@ -6,11 +6,10 @@ import { CommonModule } from '@angular/common';
 import { Subscription } from 'rxjs';
 
 @Component({
-  selector: 'app-above-the-fold',
-  standalone: true,
-  imports: [RouterLink, SocialMediaLinksComponent, TranslateModule, CommonModule],
-  templateUrl: './above-the-fold.component.html',
-  styleUrl: './above-the-fold.component.scss'
+    selector: 'app-above-the-fold',
+    imports: [RouterLink, SocialMediaLinksComponent, TranslateModule, CommonModule],
+    templateUrl: './above-the-fold.component.html',
+    styleUrl: './above-the-fold.component.scss'
 })
 export class AboveTheFoldComponent {
 

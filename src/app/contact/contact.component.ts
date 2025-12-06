@@ -8,11 +8,10 @@ import { HttpClient } from '@angular/common/http';
 import { Router, RouterLink } from '@angular/router';
 
 @Component({
-  selector: 'app-contact',
-  standalone: true,
-  imports: [FormsModule, UseScrollAnimationDirective, TranslateModule, CommonModule, ValidityIconComponent, RouterLink],
-  templateUrl: './contact.component.html',
-  styleUrl: './contact.component.scss'
+    selector: 'app-contact',
+    imports: [FormsModule, UseScrollAnimationDirective, TranslateModule, CommonModule, ValidityIconComponent, RouterLink],
+    templateUrl: './contact.component.html',
+    styleUrl: './contact.component.scss'
 })
 export class ContactComponent {
 
