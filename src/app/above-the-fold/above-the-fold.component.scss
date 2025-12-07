@@ -1,55 +1,55 @@
-@use '../../styles/mixins.scss';
-@import '../../styles/colors.scss';
-@import '../../styles/spacing.scss';
+@use "../../styles/mixins.scss";
+@use "../../styles/colors.scss";
+@use "../../styles/spacing.scss";
 
 #above-the-fold {
-    height: 100vh;
-    height: 100svh;
-    height: var(--vh100);
-    width: 100%;
-    position: relative;
+  height: 100vh;
+  height: 100svh;
+  height: var(--vh100);
+  width: 100%;
+  position: relative;
 }
 
 .above-the-fold-main-container {
-    position: absolute;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    height: 80%;
-    margin-right: $sideSpacingLarge;
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  height: 80%;
+  margin-right: spacing.$sideSpacingLarge;
 }
 
 .above-the-fold-inner-container {
-    z-index: 1;
-    background: transparent;
-    position: absolute;
-    right: 0;
-    @include mixins.flex($ai: center, $dir: column);
+  z-index: 1;
+  background: transparent;
+  position: absolute;
+  right: 0;
+  @include mixins.flex($ai: center, $dir: column);
 }
 
 .main-heading-container {
-    background: transparent;
-    @include mixins.flex($jc: center, $ai: center);
-    gap: 35px;
+  background: transparent;
+  @include mixins.flex($jc: center, $ai: center);
+  gap: 35px;
 }
 
 h2 {
-    font-size: 58px;
-    line-height: 69.6px;
-    font-weight: 400;
+  font-size: 58px;
+  line-height: 69.6px;
+  font-weight: 400;
 }
 
 .i-am {
-    transform: rotate(270deg);
-    font-size: 64px;
-    line-height: 76.8px;
-    margin-left: -45px;
-    margin-right: -45px;
-    margin-bottom: -5px;
+  transform: rotate(270deg);
+  font-size: 64px;
+  line-height: 76.8px;
+  margin-left: -45px;
+  margin-right: -45px;
+  margin-bottom: -5px;
 }
 
 .small-i-am-font-size {
-    font-size: 44px;
+  font-size: 44px;
 }
 
 $arrowAnimationStart: -110px;
@@ -57,260 +57,261 @@ $arrowAnimationMiddle: 104px;
 $arrowAnimationEnd: 88px;
 
 .scroll-down-container {
-    position: absolute;
-    right: -72px;
-    bottom: $arrowAnimationEnd;
-    @include mixins.flex($jc: center, $ai: center);
-    gap: 7px;
-    transform: rotate(90deg);
-    font-size: 23px;
-    line-height: 27.6px;
-    animation: 1.2s ease-in-out slideIn, 0.8s ease-in-out 1.2s 5 alternate forwards moveUpAndDown;
+  position: absolute;
+  right: -72px;
+  bottom: $arrowAnimationEnd;
+  @include mixins.flex($jc: center, $ai: center);
+  gap: 7px;
+  transform: rotate(90deg);
+  font-size: 23px;
+  line-height: 27.6px;
+  animation: 1.2s ease-in-out slideIn,
+    0.8s ease-in-out 1.2s 5 alternate forwards moveUpAndDown;
 }
 
 .socials-container {
-    z-index: 2;
-    @include mixins.flex($ai: center);
-    gap: 32px;
-    position: absolute;
-    left: 0;
-    bottom: 16px;
+  z-index: 2;
+  @include mixins.flex($ai: center);
+  gap: 32px;
+  position: absolute;
+  left: 0;
+  bottom: 16px;
 }
 
 .socials-hr {
-    width: $sideSpacingLarge;
-    height: 0;
-    border-color: $accentColor1;
-    border-top-right-radius: 2px;
-    border-bottom-right-radius: 2px;
-    border-top-left-radius: 2px;
-    border-bottom-left-radius: 2px;
+  width: spacing.$sideSpacingLarge;
+  height: 0;
+  border-color: colors.$accentColor1;
+  border-top-right-radius: 2px;
+  border-bottom-right-radius: 2px;
+  border-top-left-radius: 2px;
+  border-bottom-left-radius: 2px;
 }
 
 @keyframes slideIn {
-    0% {
-        bottom: $arrowAnimationStart;
-    }
-    100% {
-        bottom: $arrowAnimationMiddle;
-    }
+  0% {
+    bottom: $arrowAnimationStart;
+  }
+  100% {
+    bottom: $arrowAnimationMiddle;
+  }
 }
 
 @keyframes moveUpAndDown {
-    0% {
-        bottom: $arrowAnimationMiddle;
-    }
-    100% {
-        bottom: $arrowAnimationEnd;
-    }
+  0% {
+    bottom: $arrowAnimationMiddle;
+  }
+  100% {
+    bottom: $arrowAnimationEnd;
+  }
 }
 
 .arrow {
-    transform: rotate(270deg);
+  transform: rotate(270deg);
 }
 
 button {
-    margin-top: 44px;
+  margin-top: 44px;
 }
 
 .e-mail {
-    font-size: 23px;
-    line-height: 27.6px;
-    color: $mainTextColor;
-    text-decoration: none;
+  font-size: 23px;
+  line-height: 27.6px;
+  color: colors.$mainTextColor;
+  text-decoration: none;
 }
 
 .portrait {
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    height: 100%;
-    max-width: 90%;
-    object-fit: contain;
-    object-position: bottom;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  height: 100%;
+  max-width: 90%;
+  object-fit: contain;
+  object-position: bottom;
 }
 
 .portrait-container {
-    position: absolute;
-    height: calc(100vh - 218px);
-    height: calc(100svh - 218px);
-    height: calc(var(--vh100) - 218px);
-    min-height: 128px;
-    max-height: 1366px;
-    left: 0;
-    bottom: 100px;
-    z-index: -2;
-    width: 100%;
-    margin-left: 48px;
+  position: absolute;
+  height: calc(100vh - 218px);
+  height: calc(100svh - 218px);
+  height: calc(var(--vh100) - 218px);
+  min-height: 128px;
+  max-height: 1366px;
+  left: 0;
+  bottom: 100px;
+  z-index: -2;
+  width: 100%;
+  margin-left: 48px;
 }
 
 .portrait-shadow-svg {
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    transform: translate(-3.5%, 12%);
-    max-height: 100%;
-    max-width: 90%;
-    z-index: -3;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  transform: translate(-3.5%, 12%);
+  max-height: 100%;
+  max-width: 90%;
+  z-index: -3;
 }
 
 .accent-color1-shadow {
-    fill: $accentColor1;
+  fill: colors.$accentColor1;
 }
 
 .accent-color2-shadow {
-    fill: $accentColor2;
+  fill: colors.$accentColor2;
 }
 
 @media (max-width: 1440px) {
-    h2 {
-        font-size: 28px;
-        line-height: 33.6px;
-    }
-    .main-heading-container {
-        gap: 12px;
-    }
-    .i-am {
-        font-size: 32px;
-        line-height: 32px;
-        margin-left: -22.5px;
-        margin-right: -22.5px;
-        margin-bottom: 0;
-    }
-    .small-i-am-font-size {
-        font-size: 20px;
-    }
-    button {
-        margin-top: 32px;
-    }
-    .above-the-fold-main-container {
-        margin-right: $sideSpacingMedium;
-    }
-    .socials-hr {
-        width: $sideSpacingMedium;
-    }
+  h2 {
+    font-size: 28px;
+    line-height: 33.6px;
+  }
+  .main-heading-container {
+    gap: 12px;
+  }
+  .i-am {
+    font-size: 32px;
+    line-height: 32px;
+    margin-left: -22.5px;
+    margin-right: -22.5px;
+    margin-bottom: 0;
+  }
+  .small-i-am-font-size {
+    font-size: 20px;
+  }
+  button {
+    margin-top: 32px;
+  }
+  .above-the-fold-main-container {
+    margin-right: spacing.$sideSpacingMedium;
+  }
+  .socials-hr {
+    width: spacing.$sideSpacingMedium;
+  }
 }
 
 @media (max-width: 1024px) {
-    .above-the-fold-main-container {
-        margin-right: 24px; 
-        height: 239px;
-    }
-    .scroll-down-container {
-        display: none;
-    }
-    .e-mail {
-        display: none;
-    }
+  .above-the-fold-main-container {
+    margin-right: 24px;
+    height: 239px;
+  }
+  .scroll-down-container {
+    display: none;
+  }
+  .e-mail {
+    display: none;
+  }
 }
 
 @media (max-width: 768px) {
-    .above-the-fold-main-container {
-        margin-right: 0;
-        @include mixins.flex($jc: center);
-    }
-    .above-the-fold-inner-container {
-        position: static;
-    }
-    .portrait-container {
-        margin-left: 0;
-        @include mixins.flex($jc: center);
-    }
-    .portrait {
-        position: static;
-        max-width: 100%;
-    }
-    .portrait-shadow-svg {
-        width: 100%;
-        transform: unset;
-    }
+  .above-the-fold-main-container {
+    margin-right: 0;
+    @include mixins.flex($jc: center);
+  }
+  .above-the-fold-inner-container {
+    position: static;
+  }
+  .portrait-container {
+    margin-left: 0;
+    @include mixins.flex($jc: center);
+  }
+  .portrait {
+    position: static;
+    max-width: 100%;
+  }
+  .portrait-shadow-svg {
+    width: 100%;
+    transform: unset;
+  }
 }
 
 @media (max-width: 768px) {
-    .socials-container {
-        gap: 16px;
-    }
+  .socials-container {
+    gap: 16px;
+  }
 }
 
 @media (max-width: 768px) and (orientation: portrait) {
-    .portrait-container {
-        bottom: 250px;
-        height: calc(100vh - 360px);
-        height: calc(100svh - 360px);
-        height: calc(var(--vh100) - 360px);
-    }
+  .portrait-container {
+    bottom: 250px;
+    height: calc(100vh - 360px);
+    height: calc(100svh - 360px);
+    height: calc(var(--vh100) - 360px);
+  }
 }
 
 @media (max-width: 768px) and (orientation: landscape) {
-    h1 {
-        text-shadow: 0px 0px 4px black;
-    }
-    .above-the-fold-main-container {
-        height: 208px;
-    }
-    button {
-        margin-top: 12px;
-    }
+  h1 {
+    text-shadow: 0px 0px 4px black;
+  }
+  .above-the-fold-main-container {
+    height: 208px;
+  }
+  button {
+    margin-top: 12px;
+  }
 }
 
 @media (max-width: 360px) {
-    h2 {
-        font-size: 20px;
-        line-height: 24px;
-    }
-    .main-heading-container {
-        gap: 8px;
-    }
-    .i-am {
-        font-size: 24px;
-        line-height: 24px;
-        margin-left: -18px;
-        margin-right: -18px;
-        margin-bottom: 0;
-    }
-    .small-i-am-font-size {
-        font-size: 15px;
-    }
-    button {
-        margin-top: 32px;
-    }
+  h2 {
+    font-size: 20px;
+    line-height: 24px;
+  }
+  .main-heading-container {
+    gap: 8px;
+  }
+  .i-am {
+    font-size: 24px;
+    line-height: 24px;
+    margin-left: -18px;
+    margin-right: -18px;
+    margin-bottom: 0;
+  }
+  .small-i-am-font-size {
+    font-size: 15px;
+  }
+  button {
+    margin-top: 32px;
+  }
 }
 
 @media (max-height: 560px) and (orientation: portrait) {
-    button {
-        margin-top: 12px;
-    }
-    .portrait-container {
-        bottom: 210px;
-    }
-    .above-the-fold-main-container {
-        height: 208px;
-    }
+  button {
+    margin-top: 12px;
+  }
+  .portrait-container {
+    bottom: 210px;
+  }
+  .above-the-fold-main-container {
+    height: 208px;
+  }
 }
 
 @media (min-height: 845px) and (max-width: 768px) and (orientation: portrait) {
-    .portrait-container {
-        bottom: 300px;
-    }
-    .above-the-fold-main-container {
-        height: 298px;
-    }
+  .portrait-container {
+    bottom: 300px;
+  }
+  .above-the-fold-main-container {
+    height: 298px;
+  }
 }
 
 @media (min-height: 1024px) and (max-width: 560px) and (orientation: portrait) {
-    .portrait-container {
-        bottom: 350px;
-    }
-    .above-the-fold-main-container {
-        height: 348px;
-    }
+  .portrait-container {
+    bottom: 350px;
+  }
+  .above-the-fold-main-container {
+    height: 348px;
+  }
 }
 
 @media (min-height: 1200px) and (max-width: 768px) and (orientation: portrait) {
-    .portrait-container {
-        bottom: 450px;
-    }
-    .above-the-fold-main-container {
-        height: 448px;
-    }
+  .portrait-container {
+    bottom: 450px;
+  }
+  .above-the-fold-main-container {
+    height: 448px;
+  }
 }

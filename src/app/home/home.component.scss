@@ -1,152 +1,153 @@
-@use '../../styles/mixins.scss';
-@import '../../styles/colors.scss';
+@use "../../styles/mixins.scss";
+@use "../../styles/colors.scss";
 
 #home {
-    background-image: url('../../assets/img/vector-shape-hero-page.webp');
-    background-repeat: no-repeat;
-    background-position: top calc(100vh - 550px) left;
-    background-position: top calc(100svh - 550px) left;
-    background-position: top calc(var(--vh100) - 550px) left;
-    background-size: calc(max(100%, 1440px)) 1079px;
+  background-image: url("../../assets/img/vector-shape-hero-page.webp");
+  background-repeat: no-repeat;
+  background-position: top calc(100vh - 550px) left;
+  background-position: top calc(100svh - 550px) left;
+  background-position: top calc(var(--vh100) - 550px) left;
+  background-size: calc(max(100%, 1440px)) 1079px;
 }
 
 section {
-    margin: auto;
-    max-width: 1920px;
+  margin: auto;
+  max-width: 1920px;
 }
 
 .home-shape-svg {
-    position: absolute;
-    z-index: 0;
+  position: absolute;
+  z-index: 0;
 }
 
 .shape1 {
-    margin-top: -128px;
+  margin-top: -128px;
 }
 
 .shape2 {
-    z-index: -1;
-    margin-top: -256px;
+  z-index: -1;
+  margin-top: -256px;
 }
 
-.shape1, .shape2 {
-    width: 18.75vw;
+.shape1,
+.shape2 {
+  width: 18.75vw;
 }
 
 .shape3 {
-    width: 33.33vw;
+  width: 33.33vw;
 }
 
 .shape4 {
-    width: 16.66vw;
+  width: 16.66vw;
 }
 
 .shape5-container {
-    overflow: hidden;
+  overflow: hidden;
 }
 
 .shape5 {
-    z-index: -2;
-    margin-top: 400px;
-    width: 39.37vw;
-    overflow: hidden;
+  z-index: -2;
+  margin-top: 400px;
+  width: 39.37vw;
+  overflow: hidden;
 }
 
 .accent-color1-shape {
-    path {
-        fill: $accentColor1;
-    }
+  path {
+    fill: colors.$accentColor1;
+  }
 }
 
 .accent-color2-shape {
-    path {
-        fill: $accentColor2;
-    }
+  path {
+    fill: colors.$accentColor2;
+  }
 }
 
 .left {
-    left: 0;
+  left: 0;
 }
 
 .right {
-    right: 0;
+  right: 0;
 }
 
 #orientation-message {
-    height: 100vh;
-    height: 100svh;
-    height: var(--vh100);
-    width: 100%;
-    display: none;
-    padding: 24px;
+  height: 100vh;
+  height: 100svh;
+  height: var(--vh100);
+  width: 100%;
+  display: none;
+  padding: 24px;
 }
 
 @media (max-width: 1200px) {
-    .shape5 {
-        margin-top: 512px;
-    }
+  .shape5 {
+    margin-top: 512px;
+  }
 }
 
 @media (max-width: 1024px) {
-    .shape1 {
-        width: 46.15vw;
-    }
-    .shape2 {
-        width: 29.74vw;
-    }
-    .shape4 {
-        width: 37.97vw;
-    }
+  .shape1 {
+    width: 46.15vw;
+  }
+  .shape2 {
+    width: 29.74vw;
+  }
+  .shape4 {
+    width: 37.97vw;
+  }
 }
 
 @media (max-width: 768px) and (orientation: portrait) {
-    #home {
-        background-position: top calc(100vh - 686px) left;
-        background-position: top calc(100svh - 686px) left;
-        background-position: top calc(var(--vh100) - 686px) left;
-    }
-    .shape4 {
-        width: 38vw;
-    }
+  #home {
+    background-position: top calc(100vh - 686px) left;
+    background-position: top calc(100svh - 686px) left;
+    background-position: top calc(var(--vh100) - 686px) left;
+  }
+  .shape4 {
+    width: 38vw;
+  }
 }
 
 @media (max-height: 560px) and (orientation: portrait) {
-    #home {
-        background-position: top calc(100vh - 644px) left;
-        background-position: top calc(100svh - 644px) left;
-        background-position: top calc(var(--vh100) - 644px) left;
-    }
+  #home {
+    background-position: top calc(100vh - 644px) left;
+    background-position: top calc(100svh - 644px) left;
+    background-position: top calc(var(--vh100) - 644px) left;
+  }
 }
 
-@media (max-height: 464px) and (orientation: landscape), (max-height: 432px)  {
-    #home {
-        display: none;
-    }
-    #orientation-message {
-        @include mixins.flex($jc: center, $ai: center);
-    }
+@media (max-height: 464px) and (orientation: landscape), (max-height: 432px) {
+  #home {
+    display: none;
+  }
+  #orientation-message {
+    @include mixins.flex($jc: center, $ai: center);
+  }
 }
 
 @media (min-height: 845px) and (max-width: 768px) and (orientation: portrait) {
-    #home {
-        background-position: top calc(100vh - 744px) left;
-        background-position: top calc(100svh - 744px) left;
-        background-position: top calc(var(--vh100) - 744px) left;
-    }
+  #home {
+    background-position: top calc(100vh - 744px) left;
+    background-position: top calc(100svh - 744px) left;
+    background-position: top calc(var(--vh100) - 744px) left;
+  }
 }
 
 @media (min-height: 1024px) and (max-width: 560px) and (orientation: portrait) {
-    #home {
-        background-position: top calc(100vh - 794px) left;
-        background-position: top calc(100svh - 794px) left;
-        background-position: top calc(var(--vh100) - 794px) left;
-    }
+  #home {
+    background-position: top calc(100vh - 794px) left;
+    background-position: top calc(100svh - 794px) left;
+    background-position: top calc(var(--vh100) - 794px) left;
+  }
 }
 
 @media (min-height: 1200px) and (max-width: 768px) and (orientation: portrait) {
-    #home {
-        background-position: top calc(100vh - 894px) left;
-        background-position: top calc(100svh - 894px) left;
-        background-position: top calc(var(--vh100) - 894px) left;
-    }
+  #home {
+    background-position: top calc(100vh - 894px) left;
+    background-position: top calc(100svh - 894px) left;
+    background-position: top calc(var(--vh100) - 894px) left;
+  }
 }

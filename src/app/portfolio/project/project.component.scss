@@ -1,89 +1,89 @@
-@use '../../../styles/mixins.scss';
-@import '../../../styles/colors.scss';
+@use "../../../styles/mixins.scss";
+@use "../../../styles/colors.scss";
+@use "../../../styles/animations.scss";
 
 .project {
-    opacity: 0;
-    @include mixins.flex($ai: center);
-    gap: 35px;
-    padding: 0 182px;
+  opacity: 0;
+  @include mixins.flex($ai: center);
+  gap: 35px;
+  padding: 0 182px;
 }
 
 .project-content {
-    @include mixins.flex($dir: column);
-    gap: 35px;
+  @include mixins.flex($dir: column);
+  gap: 35px;
 }
 
 .project-content-text {
-    @include mixins.flex($dir: column);
-    gap: 15px;
+  @include mixins.flex($dir: column);
+  gap: 15px;
 }
 
 h4 {
-    color: $accentColor1;
+  color: colors.$accentColor1;
 }
 
 .stack {
-    color: $accentColor2;
+  color: colors.$accentColor2;
 }
 
 .description {
-    max-width: 684px;
+  max-width: 684px;
 }
 
 .left {
-    @include mixins.flex($jc: space-between, $ai: center, $dir: row);
-    text-align: left;
+  @include mixins.flex($jc: space-between, $ai: center, $dir: row);
+  text-align: left;
 }
 
 .right {
-    @include mixins.flex($jc: space-between, $ai: center, $dir: row-reverse);
-    text-align: right;
+  @include mixins.flex($jc: space-between, $ai: center, $dir: row-reverse);
+  text-align: right;
 }
 
 .project-btn-container {
-    @include mixins.flex();
-    gap: 86px;
+  @include mixins.flex();
+  gap: 86px;
 }
 
 .flex-end {
-    @include mixins.flex($jc: flex-end);
+  @include mixins.flex($jc: flex-end);
 }
 
 @media (max-width: 1440px) {
-    .project {
-        padding: 0 136px;
-    }
-    .description {
-        max-width: 513px;
-    }
+  .project {
+    padding: 0 136px;
+  }
+  .description {
+    max-width: 513px;
+  }
 }
 
 @media (max-width: 1200px) {
-    .project {
-        @include mixins.flex($dir: column);
-    }
-    .project-content {
-        @include mixins.flex($ai: center, $dir: column);
-    }
-    .left, .right {
-        text-align: center;
-    }
+  .project {
+    @include mixins.flex($dir: column);
+  }
+  .project-content {
+    @include mixins.flex($ai: center, $dir: column);
+  }
+  .left,
+  .right {
+    text-align: center;
+  }
 }
 
 @media (max-width: 768px) {
-    .project {
-        padding: 0 24px;
-    }
-    .project-btn-container {
-        gap: 50px;
-    }
+  .project {
+    padding: 0 24px;
+  }
+  .project-btn-container {
+    gap: 50px;
+  }
 }
 
 @media (max-width: 360px) {
-    .project-btn-container {
-        flex-direction: column;
-        gap: 16px;
-    }
+  .project-btn-container {
+    flex-direction: column;
+    gap: 16px;
+  }
 }
-
-@import '../../../styles/animations.scss';

@@ -1,54 +1,58 @@
+@use "../styles/mixins.scss";
+@use "../styles/colors.scss";
+
 .btn {
-    @include mixins.flex($jc: center, $ai: center);
-    padding: 15px 30px;
-    gap: 10px;
-    border: unset;
-    border-radius: 10px;
-    opacity: 0px;
-    color: $mainTextColor;
-    box-shadow: 4px 4px 4px 0px hsla(0, 0%, 0%, 0.25);
-    transition: padding 125ms ease-out;
+  @include mixins.flex($jc: center, $ai: center);
+  padding: 15px 30px;
+  gap: 10px;
+  border: unset;
+  border-radius: 10px;
+  opacity: 0px;
+  color: colors.$mainTextColor;
+  box-shadow: 4px 4px 4px 0px hsla(0, 0%, 0%, 0.25);
+  transition: padding 125ms ease-out;
 }
 
-.btn, .btn-link {
-    font-size: 23px;
-    line-height: 27.6px;
-    font-weight: 400;
-    cursor: pointer;
+.btn,
+.btn-link {
+  font-size: 23px;
+  line-height: 27.6px;
+  font-weight: 400;
+  cursor: pointer;
 }
 
 .btn-primary {
-    background: $accentColor2;
-    @media (hover: hover) {
-        &:hover {
-            background: $accentColor1;
-            padding: 20px 40px;
-        }
+  background: colors.$accentColor2;
+  @media (hover: hover) {
+    &:hover {
+      background: colors.$accentColor1;
+      padding: 20px 40px;
     }
+  }
 }
 
 .btn-secondary {
-    background: $accentColor1;
-    @media (hover: hover) {
-        &:hover {
-            background: $accentColor2;
-        }
+  background: colors.$accentColor1;
+  @media (hover: hover) {
+    &:hover {
+      background: colors.$accentColor2;
     }
+  }
 }
 
 .btn-tertiary {
-    border: 1px solid $accentColor2;
-    background: transparent;
-    @media (hover: hover) {
-        &:hover {
-            background: $accentColor2;
-        }
+  border: 1px solid colors.$accentColor2;
+  background: transparent;
+  @media (hover: hover) {
+    &:hover {
+      background: colors.$accentColor2;
     }
+  }
 }
 
 @media (max-width: 1440px) {
-    .btn {
-        font-size: 16px;
-        line-height: 19.2px;
-    }
+  .btn {
+    font-size: 16px;
+    line-height: 19.2px;
+  }
 }

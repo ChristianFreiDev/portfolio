@@ -1,45 +1,46 @@
 .slide-in-from-left {
-    animation: leftToRight 1.3s ease-in-out forwards;
+  animation: leftToRight 1.3s ease-in-out forwards;
 }
 
 .slide-in-from-right {
-    animation: rightToLeft 1.3s ease-in-out forwards;
+  animation: rightToLeft 1.3s ease-in-out forwards;
 }
 
 @media (prefers-reduced-motion) {
-    .slide-in-from-left, .slide-in-from-right {
-        animation: none;
-        animation: show 1s ease-in-out forwards;
-    }
+  .slide-in-from-left,
+  .slide-in-from-right {
+    animation: none;
+    animation: show 1s ease-in-out forwards;
+  }
 }
 
 @keyframes leftToRight {
-    0% {
-        opacity: 0;
-        transform: translate3d(calc(-100% - 136px), 0, 0);
-    }
-    100% {
-        opacity: 1;
-        transform: translate3d(0%, 0, 0);
-    }
+  0% {
+    opacity: 0;
+    transform: translate3d(calc(-100% - 136px), 0, 0);
+  }
+  100% {
+    opacity: 1;
+    transform: translate3d(0%, 0, 0);
+  }
 }
 
 @keyframes rightToLeft {
-    0% {
-        opacity: 0;
-        transform: translate3d(calc(100% + 136px), 0, 0);
-    }
-    100% {
-        opacity: 1;
-        transform: translate3d(0%, 0, 0);
-    }
+  0% {
+    opacity: 0;
+    transform: translate3d(calc(100% + 136px), 0, 0);
+  }
+  100% {
+    opacity: 1;
+    transform: translate3d(0%, 0, 0);
+  }
 }
 
 @keyframes show {
-    0% {
-        opacity: 0;
-    }
-    100% {
-        opacity: 1;
-    }
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
 }

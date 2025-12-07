@@ -1,71 +1,70 @@
-@use '../../styles/mixins.scss';
-@import '../../styles/colors.scss';
+@use "../../styles/mixins.scss";
+@use "../../styles/colors.scss";
+@use "../../styles/animations.scss";
 
 #portfolio {
-    padding-top: 180px;
-    @include mixins.flex($ai: flex-end, $dir: column);
+  padding-top: 180px;
+  @include mixins.flex($ai: flex-end, $dir: column);
 }
 
 .portfolio-top-container {
-    @include mixins.flex($dir: column);
-    gap: 40px;
-    opacity: 0;
+  @include mixins.flex($dir: column);
+  gap: 40px;
+  opacity: 0;
 }
 
 .portfolio-top-text {
-    padding: 0 24px;
+  padding: 0 24px;
 }
 
 .portfolio-heading-container {
-    @include mixins.flex($jc: flex-end, $ai: center);
-    gap: 32px;
+  @include mixins.flex($jc: flex-end, $ai: center);
+  gap: 32px;
 }
 
 hr {
-    border-color: $accentColor1;
+  border-color: colors.$accentColor1;
 }
 
 .portfolio-hr-before {
-    width: 100px;
+  width: 100px;
 }
 
 .portfolio-hr-after {
-    width: 35.2vw;
-    max-width: 676px;
+  width: 35.2vw;
+  max-width: 676px;
 }
 
 .projects {
-    @include mixins.flex($jc: center, $dir: column);
-    gap: 80px;
-    width: 100%;
+  @include mixins.flex($jc: center, $dir: column);
+  gap: 80px;
+  width: 100%;
 }
 
 @media (max-width: 1200px) {
-    .projects {
-        gap: 102px;
-    }
-} 
+  .projects {
+    gap: 102px;
+  }
+}
 
 @media (max-width: 1024px) {
-    #portfolio {
-        padding-top: 128px;
-    }
+  #portfolio {
+    padding-top: 128px;
+  }
 }
 
 @media (max-width: 767px) {
-    .portfolio-heading-container {
-        gap: 16px;
-    }
-    .portfolio-top-text {
-        padding: 0 24px;
-        text-align: center;
-    }
-    .portfolio-hr-before {
-        width: 24px;
-    }
-    .portfolio-hr-after {
-        width: 22.5vw;
-    }
+  .portfolio-heading-container {
+    gap: 16px;
+  }
+  .portfolio-top-text {
+    padding: 0 24px;
+    text-align: center;
+  }
+  .portfolio-hr-before {
+    width: 24px;
+  }
+  .portfolio-hr-after {
+    width: 22.5vw;
+  }
 }
-
-@import '../../styles/animations.scss';

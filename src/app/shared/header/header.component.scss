@@ -1,128 +1,129 @@
-@use '../../../styles/mixins.scss';
-@import '../../../styles.scss';
-@import '../../../styles/spacing.scss';
+@use "../../../styles/mixins.scss";
+@use "../../../styles.scss";
+@use "../../../styles/spacing.scss";
+@use "../../../styles/colors.scss";
 
 .header-container {
-    width: 100%;
-    max-width: 1920px;
-    @include mixins.flex($jc: space-between);
-    z-index: 3;
-    position: fixed;
-    top: 0;
-    padding: 37px $sideSpacingLarge;
-    background-color: $backgroundColor;
+  width: 100%;
+  max-width: 1920px;
+  @include mixins.flex($jc: space-between);
+  z-index: 3;
+  position: fixed;
+  top: 0;
+  padding: 37px spacing.$sideSpacingLarge;
+  background-color: colors.$backgroundColor;
 }
 
 .header-links {
-    @include mixins.flex($ai: center);
-    gap: 30px;
+  @include mixins.flex($ai: center);
+  gap: 30px;
 }
 
 a {
-    color: $mainTextColor;
-    text-decoration: none;
+  color: colors.$mainTextColor;
+  text-decoration: none;
 }
 
 a:-webkit-any-link {
-    color: $mainTextColor;
-    text-decoration: none;
+  color: colors.$mainTextColor;
+  text-decoration: none;
 }
 
 @media (hover: hover) {
-    a:hover {
-        color: $accentColor2;
-    }
+  a:hover {
+    color: colors.$accentColor2;
+  }
 }
 
 .active {
-    position: relative;
+  position: relative;
 }
 
 .active:before {
-    position: absolute;
-    left: 0;
-    top: 30px;
-    height: 0;
-    width: 58px;
-    content: '';
-    border-top: 3px solid $accentColor1;
+  position: absolute;
+  left: 0;
+  top: 30px;
+  height: 0;
+  width: 58px;
+  content: "";
+  border-top: 3px solid colors.$accentColor1;
 }
 
 .language-btn {
-    padding: 7.5px 15px;
-    font-size: 11.5px;
-    line-height: 13.8px;
-    background-color: transparent;
-    border: 2px solid white;
-    &:hover {
-        color: $accentColor2;
-    }
+  padding: 7.5px 15px;
+  font-size: 11.5px;
+  line-height: 13.8px;
+  background-color: transparent;
+  border: 2px solid white;
+  &:hover {
+    color: colors.$accentColor2;
+  }
 }
 
 .active-language {
-    border-color: $accentColor1;
+  border-color: colors.$accentColor1;
 }
 
 .header-burger-menu {
-    position: fixed;
-    top: 40px;
-    right: 24px;
-    z-index: 4;
-    display: none;
-    cursor: pointer;
+  position: fixed;
+  top: 40px;
+  right: 24px;
+  z-index: 4;
+  display: none;
+  cursor: pointer;
+  path {
+    stroke: white;
+  }
+  &:hover {
     path {
-        stroke: white;
+      stroke: colors.$accentColor2;
     }
-    &:hover {
-        path {
-            stroke: $accentColor2;
-        }
-    }
+  }
 }
 
 .header-burger-menu-overlay {
-    display: none;
-    background: hsla(220, 41%, 13%, 0.8);
-    z-index: 3;
-    position: fixed;
-    width: 100vw;
-    height: 100vh;
-    height: 100svh;
-    height: var(--vh100);
+  display: none;
+  background: hsla(220, 41%, 13%, 0.8);
+  z-index: 3;
+  position: fixed;
+  width: 100vw;
+  height: 100vh;
+  height: 100svh;
+  height: var(--vh100);
 }
 
 app-name {
-    font-size: 28px;
-    line-height: 35px;
-    font-weight: 700;
-    cursor: pointer;
+  font-size: 28px;
+  line-height: 35px;
+  font-weight: 700;
+  cursor: pointer;
 }
 
 .show-burger-menu {
-    @include mixins.flex($jc: center, $ai: center);
+  @include mixins.flex($jc: center, $ai: center);
 }
 
 @media (max-width: 1440px) {
-    .header-container {
-        padding: 37px $sideSpacingMedium;
-    }
+  .header-container {
+    padding: 37px spacing.$sideSpacingMedium;
+  }
 }
 
 @media (max-width: 1024px) {
-    .header-links {
-        display: none;
-    }
-    .header-burger-menu {
-        display: block;
-    }
-    .header-burger-menu-content {
-        @include mixins.flex($dir: column, $ai: flex-start);
-        gap: 29px;
-    }
+  .header-links {
+    display: none;
+  }
+  .header-burger-menu {
+    display: block;
+  }
+  .header-burger-menu-content {
+    @include mixins.flex($dir: column, $ai: flex-start);
+    gap: 29px;
+  }
 }
 
 @media (max-width: 768px) {
-    .header-container {
-        padding: 37px 6.15vw;
-    }
+  .header-container {
+    padding: 37px 6.15vw;
+  }
 }

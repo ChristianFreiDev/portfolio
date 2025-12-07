@@ -1,149 +1,148 @@
-@use '../../styles/mixins.scss';
-@import '../../styles/colors.scss';
-@import '../../styles/spacing.scss';
+@use "../../styles/mixins.scss";
+@use "../../styles/colors.scss";
+@use "../../styles/spacing.scss";
+@use "../../styles/animations.scss";
 
 #about-me {
-    padding-top: 124px;
-    @include mixins.flex($jc: space-between, $ai: center);
+  padding-top: 124px;
+  @include mixins.flex($jc: space-between, $ai: center);
 }
 
 .about-me-left-side {
-    padding-left: $sideSpacingLarge;
-    padding-right: 0;
-    @include mixins.flex($dir: column);
-    gap: 40px;
-    opacity: 0;
+  padding-left: spacing.$sideSpacingLarge;
+  padding-right: 0;
+  @include mixins.flex($dir: column);
+  gap: 40px;
+  opacity: 0;
 }
 
 .about-me-right-side {
-    @include mixins.flex($ai: center);
-    opacity: 0;
+  @include mixins.flex($ai: center);
+  opacity: 0;
 }
 
 .about-me-content {
-    width: 32.7vw;
-    max-width: 628px;
-    min-width: 471px;
-    @include mixins.flex($dir: column);
-    gap: 32px;
+  width: 32.7vw;
+  max-width: 628px;
+  min-width: 471px;
+  @include mixins.flex($dir: column);
+  gap: 32px;
 }
 
 ul {
-    margin: 0;
-    padding: 0;
-    @include mixins.flex($dir: column);
-    gap: 24px;
+  margin: 0;
+  padding: 0;
+  @include mixins.flex($dir: column);
+  gap: 24px;
 }
 
 li {
-    margin: 0;
-    padding: 0;
-    @include mixins.flex($ai: center);
-    gap: 16px;
+  margin: 0;
+  padding: 0;
+  @include mixins.flex($ai: center);
+  gap: 16px;
 }
 
 .portrait2-container {
-    padding-left: 64px;
+  padding-left: 64px;
 }
 
 .portrait2 {
-
-    width: 453px;
-    min-width: 453px;
-    border: 4px solid $accentColor2;
-    border-radius: 50%;
-    object-fit: cover;
+  width: 453px;
+  min-width: 453px;
+  border: 4px solid colors.$accentColor2;
+  border-radius: 50%;
+  object-fit: cover;
 }
 
 hr {
-    width: 20vw;
-    max-width: 384px;
-    border-color: $accentColor2;
-    border-top-right-radius: 2px;
-    border-bottom-right-radius: 2px;
+  width: 20vw;
+  max-width: 384px;
+  border-color: colors.$accentColor2;
+  border-top-right-radius: 2px;
+  border-bottom-right-radius: 2px;
 }
 
 .icon-container {
-    height: 48px;
-    width: 48px;
-    min-width: 48px;
-    @include mixins.flex($jc: center, $ai: center);
+  height: 48px;
+  width: 48px;
+  min-width: 48px;
+  @include mixins.flex($jc: center, $ai: center);
 }
 
 .bulb {
-    height: 30px;
-    path {
-        stroke: $accentColor2;
-    }
-    &:hover {
-        height: 48px;
-    }
+  height: 30px;
+  path {
+    stroke: colors.$accentColor2;
+  }
+  &:hover {
+    height: 48px;
+  }
 }
 
 .puzzle {
-    height: 30px;
-    path {
-        fill: $accentColor2;
-    }
-    &:hover {
-        height: 48px;
-    }
+  height: 30px;
+  path {
+    fill: colors.$accentColor2;
+  }
+  &:hover {
+    height: 48px;
+  }
 }
 
 .icon {
-    transition: height 100ms;
+  transition: height 100ms;
 }
 
 @media (max-width: 1920px) {
-    hr {
-        border-top-right-radius: 0;
-        border-bottom-right-radius: 0;
-    }
+  hr {
+    border-top-right-radius: 0;
+    border-bottom-right-radius: 0;
+  }
 }
 
 @media (max-width: 1440px) {
-    .about-me-left-side {
-        padding-left: $sideSpacingMedium;
-    }
+  .about-me-left-side {
+    padding-left: spacing.$sideSpacingMedium;
+  }
 }
 
 $secondPortraitSizeM: 31.8vw;
 @media (max-width: 1200px) {
-    .portrait2 {
-        width: $secondPortraitSizeM;
-        min-width: $secondPortraitSizeM;
-    }
+  .portrait2 {
+    width: $secondPortraitSizeM;
+    min-width: $secondPortraitSizeM;
+  }
 }
 
 $secondPortraitSizeS: 24vw;
 @media (max-width: 960px) {
-    .portrait2 {
-        width: $secondPortraitSizeS;
-        min-width: $secondPortraitSizeS;
-    }
-    .about-me-left-side {
-        padding-left: 93px;
-    }
+  .portrait2 {
+    width: $secondPortraitSizeS;
+    min-width: $secondPortraitSizeS;
+  }
+  .about-me-left-side {
+    padding-left: 93px;
+  }
 }
 
 @media (max-width: 864px) {
-    .portrait2, hr {
-        display: none;
-    }
+  .portrait2,
+  hr {
+    display: none;
+  }
 }
 
 @media (max-width: 768px) {
-    #about-me {
-        padding: 128px 24px 0;
-        @include mixins.flex($ai: center, $dir: column);
-    }
-    .about-me-content {
-        width: 100%;
-        min-width: unset;
-    }
-    .about-me-left-side {
-        padding-left: 0;
-    }
+  #about-me {
+    padding: 128px 24px 0;
+    @include mixins.flex($ai: center, $dir: column);
+  }
+  .about-me-content {
+    width: 100%;
+    min-width: unset;
+  }
+  .about-me-left-side {
+    padding-left: 0;
+  }
 }
-
-@import '../../styles/animations.scss';

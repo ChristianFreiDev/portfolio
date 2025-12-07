@@ -1,267 +1,268 @@
-@use '../../styles/mixins.scss';
-@import '../../styles/colors.scss';
-@import '../../styles/spacing.scss';
+@use "../../styles/mixins.scss";
+@use "../../styles/colors.scss";
+@use "../../styles/spacing.scss";
+@use "../../styles/animations.scss";
 
 p {
-    margin: 0;
+  margin: 0;
 }
 
 #skills {
-    padding-top: 180px;
-    padding-left: $sideSpacingLarge;
-    display: grid;
-    grid-template-columns: auto auto;
-    grid-template-rows: auto 1fr;
-    grid-template-areas:
+  padding-top: 180px;
+  padding-left: spacing.$sideSpacingLarge;
+  display: grid;
+  grid-template-columns: auto auto;
+  grid-template-rows: auto 1fr;
+  grid-template-areas:
     "items text-top"
     "items text-bottom";
-    row-gap: 40px;
-    column-gap: 88px;
+  row-gap: 40px;
+  column-gap: 88px;
 }
 
 .skill-items-container-outer {
-    grid-area: items;
+  grid-area: items;
 }
 
 .skill-items-container {
-    @include mixins.flex();
-    flex-wrap: wrap;
-    gap: 88px;
-    width: 664px;
-    opacity: 0;
+  @include mixins.flex();
+  flex-wrap: wrap;
+  gap: 88px;
+  width: 664px;
+  opacity: 0;
 }
 
 .skill-item {
-    @include mixins.flex($jc: center, $ai: center, $dir: column);
-    gap: 10px;
-    width: 88px;
-    padding: 12px 0 0 0;
+  @include mixins.flex($jc: center, $ai: center, $dir: column);
+  gap: 10px;
+  width: 88px;
+  padding: 12px 0 0 0;
+  > svg {
+    fill: white;
+    height: 60px;
+    transition: transform 125ms;
+  }
+  &:hover {
     > svg {
-        fill: white;
-        height: 60px;
-        transition: transform 125ms;
+      transform: translateY(-24px);
     }
-    &:hover {
-        > svg {
-            transform: translateY(-24px);
-        }
-    }
+  }
 }
 
 .skills-text-top-container-outer {
-    grid-area: text-top;
+  grid-area: text-top;
 }
 
 .skills-text-top-container {
-    @include mixins.flex($ai: flex-end, $dir: column);
-    text-align: right;
-    gap: 40px;
-    opacity: 0;
+  @include mixins.flex($ai: flex-end, $dir: column);
+  text-align: right;
+  gap: 40px;
+  opacity: 0;
 }
 
 .skills-text-top-container p {
-    padding-right: $sideSpacingLarge;
+  padding-right: spacing.$sideSpacingLarge;
 }
 
 .skills-text-bottom-container-outer {
-    grid-area: text-bottom;
+  grid-area: text-bottom;
 }
 
 .skills-text-bottom-container {
-    padding-right: $sideSpacingLarge;
-    @include mixins.flex($ai: flex-end, $dir: column);
-    text-align: right;
-    gap: 24px;
-    opacity: 0;
+  padding-right: spacing.$sideSpacingLarge;
+  @include mixins.flex($ai: flex-end, $dir: column);
+  text-align: right;
+  gap: 24px;
+  opacity: 0;
 }
 
 strong {
-    font-size: 32px;
-    line-height: 38.4px;
+  font-size: 32px;
+  line-height: 38.4px;
 }
 
 .looking-for-another-skill {
-    @include mixins.flex($ai: flex-end, $dir: column);
-    gap: 16px;
+  @include mixins.flex($ai: flex-end, $dir: column);
+  gap: 16px;
 }
 
 .another-skill {
-    color: $accentColor1;
+  color: colors.$accentColor1;
 }
 
 .learning {
-    position: relative;
+  position: relative;
 }
 
 #learning-svg {
-    position: absolute;
+  position: absolute;
 }
 
 .learning-tooltip {
-    text-align: center;
-    background-color: white;
-    color: black;
-    border: unset;
-    border-radius: 12px;
-    padding: 16px 24px;
-    min-width: 200px;
-    position: absolute;
-    top: -80px;
-    left: 80px;
-    opacity: 0;
-    transition: opacity 250ms;
+  text-align: center;
+  background-color: white;
+  color: black;
+  border: unset;
+  border-radius: 12px;
+  padding: 16px 24px;
+  min-width: 200px;
+  position: absolute;
+  top: -80px;
+  left: 80px;
+  opacity: 0;
+  transition: opacity 250ms;
 }
 
 .learning:hover {
-    .accent-color1-text{
-        color: white;
+  .accent-color1-text {
+    color: white;
+  }
+  .learning-icon-container {
+    #learning-svg {
+      fill: white;
     }
-    .learning-icon-container {
-        #learning-svg {
-            fill: white;
-        }
-        #learning-arrows {
-            animation: rotateArrows 2s infinite linear;
-            fill: white;
-        }
+    #learning-arrows {
+      animation: rotateArrows 2s infinite linear;
+      fill: white;
     }
-    .learning-tooltip {
-        opacity: 1;
-    }
+  }
+  .learning-tooltip {
+    opacity: 1;
+  }
 }
 
 @keyframes rotateArrows {
-    0% {
-        transform: rotate(0deg);
-    }
-    100% {
-        transform: rotate(-360deg);
-    }
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(-360deg);
+  }
 }
 
 .skills-heading-container {
-    @include mixins.flex($ai: center);
-    gap: 32px;
+  @include mixins.flex($ai: center);
+  gap: 32px;
 }
 
 .skills-hr {
-    width: 4.72vw;
-    min-width: 24px;
-    max-width: 90px;
-    color: $accentColor1;
+  width: 4.72vw;
+  min-width: 24px;
+  max-width: 90px;
+  color: colors.$accentColor1;
 }
 
-#learning-svg, #learning-arrows {
-    fill: $accentColor1;
-    transition: all 125ms;
+#learning-svg,
+#learning-arrows {
+  fill: colors.$accentColor1;
+  transition: all 125ms;
 }
 
 .node {
-    color: hsla(78, 100%, 40%, 1);
+  color: hsla(78, 100%, 40%, 1);
 }
 
 @media (max-width: 1440px) {
-    #skills {
-        padding-left: $sideSpacingMedium;
-    }
-    .skills-text-top-container p, .skills-text-bottom-container {
-        padding-right: calc(4.72vw + 32px);
-    }
-    .skills-text-bottom-container {
-        padding-right: calc(4.72vw + 32px);
-    }
-    br {
-        display: none;
-    }
+  #skills {
+    padding-left: spacing.$sideSpacingMedium;
+  }
+  .skills-text-top-container p,
+  .skills-text-bottom-container {
+    padding-right: calc(4.72vw + 32px);
+  }
+  .skills-text-bottom-container {
+    padding-right: calc(4.72vw + 32px);
+  }
+  br {
+    display: none;
+  }
 }
 
 @media (max-width: 1200px) {
-    #skills {
-        padding-left: 0;
-        padding-top: 128px;
-        grid-template-columns: 1fr;
-        grid-template-rows: auto auto auto;
-        grid-template-areas:
-        "text-top"
-        "items"
-        "text-bottom";
+  #skills {
+    padding-left: 0;
+    padding-top: 128px;
+    grid-template-columns: 1fr;
+    grid-template-rows: auto auto auto;
+    grid-template-areas:
+      "text-top"
+      "items"
+      "text-bottom";
+  }
+  br {
+    display: inline;
+  }
+  .learning-tooltip {
+    top: -128px;
+    left: -52px;
+  }
+  .skill-items-container {
+    @include mixins.flex($jc: center);
+    flex-wrap: wrap;
+    justify-self: right;
+    margin-right: 0;
+    width: 100%;
+    padding-left: 4.72vw;
+    padding-right: 4.72vw;
+    gap: 39px;
+  }
+  .skill-item {
+    justify-self: center;
+    gap: 10px;
+    > svg {
+      height: 48px;
     }
-    br {
-        display: inline;
-    }
-    .learning-tooltip {
-        top: -128px;
-        left: -52px;
-    }
-    .skill-items-container {
-        @include mixins.flex($jc: center);
-        flex-wrap: wrap;
-        justify-self: right;
-        margin-right: 0;
-        width: 100%;
-        padding-left: 4.72vw;
-        padding-right: 4.72vw;
-        gap: 39px;
-    }
-    .skill-item {
-        justify-self: center;
-        gap: 10px;
-        > svg {
-            height: 48px;
-        }
-    }
+  }
 }
 
 @media (max-width: 800px) {
-    .skill-items-container {
-        gap: 72px;
-    }
+  .skill-items-container {
+    gap: 72px;
+  }
 }
 
 @media (max-width: 768px) {
-    .skills-heading-container {
-        gap: 16px;
-    }
-    .skills-text-top-container {
-        padding-left: 24px;
-    }
-    .skills-text-bottom-container {
-        padding: 0 24px;
-    }
+  .skills-heading-container {
+    gap: 16px;
+  }
+  .skills-text-top-container {
+    padding-left: 24px;
+  }
+  .skills-text-bottom-container {
+    padding: 0 24px;
+  }
 }
 
 @media (max-width: 720px) {
-    .skill-items-container {
-        gap: 62px;
-    }
-    #skills {
-        row-gap: 40px;
-    }
-    .skills-text-top-container {
-        gap: 40px;
-    }
+  .skill-items-container {
+    gap: 62px;
+  }
+  #skills {
+    row-gap: 40px;
+  }
+  .skills-text-top-container {
+    gap: 40px;
+  }
 }
 
 @media (max-width: 660px) {
-    .skill-items-container {
-        gap: 39px;
-    }
-    #skills {
-        row-gap: 24px;
-    }
-    .skills-text-top-container {
-        gap: 24px;
-    }
-    br {
-        display: none;
-    }
+  .skill-items-container {
+    gap: 39px;
+  }
+  #skills {
+    row-gap: 24px;
+  }
+  .skills-text-top-container {
+    gap: 24px;
+  }
+  br {
+    display: none;
+  }
 }
 
 @media (max-width: 328px) {
-    strong {
-        font-size: 28px;
-        line-height: 33.6px;
-    }
+  strong {
+    font-size: 28px;
+    line-height: 33.6px;
+  }
 }
-
-@import '../../styles/animations.scss';

@@ -1,206 +1,208 @@
-@use '../../styles/mixins.scss';
-@import '../../styles/colors.scss';
-@import '../../styles/spacing.scss';
+@use "../../styles/mixins.scss";
+@use "../../styles/colors.scss";
+@use "../../styles/spacing.scss";
+@use "../../styles/animations.scss";
 
 #contact {
-    padding-top: 146px;
+  padding-top: 146px;
 }
 
 .contact-heading-container {
-    @include mixins.flex($ai: center);
-    gap: 32px;
-    opacity: 0;
+  @include mixins.flex($ai: center);
+  gap: 32px;
+  opacity: 0;
 }
 
 .contact-content {
-    @include mixins.flex($jc: space-between);
-    padding: 40px $sideSpacingLarge 181px;
+  @include mixins.flex($jc: space-between);
+  padding: 40px spacing.$sideSpacingLarge 181px;
 }
 
 .contact-text-container {
-    @include mixins.flex($dir: column);
-    gap: 24px;
-    width: 32.9vw;
-    max-width: 632px;
-    padding-right: 48px;
-    opacity: 0;
+  @include mixins.flex($dir: column);
+  gap: 24px;
+  width: 32.9vw;
+  max-width: 632px;
+  padding-right: 48px;
+  opacity: 0;
 }
 
 .contact-text {
-    @include mixins.flex($dir: column);
-    gap: 16px;
+  @include mixins.flex($dir: column);
+  gap: 16px;
 }
 
-input::placeholder, textarea::placeholder {
-    color: white;
+input::placeholder,
+textarea::placeholder {
+  color: white;
 }
 
-input, textarea {
-    color: white;
-    border: 1px solid $accentColor1;
-    background-color: transparent;
-    border-radius: 10px;
-    padding: 15px 25px;
-    font-family: 'Poppins', sans-serif;
+input,
+textarea {
+  color: white;
+  border: 1px solid colors.$accentColor1;
+  background-color: transparent;
+  border-radius: 10px;
+  padding: 15px 25px;
+  font-family: "Poppins", sans-serif;
 }
 
 input {
-    height: 50px;
+  height: 50px;
 }
 
 .contact-form {
-    width: 617px;
-    @include mixins.flex($dir: column);
-    gap: 32px;
-    opacity: 0;
+  width: 617px;
+  @include mixins.flex($dir: column);
+  gap: 32px;
+  opacity: 0;
 }
 
 button {
-    align-self: center;
+  align-self: center;
 }
 
 button:disabled {
-    background-color: hsla(0, 0%, 71%, 1);
-    @media (hover: hover) {
-        &:hover {
-            padding: 15px 30px;
-        }
+  background-color: hsla(0, 0%, 71%, 1);
+  @media (hover: hover) {
+    &:hover {
+      padding: 15px 30px;
     }
+  }
 }
 
 hr {
-    width: 37.15vw;
-    max-width: 714px;
-    border-color: $accentColor1;
+  width: 37.15vw;
+  max-width: 714px;
+  border-color: colors.$accentColor1;
 }
 
 $validInputColor: hsla(95, 80%, 51%, 1);
 $invalidInputColor: hsla(349, 80%, 51%, 1);
 
 .validation-message {
-    margin-top: -16px;
-    color: $invalidInputColor;
+  margin-top: -16px;
+  color: $invalidInputColor;
 }
 
-input, textarea {
-    width: 100%;
+input,
+textarea {
+  width: 100%;
 }
 
 textarea {
-    resize: vertical;
-    min-height: 202px;
+  resize: vertical;
+  min-height: 202px;
 }
 
 .input-container {
-    position: relative;
-    display: flex;
+  position: relative;
+  display: flex;
 }
 
 .invalid-input {
-    border: 1px solid $invalidInputColor;
+  border: 1px solid $invalidInputColor;
 }
 
 .valid-input {
-    border: 1px solid $validInputColor;
+  border: 1px solid $validInputColor;
 }
 
-input[type='checkbox'] {
-    width: 18px;
-    height: 18px;
-    position: absolute;
-    left: 0;
-    top: 0;
-    opacity: 0;
+input[type="checkbox"] {
+  width: 18px;
+  height: 18px;
+  position: absolute;
+  left: 0;
+  top: 0;
+  opacity: 0;
 }
 
 .checkbox-svg {
-    width: 18px;
-    height: 18px;
-    path {
-        fill: $validInputColor;
-    }
+  width: 18px;
+  height: 18px;
+  path {
+    fill: $validInputColor;
+  }
 }
 
 .checkbox {
-    cursor: pointer;
+  cursor: pointer;
 }
 
 .contact-privacy-policy-message-container {
-    display: grid;
-    grid-template-columns: 26px auto;
-    position: relative;
+  display: grid;
+  grid-template-columns: 26px auto;
+  position: relative;
 }
 
 .arrow-svg-btn {
-    position: absolute;
-    color: unset;
-    background-color: unset;
-    border: unset;
-    cursor: pointer;
-    right: $sideSpacingLarge;
-    z-index: 1;
-    margin-top: -90px;
-    path {
-        fill: white;
+  position: absolute;
+  color: unset;
+  background-color: unset;
+  border: unset;
+  cursor: pointer;
+  right: spacing.$sideSpacingLarge;
+  z-index: 1;
+  margin-top: -90px;
+  path {
+    fill: white;
+  }
+  rect {
+    stroke: white;
+  }
+  @media (hover: hover) {
+    &:hover {
+      path {
+        fill: colors.$accentColor2;
+      }
+      rect {
+        stroke: colors.$accentColor2;
+      }
     }
-    rect {
-        stroke: white;
-    }
-    @media (hover: hover) {
-        &:hover {
-            path {
-                fill: $accentColor2;
-            }
-            rect {
-                stroke: $accentColor2;
-            }
-        }
-    }
+  }
 }
 
 .privacy-policy-link {
-    font-size: 16px;
-    line-height: 20px;
+  font-size: 16px;
+  line-height: 20px;
 }
 
 @media (max-width: 1440px) {
-    .contact-content {
-        padding: 40px $sideSpacingMedium 181px;
-    }
-    .arrow-svg-btn {
-        right: $sideSpacingMedium;
-    }
+  .contact-content {
+    padding: 40px spacing.$sideSpacingMedium 181px;
+  }
+  .arrow-svg-btn {
+    right: spacing.$sideSpacingMedium;
+  }
 }
 
 @media (max-width: 1200px) {
-    .contact-content {
-        @include mixins.flex($dir: column);
-        gap: 24px;
-    }
-    .contact-form {
-        width: 100%;
-        max-width: 617px;
-    }
-    .contact-text-container {
-        width: unset;
-        max-width: 617px;
-    }
-    .contact-content {
-        @include mixins.flex($ai: center, $dir: column);
-        padding: 32px 4.72vw 100px;
-    }
-    .arrow-svg-btn {
-        right: calc(4.72vw + 32px);
-    }
+  .contact-content {
+    @include mixins.flex($dir: column);
+    gap: 24px;
+  }
+  .contact-form {
+    width: 100%;
+    max-width: 617px;
+  }
+  .contact-text-container {
+    width: unset;
+    max-width: 617px;
+  }
+  .contact-content {
+    @include mixins.flex($ai: center, $dir: column);
+    padding: 32px 4.72vw 100px;
+  }
+  .arrow-svg-btn {
+    right: calc(4.72vw + 32px);
+  }
 }
 
 @media (max-width: 768px) {
-    .contact-heading-container {
-        gap: 16px;
-    }
-    .arrow-svg-btn {
-        right: 24px;
-    }
+  .contact-heading-container {
+    gap: 16px;
+  }
+  .arrow-svg-btn {
+    right: 24px;
+  }
 }
-
-@import '../../styles/animations.scss';

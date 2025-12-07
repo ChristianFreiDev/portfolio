@@ -1,7 +1,7 @@
 @use "./styles/mixins.scss";
-@import "./styles/fonts.scss";
-@import "./styles/colors.scss";
-@import "./styles/buttons.scss";
+@use "./styles/fonts.scss";
+@use "./styles/colors.scss";
+@use "./styles/buttons.scss";
 
 :root {
   --vh100: 100vh;
@@ -22,9 +22,9 @@ html {
 
 body {
   overflow-x: hidden;
-  background: $backgroundColor;
+  background: colors.$backgroundColor;
   font-family: "Poppins", sans-serif;
-  color: $mainTextColor;
+  color: colors.$mainTextColor;
 }
 
 h1,
@@ -60,7 +60,7 @@ hr {
 }
 
 .regular-link {
-  color: $accentColor1;
+  color: colors.$accentColor1;
   text-decoration: none;
 }
 
@@ -71,11 +71,11 @@ hr {
 
 ::-webkit-scrollbar-track {
   border-radius: 5px;
-  background-color: $scrollbarColor1;
+  background-color: colors.$scrollbarColor1;
 }
 
 ::-webkit-scrollbar-thumb {
-  background: $scrollbarColor2;
+  background: colors.$scrollbarColor2;
   border-radius: 5px;
 }
 

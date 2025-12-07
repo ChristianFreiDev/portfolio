@@ -1,14 +1,14 @@
-@import '../../../styles/colors.scss';
+@use "../../../styles/colors.scss";
 
-.i {  
-    position: relative;
-    z-index: 0;
-  }
+.i {
+  position: relative;
+  z-index: 0;
+}
 
 .i:before {
-    z-index: -1;
-    content: 'i';
-    position: absolute;
-    left: 0;
-    color: $accentColor1;
+  z-index: -1;
+  content: "i";
+  position: absolute;
+  left: 0;
+  color: colors.$accentColor1;
 }

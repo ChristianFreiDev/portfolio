@@ -1,117 +1,117 @@
-@use '../../../styles/mixins.scss';
-@import '../../../styles/colors.scss';
-@import '../../../styles/spacing.scss';
+@use "../../../styles/mixins.scss";
+@use "../../../styles/colors.scss";
+@use "../../../styles/spacing.scss";
 
 hr {
-    border: 2px solid $accentColor2;
-    border-top-left-radius: 2px;
-    border-top-right-radius: 2px;
-    border-bottom-left-radius: 2px;
-    border-bottom-right-radius: 2px;
+  border: 2px solid colors.$accentColor2;
+  border-top-left-radius: 2px;
+  border-top-right-radius: 2px;
+  border-bottom-left-radius: 2px;
+  border-bottom-right-radius: 2px;
 }
 
 #footer {
-    margin: auto;
-    max-width: 1920px;
-    height: 291px;
-    padding-right: $sideSpacingLarge;
-    padding-left: $sideSpacingLarge;
-    @include mixins.flex($jc: space-between);
+  margin: auto;
+  max-width: 1920px;
+  height: 291px;
+  padding-right: spacing.$sideSpacingLarge;
+  padding-left: spacing.$sideSpacingLarge;
+  @include mixins.flex($jc: space-between);
 }
 
 .footer-name-container {
-    margin-top: 121px;
-    position: relative;
+  margin-top: 121px;
+  position: relative;
 }
 
 a {
-    left: 0;
-    text-decoration: none;
-    color: white;
-    font-size: 16px;
-    line-height: 19.2px;
-    position: relative;
-    @media (hover: hover) {
-        &:hover:before {
-            position: absolute;
-            left: 0;
-            top: 22px;
-            height: 0;
-            width: 58px;
-            content: '';
-            border-top: 3px solid $accentColor2;
-        }
+  left: 0;
+  text-decoration: none;
+  color: white;
+  font-size: 16px;
+  line-height: 19.2px;
+  position: relative;
+  @media (hover: hover) {
+    &:hover:before {
+      position: absolute;
+      left: 0;
+      top: 22px;
+      height: 0;
+      width: 58px;
+      content: "";
+      border-top: 3px solid colors.$accentColor2;
     }
+  }
 }
 
 .legal-notice {
-    position: absolute;
-    top: 42px;
+  position: absolute;
+  top: 42px;
 }
 
 .legal-notice-mobile {
-    margin-top: 28px;
-    display: none;
+  margin-top: 28px;
+  display: none;
 }
 
 .copyright {
-    margin-top: 133px;
-    font-size: 23px;
-    line-height: 27.6px;
+  margin-top: 133px;
+  font-size: 23px;
+  line-height: 27.6px;
 }
 
 app-name {
-    font-size: 40px;
-    line-height: 40px;
-    font-weight: 700;
-    cursor: pointer;
+  font-size: 40px;
+  line-height: 40px;
+  font-weight: 700;
+  cursor: pointer;
 }
 
 app-social-media-links {
-    margin-top: 121px;
+  margin-top: 121px;
 }
 
 @media (max-width: 1920px) {
-    hr {
-        border-radius: 0;
-    }
+  hr {
+    border-radius: 0;
+  }
 }
 
 @media (max-width: 1440px) {
-    #footer {
-        padding-right: $sideSpacingMedium;
-        padding-left: $sideSpacingMedium;
-    }
+  #footer {
+    padding-right: spacing.$sideSpacingMedium;
+    padding-left: spacing.$sideSpacingMedium;
+  }
 }
 
 @media (max-width: 960px) {
-    #footer {
-        padding-left: 0;
-        padding-right: 0;
-        @include mixins.flex($ai: center, $dir: column);
-        margin-bottom: 81px;
-    }
-    .footer-name-container {
-        margin-top: 66px;
-    }
-    .copyright {
-        margin-top: 55px;
-    }
-    app-social-media-links {
-        margin-top: 23px;
-    }
-    .legal-notice {
-        margin-top: 28px;
-        display: none;
-    }
-    .legal-notice-mobile {
-        display: block;
-    }
+  #footer {
+    padding-left: 0;
+    padding-right: 0;
+    @include mixins.flex($ai: center, $dir: column);
+    margin-bottom: 81px;
+  }
+  .footer-name-container {
+    margin-top: 66px;
+  }
+  .copyright {
+    margin-top: 55px;
+  }
+  app-social-media-links {
+    margin-top: 23px;
+  }
+  .legal-notice {
+    margin-top: 28px;
+    display: none;
+  }
+  .legal-notice-mobile {
+    display: block;
+  }
 }
 
 @media (max-width: 328px) {
-    app-name {
-        font-size: 28px;
-        line-height: 35px;
-    }
+  app-name {
+    font-size: 28px;
+    line-height: 35px;
+  }
 }

@@ -1,28 +1,27 @@
-@use '../../styles/mixins.scss';
-@import '../../styles/colors.scss';
+@use "../../styles/mixins.scss";
+@use "../../styles/colors.scss";
+@use "../../styles/animations.scss";
 
 section {
-    padding: 128px 24px 0;
-    min-height: calc(100vh - 295px);
-    min-height: calc(100svh - 295px);
-    min-height: calc(var(--vh100) - 295px);
-    @include mixins.flex($jc: center, $ai: center, $dir: column);
+  padding: 128px 24px 0;
+  min-height: calc(100vh - 295px);
+  min-height: calc(100svh - 295px);
+  min-height: calc(var(--vh100) - 295px);
+  @include mixins.flex($jc: center, $ai: center, $dir: column);
 }
 
 #legal-notice {
-    @include mixins.flex($jc: center, $ai: flex-start, $dir: column);
-    opacity: 0;
+  @include mixins.flex($jc: center, $ai: flex-start, $dir: column);
+  opacity: 0;
 }
 
 h2 {
-    margin-bottom: 20px;
+  margin-bottom: 20px;
 }
 
 h3 {
-    margin-top: 24px;
-    margin-bottom: 12px;
-    font-size: 20px;
-    line-height: 20px;
+  margin-top: 24px;
+  margin-bottom: 12px;
+  font-size: 20px;
+  line-height: 20px;
 }
-
-@import '../../styles/animations.scss';

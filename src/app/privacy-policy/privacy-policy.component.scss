@@ -1,41 +1,40 @@
-@use '../../styles/mixins.scss';
-@import '../../styles/colors.scss';
+@use "../../styles/mixins.scss";
+@use "../../styles/colors.scss";
+@use "../../styles/animations.scss";
 
 section {
-    padding: 128px 100px 100px;
-    min-height: calc(100vh - 295px);
-    min-height: calc(100svh - 295px);
-    min-height: calc(var(--vh100) - 295px);
-    @include mixins.flex($jc: center, $ai: center, $dir: column);
-    margin: auto;
-    max-width: 1920px;
+  padding: 128px 100px 100px;
+  min-height: calc(100vh - 295px);
+  min-height: calc(100svh - 295px);
+  min-height: calc(var(--vh100) - 295px);
+  @include mixins.flex($jc: center, $ai: center, $dir: column);
+  margin: auto;
+  max-width: 1920px;
 }
 
 #privacy-policy {
-    opacity: 0;
+  opacity: 0;
 }
 
 h2 {
-    margin-bottom: 20px;
+  margin-bottom: 20px;
 }
 
 h3 {
-    margin-top: 24px;
-    margin-bottom: 12px;
-    font-size: 20px;
-    line-height: 20px;
+  margin-top: 24px;
+  margin-bottom: 12px;
+  font-size: 20px;
+  line-height: 20px;
 }
 
 a {
-    color: hsl(241, 100%, 64%);
-    text-decoration: none;
-    word-break: break-word
+  color: hsl(241, 100%, 64%);
+  text-decoration: none;
+  word-break: break-word;
 }
 
 @media (max-width: 768px) {
-    section {
-        padding: 128px 24px 24px;
-    }
+  section {
+    padding: 128px 24px 24px;
+  }
 }
-
-@import '../../styles/animations.scss';

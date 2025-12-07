@@ -1,10 +1,10 @@
-@import '../styles/colors.scss';
+@use "../styles/colors.scss";
 
 header {
-    margin: auto;
-    max-width: 1920px;
+  margin: auto;
+  max-width: 1920px;
 }
 
 footer {
-    background-color: $backgroundColor;
+  background-color: colors.$backgroundColor;
 }

@@ -1,41 +1,41 @@
-@use '../../../styles/mixins.scss';
-@import '../../../styles/colors.scss';
+@use "../../../styles/mixins.scss";
+@use "../../../styles/colors.scss";
 
 .social-links {
-    @include mixins.flex($ai: center);
-    gap: 32px;
+  @include mixins.flex($ai: center);
+  gap: 32px;
 }
 
 .footer-social-links {
-    padding: 5px 0;
-    gap: 42px;
+  padding: 5px 0;
+  gap: 42px;
 }
 
 .social-link {
-    display: flex;
-    transition: transform 100ms ease-out;
-    @media (hover: hover) {
-        &:hover {
-            transform: scale(1.2);
-        }
+  display: flex;
+  transition: transform 100ms ease-out;
+  @media (hover: hover) {
+    &:hover {
+      transform: scale(1.2);
     }
+  }
 }
 
 @media (max-width: 1920px) {
-    .socials-hr {
-        border-top-left-radius: 0;
-        border-bottom-left-radius: 0;
-    }
+  .socials-hr {
+    border-top-left-radius: 0;
+    border-bottom-left-radius: 0;
+  }
 }
 
 @media (max-width: 1024px) {
-    .social-links {
-        gap: 42px;
-    }
+  .social-links {
+    gap: 42px;
+  }
 }
 
 @media (max-width: 328px) {
-    .social-links {
-        gap: 24px;
-    }
+  .social-links {
+    gap: 24px;
+  }
 }
